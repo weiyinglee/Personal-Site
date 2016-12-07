@@ -30,13 +30,15 @@ const middleware = applyMiddleware(thunk)
 const store = createStore(reducer, middleware)
 
 ReactDOM.render((
-	<Provider history={hashHistory}>
-		<Route path="/" component={Layout}>
-			<IndexRoute component={Home} />
-			<Route path="/about" component={About} />
-			<Route path="/project" component={Project} />
-			<Route path="/contact" component={Contact} />
-			<Route path="/login" component={Login} />
-		</Route>
+	<Provider store={store}>
+		<Router history={hashHistory}>
+			<Route path="/" component={Layout}>
+				<IndexRoute component={Home} />
+				<Route path="/about" component={About} />
+				<Route path="/project" component={Project} />
+				<Route path="/contact" component={Contact} />
+				<Route path="/login" component={Login} />
+			</Route>
+		</Router>
 	</Provider>
 ), app)

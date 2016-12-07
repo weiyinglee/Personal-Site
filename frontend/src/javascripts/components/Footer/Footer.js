@@ -3,10 +3,10 @@
 //import dependencies
 import React from "react"
 import { Nav, NavItem } from "react-bootstrap"
-import { IndexLinkContainer, LinkContainer } from "react-router"
+import { IndexLinkContainer, LinkContainer } from "react-router-bootstrap"
 
 //import components
-import FootLinks from "./FootLinks"
+import FooterLinks from "./FooterLinks"
 
 class Footer extends React.Component {
 	render() {
@@ -16,7 +16,7 @@ class Footer extends React.Component {
 					<h4 id="footer-header-title">
 						Follow me on:
 					</h4>
-					<LinkList />
+					<FooterLinks />
 				</div>
 				<Nav bsStyle="pills" className="footer-bar">
 					<IndexLinkContainer to="/">

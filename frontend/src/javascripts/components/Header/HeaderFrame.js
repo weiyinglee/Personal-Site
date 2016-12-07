@@ -42,8 +42,7 @@ class HeaderFrame extends React.Component {
 		this.props.dispatch(fetchAboutIntro())
 	}
 
-	return (
-
+	render() {
 		/* Handle the editing mode */
 		let editBtn, editBlock
 
@@ -63,26 +62,30 @@ class HeaderFrame extends React.Component {
 		}else {
 			editBlock = (<h4>{this.props.intro}</h4>)
 		}
-
-		<div id="header-frame">
-			<Grid>
-				<Row>
-					<Col xs={12} sm={9} md={7}>
-						<div className="profile-info">
-							<div className="page-header">
-								<h3>Hi, My name is <span id="myname">WeiYing (Eric) Lee</span></h3>
-								{editBlock}
-								{editBtn}									
+		
+		return (
+			<div id="header-frame">
+				<Grid>
+					<Row>
+						<Col xs={12} sm={9} md={7}>
+							<div className="profile-info">
+								<div className="page-header">
+									<h3>Hi, My name is <span id="myname">WeiYing (Eric) Lee</span></h3>
+									{editBlock}
+									{editBtn}									
+								</div>
+								<h4>Get to know me more now</h4>
+								<Link role="button" className="btn btn-info" to="/about">About me</Link>
 							</div>
-							<h4>Get to know me more now</h4>
-							<Link role="button" className="btn btn-info" to="/about">About me</Link>
-						</div>
-					</Col>
-					<Col sm={3} md={5}></Col>
-				</Row>
-			</Grid>
-		</div>		
-	)
+						</Col>
+						<Col sm={3} md={5}></Col>
+					</Row>
+				</Grid>
+			</div>		
+		)		
+
+	}
+
 }
 
 //to map the state to props for getting the state and dispatcher of the reducer

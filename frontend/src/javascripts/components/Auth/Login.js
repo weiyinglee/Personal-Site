@@ -5,7 +5,7 @@ import React from "react";
 import { connect } from "react-redux";
 import cookie from "react-cookie";
 import { Button } from "react-bootstrap";
-import { loginUser } from "../actions/LoginAction";
+import { loginUser } from "../../actions/LoginAction";
 import $ from "jquery";
 
 class Login extends React.Component {

@@ -1,13 +1,14 @@
 import React from "react"
 
-import Header from "./components/Header/Header"
-import Footer from "./components/Footer/Footer"
+import Header from "./Header/Header"
+import Footer from "./Footer/Footer"
+
+import "../../stylesheets/style.scss"
 
 class Layout extends React.Component {
 	render() {
 		return (
 			<div className="unselectableText">
-				/* Pass in the React-Router pathname as props nameed path to Header*/
 				<Header path={this.props.location.pathname}/>
 				<div className="container-fluid" id="content">
 					{this.props.children}

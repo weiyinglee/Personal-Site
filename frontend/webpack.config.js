@@ -1,3 +1,4 @@
+
 module.exports = {
 	entry: "./src/javascripts/app.js",
 	output: {
@@ -14,6 +15,10 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				loaders: ["style-loader", "css-loader", "sass-loader"]
+			},
+			{
+				loaders: ["url", "img"],
+				test: /\.png$/
 			}
 		]
 	}
