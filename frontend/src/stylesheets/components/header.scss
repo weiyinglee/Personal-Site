@@ -1,0 +1,114 @@
+$navbar-color: rgba(0, 0, 0, 0.4);
+
+#nav-frame {
+	height: 40%;
+	padding-top: 1%;
+	background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../images/header-bg.png") no-repeat scroll bottom;
+	background-color: white;
+	backgroud-size: 100%;
+	
+	.navbar {
+		padding: 1%;
+		background: $navbar-color;
+		border: none;
+
+		#page-title {
+			font-weight: bold;
+			font-size: 30px;
+		}
+
+		a {
+			color: white;
+		}
+		
+		/* override active class */
+		.active {
+			a {
+				color: orange;
+				font-weight: bold;
+				background: rgba(0,0,0,0);
+			}
+		}
+
+		#admin-btn {
+			color: darkred;
+		}
+
+	}
+}
+
+#header-frame {
+	padding: 10%;
+	
+	#myname {
+		color: orange;
+	}
+
+	textarea {
+		color: black;
+		resize: none;
+	}
+}
+
+.profile-pic-frame {
+	border: 1px white solid;
+	border-radius: 100px;
+	box-shadow: 5px 5px 5px #111;
+	width: 80%;
+	height: 80%;
+	margin-right: 5%;
+	margin-bottom: 5%;
+	float: right;
+
+	img {
+	 	width: 100%;
+	 	height: 100%;
+	 	border-radius: 100px;
+	}
+}
+
+.profile-info {
+	border: 1px white solid;
+	background: rgba(255, 255, 255, 0.1);
+	width: 100%;
+	height: 100%;
+	padding: 10%;
+	margin-top: 1%;
+	color: white;
+	text-align: center;
+	
+	h3 {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+}
+
+.sub-header-title {
+	border: none;
+	background: rgba(255, 255, 255, 0.1);
+	padding: 5%;
+	margin: 1%;
+
+	h2 {
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		text-shadow: 10px 10px 10px #000;
+		padding: 2%;
+	}
+
+	.project-add-btn {
+		margin-left: 48%;
+	}
+
+	.project-fields {
+
+		margin-top: 1%;
+
+		li {
+			margin: 1%;
+			list-style: none;
+		}
+	}
+}

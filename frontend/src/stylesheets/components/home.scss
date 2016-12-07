@@ -1,0 +1,91 @@
+$backgroundOdd: rgba(255, 255, 255, 1);
+$backgroundDefault: rgba(230, 255, 250, 1);
+$transparent: rgba(0,0,0,0);
+
+.home-sec {
+	
+	background: white;
+	height: auto;
+	width: auto;
+	margin-bottom: 0;
+
+	.home-sec-title {
+		text-align: center;
+		padding: 3%;
+		font-size: 72px;
+		font-weight: bold;
+
+		.title-head {
+			color: #777;
+			font-weight: bold;
+		}
+
+		.title-subHead {
+			font-weight: bold;
+		}
+	}
+
+	.home-sec-content {
+		padding-bottom: 5%;
+		font-weight: bold;
+		color: #888;
+
+		.home-project-title {
+			font-weight: bold;
+			font-size: 28px;
+			color: darkred;
+		}
+
+		.home-project-date {
+			font-style: italic;
+			font-size: 16px;
+			color: darkorange;
+		}
+	}
+
+	.more-btn-row {
+		margin: 2%;
+	}
+
+	.home-project-sec {
+		background: $backgroundDefault;
+		text-align: center;
+	}	
+
+	.home-summary-sec {
+		.home-sec-content {
+			.profile-pic {
+				padding: 0;
+
+				img {
+					width: 230px;
+					height: 230px;
+					border-radius: 130px;
+				}
+			}
+
+			.profile-summary {
+				margin: 1%;
+
+				pre {
+					background: $transparent;
+					border: none;
+					white-space: pre-wrap;
+					word-wrap: break-word;
+				}
+			}
+		}
+	}
+
+	.home-contact-sec {
+		background: $backgroundOdd;
+		text-align: center;
+
+		.home-contact-title {
+			font-size: 18px;
+			font-weight: bold;
+			color: brown;
+		}
+
+	}
+}

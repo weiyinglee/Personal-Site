@@ -1,0 +1,43 @@
+.project-sec {
+	
+	padding: 2%;
+
+	.project-btn {
+		background: darkred;
+		color: white;
+	}
+
+	a {
+		color: $linkColor;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	.jumbotron {
+		background: white;
+		border: 1px solid black;
+	}
+
+	.form-control {
+		margin-top: 1%;
+	}
+
+	.project-frame {
+		.project-description {
+			color: #888;
+		}
+		.project-title {
+			color: darkred;
+			font-weight: bold;
+
+		}
+		.project-date {
+			font-style: italic;
+		}
+		.project-link {
+			text-decoration: underline;
+		}
+	}
+}

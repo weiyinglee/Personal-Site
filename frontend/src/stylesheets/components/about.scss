@@ -1,0 +1,71 @@
+$backgroundOdd: rgba(255, 255, 255, 1);
+$backgroundDefault: rgba(230, 255, 250, 1);
+$transparent: rgba(0,0,0,0);
+
+.about-sec {
+
+	background: white;
+	height: auto;
+	width: auto;
+	margin-bottom: 0;
+
+	.about-sec-title {
+		text-align: center;
+		padding: 3%;
+		font-size: 72px;
+		font-weight: bold;
+
+		.title-head {
+			color: #777;
+			font-weight: bold;
+		}
+
+		.title-subHead {
+			font-weight: bold;
+		}
+	}
+
+	.intro-sec {
+		background-color: $backgroundOdd;
+		
+		.intro-sec-content {
+
+			.intro-summary {
+				font-size: 16px;
+			}
+
+			pre {
+				background: $transparent;
+				border: none;
+				white-space: pre-wrap;
+				word-wrap: break-word;
+			}
+		}
+
+	}
+
+	.experience-sec {
+		background-color: $backgroundDefault;
+		padding: 2%;
+
+		.experience-sec-content {
+
+			.experience-edit {
+
+			}
+
+		}
+	}
+
+	.education-sec {
+		background-color: $backgroundOdd;
+	}
+
+	.skill-sec {
+		background-color: $backgroundDefault;
+	}
+
+	.award-sec {
+		background-color: $backgroundOdd;
+	}
+}
