@@ -4,7 +4,7 @@ import $ from "jquery"
 //fetch work
 export function fetchWork() {
 	return function(dispatch) {
-		$.get("/api/experience-info", (response) => {
+		$.get("http://localhost:3000/api/experience-info", (response) => {
 			dispatch({ type: "FETCH_WORK", payload: response })
 		})	
 	}
@@ -13,7 +13,7 @@ export function fetchWork() {
 //add work
 export function addWork(data) {
 	return function(dispatch) {
-		$.post("/api/post-experience", data, (response) => {
+		$.post("http://localhost:3000/api/post-experience", data, (response) => {
 			dispatch({ type: "ADD_WORK", payload: response.Message })
 			location.reload()
 		})
@@ -25,7 +25,7 @@ export function updateWork(id, data) {
 	return function(dispatch) {
 		$.ajax({
 			type: "PUT",
-			url: "/api/update-work/" + id,
+			url: "http://localhost:3000/api/update-work/" + id,
 			data: data,
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
@@ -42,7 +42,7 @@ export function delWork(id) {
 	return function(dispatch) {
 		$.ajax({
 			type: "DELETE",
-			url: "/api/delete-work/" + id,
+			url: "http://localhost:3000/api/delete-work/" + id,
 			success: function(response){
 				dispatch({ type: "DELETE_WORK", payload: response.Message })
 				location.reload()

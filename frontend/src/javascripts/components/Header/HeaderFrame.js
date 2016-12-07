@@ -24,7 +24,7 @@ class HeaderFrame extends React.Component {
 
 	//open the edit mode
 	editingHandler() {
-		this.setState({ editing: this.state.editing })
+		this.setState({ editing: !this.state.editing })
 	}
 
 	//update the about info on the home page header frame

@@ -8,7 +8,7 @@ import cookie from "react-cookie"
 //login user
 export function loginUser(acct, pw) {
 	return function(dispatch) {
-		$.post("/api/Authentication", {
+		$.post("http://localhost:3000/api/Authentication", {
 			account: acct,
 			password: pw
 		}, (res) => {
