@@ -11,6 +11,9 @@ import cookie from "react-cookie"
 import { fetchAboutSummary } from "../../actions/AboutAction"
 import { fetchProject } from "../../actions/ProjectAction"
 
+//import img
+import selfImg from "../../../images/profile-pic.png"
+
 class Home extends React.Component {
 	
 	componentWillMount() {
@@ -32,7 +35,7 @@ class Home extends React.Component {
 						<Row className="home-sec-content">
 							<Col md={3} sm={3} xsHidden></Col>
 							<Col md={3} sm={3} xs={6} className="profile-pic">
-								<img src="../../../images/profile-pic.png"/>
+								<img src={selfImg}/>
 							</Col>
 							<Col md={5} sm={5} xs={6} className="profile-summary">
 								<pre>{this.props.about_summary}</pre>
