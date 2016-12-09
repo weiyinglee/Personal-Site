@@ -20,6 +20,11 @@ $navbar-color: rgba(0, 0, 0, 0.4);
 		a {
 			color: white;
 		}
+
+		a:hover {
+			color: red;
+			transition: color 1s ease-out;
+		}
 		
 		/* override active class */
 		.active {

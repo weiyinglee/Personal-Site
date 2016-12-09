@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --process --incline --hot",
+    "dev": "webpack-dev-server --content-base src/ --process --incline --hot --history-api-fallback",
     "start": "webpack",
     "start-watch": "webpack --watch"
   },
