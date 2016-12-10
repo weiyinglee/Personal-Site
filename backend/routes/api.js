@@ -24,7 +24,7 @@ router.get('/about-info', function(req, res){
 	// });
 
 	
-	
+
 });
 
 router.get('/skill-info', function(req, res){
