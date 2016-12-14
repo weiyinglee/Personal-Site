@@ -35,7 +35,7 @@ class Project extends React.Component {
 				{
 					this.props.projects.map((elem, index) => {
 						return (
-							<ProjectContainer login={this.state.login} title={elem.Title} description={elem.Description} year={elem.Year} link={elem.Link} _id={elem._id} key={index}/>
+							<ProjectContainer login={this.state.login} title={elem.Title} description={elem.Description} year={elem.Year} link={elem.Link} _id={elem.id} key={index}/>
 						)
 					})
 				}

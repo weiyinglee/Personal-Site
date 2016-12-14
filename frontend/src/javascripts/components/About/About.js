@@ -83,7 +83,7 @@ class About extends React.Component {
 							{
 								this.props.experience.map((elem, index) => {
 									return (
-										<Experience login={this.state.login} title={elem.Title} description={elem.Description} year={elem.Year} _id={elem._id} key={index}/>
+										<Experience login={this.state.login} title={elem.Title} description={elem.Description} year={elem.Year} _id={elem.id} key={index}/>
 									)
 								})
 							}

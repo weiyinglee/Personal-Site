@@ -16,41 +16,38 @@ var db = knex({
 	}
 });
 
+//helper function
+function fetchDB(req, res, table) {
+	db(table).then(function(data){
+		res.json(data);
+	}, function(err){
+		res.send(err);
+	});
+}
+
 /* GET */
 router.get('/about-info', function(req, res){
-	// About.find(function(err, data){
-	// 	if(err) return res.send(err);
-	// 	res.json(data);
-	// });
-
-	
-
+	fetchDB(req, res, "user");
 });
 
 router.get('/skill-info', function(req, res){
-
+	fetchDB(req, res, "skills");
 });
 
 router.get('/award-info', function(req, res){
-
+	fetchDB(req, res, "award");
 });
 
 router.get('/education-info', function(req, res){
-
+	fetchDB(req, res, "education");
 });
 
 router.get('/experience-info', function(req, res){
-	// Experience.find(function(err, data){
-	// 	if(err) return res.send(err);
-	// 	res.json(data);
-	// });	
+	fetchDB(req, res, "experience");
 });
 
 router.get('/project-info', function(req, res){
-	// Project.find(function(err, data){
-	// 	if(err) return res.send(err);
-	// 	res.json(data);
-	// });
+	fetchDB(req, res, "project");
 });
 
 /* PUT */
@@ -58,27 +55,28 @@ router.put('/update-about-info', function(req, res){
 
 	var intro = req.body.newIntro;
 
-	// About.find(function(err, data){
-	// 	if(err) return res.send(err)
-	// 	About.update({_id: data[0]._id}, { $set: { "Intro": intro }}, function(err){
-	// 		if(err) return res.json({Message: err});
-	// 		res.json({Message: "successfully updated intro"});
-	// 	});
-	// });
+	db("user")
+		.where("account", "EricLee")
+		.update("Intro", intro)
+		.then(function(result) {
+			res.json({Message: "successfully updated intro"});
+		}, function(err) {
+			res.json({Message: err});
+		});
 });
 
 router.put('/update-about-summary', function(req, res) {
 
 	var summary = req.body.newSummary;
-
-	// About.find(function(err, data) {
-	// 	if(err) return res.send(err)
-	// 	About.update({_id: data[0]._id}, {$set: { "Summary": summary }}, function(err) {
-	// 		if(err) return res.json({Message: err});
-	// 		res.json({Message: "successfully update summary"});
-	// 	});
-	// });
-
+	
+	db("user")
+		.where("account", "EricLee")
+		.update("Summary", summary)
+		.then(function(result) {
+			res.json({Message: "successfully updated summary"});
+		}, function(err) {
+			res.json({Message: err});
+		});
 });
 
 router.put('/update-project-info/:id', function(req, res){
@@ -89,15 +87,20 @@ router.put('/update-project-info/:id', function(req, res){
 	var link = req.body.Link;
 	var id = req.params.id;
 
-	// Project.update({_id: id}, { $set: {
-	// 	"Title": title,
-	// 	"Description": des,
-	// 	"Year": year,
-	// 	"Link": link
-	// }}, function(err){
-	// 	if(err) return res.json({Message: err});
-	// 	res.json({Message: "successfully updated project"})
-	// });
+	db("project")
+		.where("id", id)
+		.update({
+			Title: title,
+			Description: des,
+			Year: year,
+			Link: link
+		})
+		.then(function(result){
+			res.json({Message: "successfully updated project"});
+		}, function(err) {
+			res.json({Message: err});
+		});
+
 });
 
 router.put('/update-work/:id', function(req, res){
@@ -107,14 +110,18 @@ router.put('/update-work/:id', function(req, res){
 	var year = req.body.Year;
 	var id = req.params.id;
 
-	// Experience.update({_id: id}, { $set: {
-	// 	"Title": title,
-	// 	"Description": des,
-	// 	"Year": year
-	// }}, function(err){
-	// 	if(err) return res.json({Message: err});
-	// 	res.json({Message: "successfully updated project"})
-	// });
+	db("experience")
+		.where("id", id)
+		.update({
+			Title: title,
+			Description: des,
+			Year: year
+		})
+		.then(function(result){
+			res.json({Message: "successfully updated project"});
+		}, function(err) {
+			res.json({Message: err});
+		});	
 
 });
 
@@ -123,35 +130,39 @@ router.post('/Authentication', function(req, res){
 	var acct = req.body.account;
 	var pw = req.body.password;
 
-	// Admin.findOne({account: acct}, function(err, user){
-	// 	if(user){
-	// 		if(bcrypt.compareSync(pw, user.password)){
-	// 			return res.json({ login: true });
-	// 		}
-	// 	}
-	// 	res.json({login: false})
-	// })
+	db("user")
+		.where({
+			account: acct,
+			password: pw
+		}).then(function(data){
+			if(data) {
+				return res.json({ login: true });
+			}
+			res.json({ login: false });
+		}, function(err) {
+			res.send(err);
+		});
 });
 
-router.post('/reg', function(req, res){
-	var acct = req.body.account;
-	var pw = req.body.password;
+// router.post('/reg', function(req, res){
+// 	var acct = req.body.account;
+// 	var pw = req.body.password;
 
 
-	//Hash password
-	var hashPw = bcrypt.hashSync(pw, bcrypt.genSaltSync(10));
+// 	//Hash password
+// 	var hashPw = bcrypt.hashSync(pw, bcrypt.genSaltSync(10));
 
-	// var newAdmin = new Admin({
-	// 	account: acct,
-	// 	password: hashPw
-	// });
-	// newAdmin.save(function(err) {
-	// 	if(err) return res.send(err);
-	// 	res.json({
-	// 		success: true
-	// 	});
-	// });
-});
+// 	// var newAdmin = new Admin({
+// 	// 	account: acct,
+// 	// 	password: hashPw
+// 	// });
+// 	// newAdmin.save(function(err) {
+// 	// 	if(err) return res.send(err);
+// 	// 	res.json({
+// 	// 		success: true
+// 	// 	});
+// 	// });
+// });
 
 router.post('/post-project-info', function(req, res){
 
@@ -160,19 +171,20 @@ router.post('/post-project-info', function(req, res){
 	var year = req.body.Year;
 	var link = req.body.Link;
 
-	// var newProject = new Project({
-	// 	Title: title,
-	// 	Description: des,
-	// 	Year: year,
-	// 	Link: link
-	// });
-	// newProject.save(function(err) {
-	// 	if(err) return res.send(err);
-	// 	res.json({
-	// 		Message: "successfully added project"
-	// 	});
-	// });
+	var data = {
+		Title: title,
+		Description: des,
+		Year: year,
+		Link: link
+	}
 
+	db("project")
+		.insert(data)
+		.then(function(response) {
+			res.json({Message: "successfully added project"});
+		}, function(err) {
+			res.send(err);
+		});
 });
 
 router.post('/post-experience', function(req, res) {
@@ -181,17 +193,20 @@ router.post('/post-experience', function(req, res) {
 	var des = req.body.Description;
 	var year = req.body.Year;
 
-	// var newWork = new Experience({
-	// 	Title: title,
-	// 	Description: des,
-	// 	Year: year
-	// });
-	// newWork.save(function(err){
-	// 	if(err) return res.send(err);
-	// 	res.json({
-	// 		Message: "successfully added experience"
-	// 	});
-	// });
+	var data = {
+		Title: title,
+		Description: des,
+		Year: year
+	}
+
+	db("experience")
+		.insert(data)
+		.then(function(response) {
+			res.json({Message: "successfully added project"});
+		}, function(err) {
+			res.send(err);
+		});
+
 });
 
 /* DELETE */
@@ -199,20 +214,29 @@ router.delete('/delete-project-info/:id', function(req, res){
 
 	var id = req.params.id;
 
-	// Project.remove({_id: id}, function(err, data){
-	// 	if(err) return res.send(err);
-	// 	res.json({Message: "successfully deleted"})
-	// });
+	db("project")
+		.where("id", id)
+		.delete()
+		.then(function(result){
+			res.json({Message: "successfully deleted project"});
+		}, function(err) {
+			res.send(err);
+		});
+
 });
 
 router.delete('/delete-work/:id', function(req, res) {
 
 	var id = req.params.id;
 
-	// Experience.remove({_id: id}, function(err, data){
-	// 	if(err) return res.send(err);
-	// 	res.json({Message: "successfully deleted"})
-	// });
+	db("experience")
+		.where("id", id)
+		.delete()
+		.then(function(result){
+			res.json({Message: "successfully deleted experience"});
+		}, function(err) {
+			res.send(err);
+		});
 });
 
 module.exports = router;

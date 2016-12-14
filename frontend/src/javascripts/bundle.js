@@ -59419,7 +59419,7 @@
 								_reactBootstrap.Col,
 								null,
 								this.props.experience.map(function (elem, index) {
-									return _react2.default.createElement(_Experience2.default, { login: _this2.state.login, title: elem.Title, description: elem.Description, year: elem.Year, _id: elem._id, key: index });
+									return _react2.default.createElement(_Experience2.default, { login: _this2.state.login, title: elem.Title, description: elem.Description, year: elem.Year, _id: elem.id, key: index });
 								})
 							)
 						)
@@ -59936,7 +59936,7 @@
 						)
 					),
 					this.props.projects.map(function (elem, index) {
-						return _react2.default.createElement(_ProjectContainer2.default, { login: _this2.state.login, title: elem.Title, description: elem.Description, year: elem.Year, link: elem.Link, _id: elem._id, key: index });
+						return _react2.default.createElement(_ProjectContainer2.default, { login: _this2.state.login, title: elem.Title, description: elem.Description, year: elem.Year, link: elem.Link, _id: elem.id, key: index });
 					})
 				);
 			}
