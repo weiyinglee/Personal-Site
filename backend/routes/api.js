@@ -4,17 +4,11 @@
 var express = require('express');
 var router = express.Router();
 
-//database test
-var knex = require('knex');
-var db = knex({
-	client: "mysql",
-	connection: {
-		host: "127.0.0.1",
-		user: "root",
-		password: "1009",
-		database: "Test"
-	}
-});
+//database
+var db = require("./db");
+
+//bcrypt
+var bcrypt = require("bcryptjs");
 
 //helper function
 function fetchDB(req, res, table) {
@@ -132,10 +126,11 @@ router.post('/Authentication', function(req, res){
 
 	db("user")
 		.where({
-			account: acct,
-			password: pw
-		}).then(function(data){
-			if(data) {
+			account: acct
+		})
+		.first()
+		.then(function(data){
+			if(bcrypt.compareSync(pw, data.password)) {
 				return res.json({ login: true });
 			}
 			res.json({ login: false });
@@ -144,25 +139,29 @@ router.post('/Authentication', function(req, res){
 		});
 });
 
-// router.post('/reg', function(req, res){
-// 	var acct = req.body.account;
-// 	var pw = req.body.password;
 
+//OPTION
+router.post('/reg', function(req, res){
+	var acct = req.body.account;
+	var pw = req.body.password;
 
-// 	//Hash password
-// 	var hashPw = bcrypt.hashSync(pw, bcrypt.genSaltSync(10));
+	//Hash password
+	var hashPw = bcrypt.hashSync(pw, bcrypt.genSaltSync(10));
+	
+	db("user")
+		.where("account", "EricLee")
+		.update({
+			"account": acct,
+			"password": hashPw
+		})
+		.then(function(result) {
+			return res.json({login: true})
+		})
+		.catch(function(err) {
+			return res.send(err)
+		})
 
-// 	// var newAdmin = new Admin({
-// 	// 	account: acct,
-// 	// 	password: hashPw
-// 	// });
-// 	// newAdmin.save(function(err) {
-// 	// 	if(err) return res.send(err);
-// 	// 	res.json({
-// 	// 		success: true
-// 	// 	});
-// 	// });
-// });
+});
 
 router.post('/post-project-info', function(req, res){
 

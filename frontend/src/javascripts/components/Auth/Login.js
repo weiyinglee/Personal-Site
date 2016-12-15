@@ -24,6 +24,16 @@ class Login extends React.Component {
 		this.props.dispatch(loginUser(acct, pw));
 	}
 
+	//reg
+	reg() {
+		$.post("http://localhost:3000/api/reg", {
+			account: "EricLee1009",
+			password: "Spider1009"
+		}, (res) => {
+			console.log(res)
+		})
+	}
+
 	componentWillMount() {
 		if(this.state.login) {
 			location.replace("/#/")

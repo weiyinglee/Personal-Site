@@ -60368,6 +60368,19 @@
 
 				this.props.dispatch((0, _LoginAction.loginUser)(acct, pw));
 			}
+
+			//reg
+
+		}, {
+			key: "reg",
+			value: function reg() {
+				_jquery2.default.post("http://localhost:3000/api/reg", {
+					account: "EricLee1009",
+					password: "Spider1009"
+				}, function (res) {
+					console.log(res);
+				});
+			}
 		}, {
 			key: "componentWillMount",
 			value: function componentWillMount() {
