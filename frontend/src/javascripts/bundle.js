@@ -28674,8 +28674,18 @@
 				if (this.state.login) {
 					userlogin = _react2.default.createElement(
 						_reactBootstrap.NavItem,
-						{ eventKey: 5, id: "admin-btn" },
+						{ eventKey: 5 },
 						"Logout"
+					);
+				} else {
+					userlogin = _react2.default.createElement(
+						_reactRouterBootstrap.LinkContainer,
+						{ to: "/login" },
+						_react2.default.createElement(
+							_reactBootstrap.NavItem,
+							{ eventKey: 5 },
+							"Login"
+						)
 					);
 				}
 
@@ -28791,15 +28801,6 @@
 										_reactBootstrap.NavItem,
 										{ eventKey: 4 },
 										"Contact"
-									)
-								),
-								_react2.default.createElement(
-									_reactRouterBootstrap.LinkContainer,
-									{ to: "/login" },
-									_react2.default.createElement(
-										_reactBootstrap.NavItem,
-										{ eventKey: 5 },
-										"Login"
 									)
 								),
 								userlogin
@@ -60448,7 +60449,7 @@
 			key: "componentWillMount",
 			value: function componentWillMount() {
 				if (this.state.login) {
-					location.replace("/#/");
+					location.replace("/");
 				}
 			}
 		}, {

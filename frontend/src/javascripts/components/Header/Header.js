@@ -50,7 +50,13 @@ class Header extends React.Component {
 		//This is for admin login in section, can see when its unlogin, otherwise, show logout
 		if(this.state.login){
 			userlogin = (
-				<NavItem eventKey={5} id="admin-btn">Logout</NavItem>
+				<NavItem eventKey={5}>Logout</NavItem>
+			)
+		}else {
+			userlogin = (
+				<LinkContainer to="/login">
+					<NavItem eventKey={5}>Login</NavItem>
+				</LinkContainer>
 			)
 		}
 
@@ -112,9 +118,6 @@ class Header extends React.Component {
 							</LinkContainer>
 							<LinkContainer to="/contact">
 								<NavItem eventKey={4}>Contact</NavItem>
-							</LinkContainer>
-							<LinkContainer to="/login">
-								<NavItem eventKey={5}>Login</NavItem>
 							</LinkContainer>
 							{userlogin}
 						</Nav>

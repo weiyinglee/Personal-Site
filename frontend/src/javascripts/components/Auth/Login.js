@@ -36,7 +36,7 @@ class Login extends React.Component {
 
 	componentWillMount() {
 		if(this.state.login) {
-			location.replace("/#/")
+			location.replace("/")
 		}
 	}
 
