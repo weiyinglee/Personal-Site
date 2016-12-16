@@ -27,6 +27,10 @@ router.get('/about-info', function(req, res){
 	fetchDB(req, res, "about");
 });
 
+router.get("/get-message", function(req, res){
+	fetchDB(req, res, "messages");
+});
+
 router.get('/skill-info', function(req, res){
 	fetchDB(req, res, "skills");
 });
@@ -72,6 +76,42 @@ router.put('/update-about-summary', function(req, res) {
 		}, function(err) {
 			res.json({Message: err});
 		});
+});
+
+router.put('/add-response/:id', function(req, res){
+
+	var response = req.body.response;
+	var id = req.params.id;
+
+	db("messages")
+		.where("id", id)
+		.update("response", response)
+		.then(function(result){
+			res.json({message: "successfully added response"});
+		},function(err) {
+			res.send(err);
+		});
+
+});
+
+router.put('/update-message/:id', function(req, res){
+
+	var newMessage = req.body.posts;
+	var newDate = req.body.date;
+	var id = req.params.id;
+
+	db("messages")
+		.where("id", id)
+		.update({
+			date: newDate,
+			posts: newMessage
+		})
+		.then(function(result){
+			res.json({message: "successfully updated message"})
+		}, function(err) {
+			res.send(err);
+		});
+
 });
 
 router.put('/update-project-info/:id', function(req, res){
@@ -191,6 +231,32 @@ router.post('/reg', function(req, res){
 
 });
 
+router.post('/add-message', function(req, res) {
+
+	var date = req.body.date;
+	var posts = req.body.posts;
+	var response = req.body.response;
+	var user = req.body.user;
+
+	var newPost = {
+		date: date,
+		posts: posts,
+		response: response,
+		user: user
+	}
+
+	db("messages")
+		.insert(newPost)
+		.then(function(response){
+			res.json({message: "successfully added new message"});
+		}, function(err) {
+			console.log(err);
+			res.json({message: "something went wrong"});
+		});
+
+});
+
+
 router.post('/post-project-info', function(req, res){
 
 	var title = req.body.Title;
@@ -237,6 +303,20 @@ router.post('/post-experience', function(req, res) {
 });
 
 /* DELETE */
+router.delete('/delete-message/:id', function(req, res){
+
+	var id = req.params.id;
+
+	db("messages")
+		.where("id", id)
+		.delete()
+		.then(function(result){
+			res.json({message: "successfully deleted message"});
+		}, function(err){
+			res.send(err);
+		});
+})
+
 router.delete('/delete-project-info/:id', function(req, res){
 
 	var id = req.params.id;

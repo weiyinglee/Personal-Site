@@ -72,7 +72,7 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _reducers = __webpack_require__(546);
+	var _reducers = __webpack_require__(547);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -23679,7 +23679,7 @@
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
-	var _Login = __webpack_require__(544);
+	var _Login = __webpack_require__(545);
 
 	var _Login2 = _interopRequireDefault(_Login);
 
@@ -60192,6 +60192,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRedux = __webpack_require__(200);
+
 	var _reactCookie = __webpack_require__(523);
 
 	var _reactCookie2 = _interopRequireDefault(_reactCookie);
@@ -60200,6 +60202,8 @@
 
 	var _reactBootstrap = __webpack_require__(270);
 
+	var _ContactAction = __webpack_require__(544);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -60207,6 +60211,9 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	//import source
+
 
 	var Contact = function (_React$Component) {
 		_inherits(Contact, _React$Component);
@@ -60218,22 +60225,64 @@
 
 			_this.state = {
 				user: _reactCookie2.default.load("user"),
-				messages: [{
-					"id": 1,
-					"date": "11/30/15",
-					"text": "dfasdfasdfasdfas"
-				}, {
-					"id": 2,
-					"date": "12/15/17",
-					"text": "asjdlfjsaldkf"
-				}]
+				edit: false
 			};
 			return _this;
 		}
 
 		_createClass(Contact, [{
+			key: "addZeroBefore",
+			value: function addZeroBefore(n) {
+				return (n < 10 ? '0' : '') + n;
+			}
+		}, {
+			key: "addPost",
+			value: function addPost() {
+				var newMessage = this.refs.message.value;
+				var date = new Date();
+				var dateFormat = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate() + " " + this.addZeroBefore(date.getHours()) + ":" + this.addZeroBefore(date.getMinutes()) + ":" + this.addZeroBefore(date.getSeconds());
+				var data = {
+					date: dateFormat,
+					posts: newMessage,
+					response: null,
+					user: this.state.user.username
+				};
+
+				this.props.dispatch((0, _ContactAction.addMessage)(data));
+			}
+		}, {
+			key: "updatePost",
+			value: function updatePost(id) {
+
+				var newMessage = this.refs.new_message.value;
+				var date = new Date();
+				var dateFormat = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate() + " " + this.addZeroBefore(date.getHours()) + ":" + this.addZeroBefore(date.getMinutes()) + ":" + this.addZeroBefore(date.getSeconds());
+				var data = {
+					date: dateFormat,
+					posts: newMessage
+				};
+
+				this.props.dispatch((0, _ContactAction.updateMessage)(id, data));
+			}
+		}, {
+			key: "editPost",
+			value: function editPost() {
+				this.setState({ edit: !this.state.edit });
+			}
+		}, {
+			key: "deletePost",
+			value: function deletePost(id) {
+				this.props.dispatch((0, _ContactAction.deleteMessage)(id));
+			}
+		}, {
+			key: "componentWillMount",
+			value: function componentWillMount() {
+				this.props.dispatch((0, _ContactAction.fetchMessage)());
+			}
+		}, {
 			key: "render",
 			value: function render() {
+				var _this2 = this;
 
 				var messageBlk = void 0;
 
@@ -60258,23 +60307,12 @@
 							_react2.default.createElement(
 								"ul",
 								null,
-								this.state.messages.map(function (message, index) {
-									return _react2.default.createElement(
-										"li",
-										{ key: index },
-										_react2.default.createElement(
-											_reactBootstrap.Panel,
-											{ header: message.date, bsStyle: "warning" },
-											_react2.default.createElement(
-												"div",
-												{ className: "message-post" },
-												_react2.default.createElement(
-													"span",
-													{ className: "message-text" },
-													message.text
-												)
-											),
-											_react2.default.createElement(
+								this.props.messages.map(function (message, index) {
+									if (_this2.state.user.username === message.user) {
+										var response = void 0,
+										    editBlk = void 0;
+										if (message.response) {
+											response = _react2.default.createElement(
 												"div",
 												{ className: "message-response" },
 												_react2.default.createElement(
@@ -60285,11 +60323,53 @@
 												_react2.default.createElement(
 													"span",
 													{ className: "message-text" },
-													"Hello"
+													message.response
 												)
+											);
+										}
+										if (_this2.state.edit) {
+											editBlk = _react2.default.createElement(
+												"div",
+												{ className: "form-group" },
+												_react2.default.createElement("textarea", { ref: "new_message", className: "form-control", placeholder: "New message..", defaultValue: message.posts }),
+												_react2.default.createElement(
+													_reactBootstrap.Button,
+													{ bsSize: "xsmall", bsStyle: "warning", onClick: _this2.updatePost.bind(_this2, message.id) },
+													"Update"
+												)
+											);
+										} else {
+											editBlk = _react2.default.createElement(
+												"span",
+												{ className: "message-text" },
+												message.posts
+											);
+										}
+										return _react2.default.createElement(
+											"li",
+											{ key: index },
+											_react2.default.createElement(
+												_reactBootstrap.Panel,
+												{ header: message.date, bsStyle: "warning" },
+												_react2.default.createElement(
+													"div",
+													{ className: "message-post" },
+													editBlk,
+													_react2.default.createElement(
+														"a",
+														{ className: "btn btn-xs", onClick: _this2.editPost.bind(_this2) },
+														_react2.default.createElement("span", { className: "glyphicon glyphicon-pencil", "aria-hidden": "true" })
+													),
+													_react2.default.createElement(
+														"a",
+														{ className: "btn btn-xs", onClick: _this2.deletePost.bind(_this2, message.id) },
+														_react2.default.createElement("span", { className: "glyphicon glyphicon-remove", "aria-hidden": "true" })
+													)
+												),
+												response
 											)
-										)
-									);
+										);
+									}
 								})
 							)
 						),
@@ -60303,10 +60383,17 @@
 							),
 							_react2.default.createElement(
 								_reactBootstrap.Button,
-								null,
+								{ onClick: this.addPost.bind(this) },
 								"Send"
 							)
 						)
+					);
+					//if the user is not login, juat ask for login
+				} else {
+					messageBlk = _react2.default.createElement(
+						_reactRouter.Link,
+						{ to: "/login", role: "button", className: "btn btn-default" },
+						"Login First !"
 					);
 				}
 
@@ -60366,12 +60453,110 @@
 		return Contact;
 	}(_react2.default.Component);
 
-	exports.default = Contact;
+	function mapStateToProps(state) {
+		return {
+			messages: state.message.posts,
+			message: state.message.message
+		};
+	}
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Contact);
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Contact.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 544 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.fetchMessage = fetchMessage;
+	exports.addMessage = addMessage;
+	exports.updateMessage = updateMessage;
+	exports.deleteMessage = deleteMessage;
+	exports.addResponse = addResponse;
+
+	var _jquery = __webpack_require__(525);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function fetchMessage() {
+		return function (dispatch) {
+			_jquery2.default.get("http://localhost:3000/api/get-message", function (response) {
+				dispatch({
+					type: "FETCH_MESSAGE",
+					payload: response
+				});
+			});
+		};
+	} //import dependencies
+	function addMessage(data) {
+		return function (dispatch) {
+			_jquery2.default.post("http://localhost:3000/api/add-message", data, function (response) {
+				dispatch({
+					type: "ADD_MESSAGE",
+					payload: response.message
+				});
+				location.reload();
+			});
+		};
+	}
+
+	function updateMessage(id, data) {
+		return function (dispatch) {
+			_jquery2.default.ajax({
+				type: "PUT",
+				url: "http://localhost:3000/api/update-message/" + id,
+				data: data,
+				dataType: "json",
+				success: function success(response) {
+					dispatch({ type: "UPDATE_MESSAGE", payload: response.message });
+					location.reload();
+				}
+			});
+		};
+	}
+
+	function deleteMessage(id) {
+		return function (dispatch) {
+			_jquery2.default.ajax({
+				url: 'http://localhost:3000/api/delete-message/' + id,
+				type: 'DELETE',
+				success: function success(response) {
+					dispatch({ type: "DELETE_MESSAGE", payload: response.message });
+					location.reload();
+				}
+			});
+		};
+	}
+
+	function addResponse(id, data) {
+		return function (dispatch) {
+			_jquery2.default.ajax({
+				type: "PUT",
+				url: "http://localhost:3000/api/add-response/" + id,
+				data: data,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function success(response) {
+					dispatch({ type: "ADD_RESPONSE", payload: response.message });
+					location.reload();
+				}
+			});
+		};
+	}
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "ContactAction.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -60398,7 +60583,7 @@
 
 	var _reactBootstrap = __webpack_require__(270);
 
-	var _LoginAction = __webpack_require__(545);
+	var _LoginAction = __webpack_require__(546);
 
 	var _jquery = __webpack_require__(525);
 
@@ -60595,7 +60780,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Login.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 545 */
+/* 546 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -60665,7 +60850,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "LoginAction.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 546 */
+/* 547 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -60678,19 +60863,23 @@
 
 	var _redux = __webpack_require__(178);
 
-	var _userLoginReducer = __webpack_require__(547);
+	var _userLoginReducer = __webpack_require__(548);
 
 	var _userLoginReducer2 = _interopRequireDefault(_userLoginReducer);
 
-	var _aboutReducer = __webpack_require__(548);
+	var _aboutReducer = __webpack_require__(549);
 
 	var _aboutReducer2 = _interopRequireDefault(_aboutReducer);
 
-	var _projectReducer = __webpack_require__(549);
+	var _messageReducer = __webpack_require__(550);
+
+	var _messageReducer2 = _interopRequireDefault(_messageReducer);
+
+	var _projectReducer = __webpack_require__(551);
 
 	var _projectReducer2 = _interopRequireDefault(_projectReducer);
 
-	var _workReducer = __webpack_require__(550);
+	var _workReducer = __webpack_require__(552);
 
 	var _workReducer2 = _interopRequireDefault(_workReducer);
 
@@ -60698,6 +60887,7 @@
 
 	var allReducers = (0, _redux.combineReducers)({
 		userLogin: _userLoginReducer2.default,
+		message: _messageReducer2.default,
 		about: _aboutReducer2.default,
 		experience: _workReducer2.default,
 		project: _projectReducer2.default
@@ -60708,7 +60898,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 547 */
+/* 548 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -60739,7 +60929,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "userLoginReducer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 548 */
+/* 549 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -60788,7 +60978,51 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "aboutReducer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 549 */
+/* 550 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	exports.default = reducer;
+	function reducer() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+			posts: [],
+			message: ""
+		};
+		var action = arguments[1];
+
+		switch (action.type) {
+			case "FETCH_MESSAGE":
+				return _extends({}, state, { posts: action.payload });
+				break;
+			case "ADD_MESSAGE":
+				return _extends({}, state, { message: action.payload });
+				break;
+			case "UPDATE_MESSAGE":
+				return _extends({}, state, { message: action.payload });
+				break;
+			case "DELETE_MESSAGE":
+				return _extends({}, state, { message: action.payload });
+				break;
+			case "ADD_RESPONSE":
+				return _extends({}, state, { message: action.payload });
+				break;
+		}
+		return state;
+	}
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "messageReducer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -60837,7 +61071,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "projectReducer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 550 */
+/* 552 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
