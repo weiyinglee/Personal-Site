@@ -40,7 +40,7 @@ class Header extends React.Component {
 
 	render() {
 
-		let extendedHeader, adminLogin, loginAddBtn
+		let extendedHeader, userlogin, loginAddBtn
 
 		//This is for project, when login, can see the add project button
 		if(this.state.login){
@@ -49,7 +49,7 @@ class Header extends React.Component {
 
 		//This is for admin login in section, can see when its unlogin, otherwise, show logout
 		if(this.state.login){
-			adminLogin = (
+			userlogin = (
 				<NavItem eventKey={5} id="admin-btn">Logout</NavItem>
 			)
 		}
@@ -83,8 +83,8 @@ class Header extends React.Component {
 				break
 			case "/login":
 				extendedHeader = (
-					<div id="admin-title">
-						<h2>Note: This is for only Administrator used!</h2>
+					<div className="sub-header-title">
+						<h2>USER LOGIN</h2>
 					</div>
 				)
 				break
@@ -113,7 +113,10 @@ class Header extends React.Component {
 							<LinkContainer to="/contact">
 								<NavItem eventKey={4}>Contact</NavItem>
 							</LinkContainer>
-							{adminLogin}
+							<LinkContainer to="/login">
+								<NavItem eventKey={5}>Login</NavItem>
+							</LinkContainer>
+							{userlogin}
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>

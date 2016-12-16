@@ -10,6 +10,9 @@ var db = require("./db");
 //bcrypt
 var bcrypt = require("bcryptjs");
 
+//passport
+var passport = require("passport");
+
 //helper function
 function fetchDB(req, res, table) {
 	db(table).then(function(data){
@@ -129,8 +132,8 @@ router.post('/Authentication', function(req, res){
 			account: acct
 		})
 		.first()
-		.then(function(data){
-			if(bcrypt.compareSync(pw, data.password)) {
+		.then(function(user){
+			if(bcrypt.compareSync(pw, user.password)) {
 				return res.json({ login: true });
 			}
 			res.json({ login: false });

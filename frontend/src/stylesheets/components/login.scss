@@ -1,11 +1,46 @@
-.login-sec {
-	@extend .contact-sec;
-}
+$backgroundOdd: rgba(255, 255, 255, 1);
+$backgroundDefault: rgba(230, 255, 250, 1);
+$loginPanelColor: rgba(255, 230, 128, 1);
+$regPanelColor: rgba(153, 255, 153, 1);
 
-#admin-title {
-	color: red;
-	text-align: center;
-	font-weight: bold;
-	padding: 5%;
-	background: rgba(255, 0, 0, 0.1);
+.login-sec {
+
+		background: white;
+		width: auto;
+		height: auto;
+		margin: 0;
+
+		.login-area {
+			
+			background: $backgroundOdd;
+
+			.login-sec-title {
+				text-align: center;
+				padding: 3%;
+				font-size: 72px;
+				font-weight: bold;
+
+				.title-head {
+					font-weight: bold;
+				}
+			}
+
+			.login-panel {
+				padding: 2%;
+				margin-bottom: 5%; 
+				background: $loginPanelColor;
+			}			
+
+		}
+
+		.reg-area {
+			@extend .login-area;
+			background: $backgroundDefault;
+			.login-panel {
+				padding: 2%;
+				margin-bottom: 5%;
+				background: $regPanelColor;
+			}
+		}
+
 }

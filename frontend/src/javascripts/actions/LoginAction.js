@@ -12,8 +12,6 @@ export function loginUser(acct, pw) {
 			account: acct,
 			password: pw
 		}, (res) => {
-			console.log(res)
-
 			if(res.login){
 				cookie.save("login", res.login)
 				location.reload()

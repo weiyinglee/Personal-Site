@@ -10,11 +10,34 @@ $transparent: rgba(0,0,0,0);
 	color: black;
 	font-weight: bold;
 
-	a {
-		color: $linkColor;
+	.message-area {
+
+		text-align: left;
+
+		.message-area-title {
+			text-align: center;
+		}
+
+		.message-lists {
+
+			li {
+				list-style: none;
+				.message-post {
+					padding: 1%;
+				}
+				.message-response {
+					margin-top: 1%;
+					padding: 1%;  
+					border-top: 1px solid #999;
+				}
+
+				.message-text {
+					color: #888;
+				}
+			}
+
+		}
+
 	}
 
-	a:hover {
-		text-decoration: none;
-	}
 }

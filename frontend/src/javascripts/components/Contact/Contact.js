@@ -1,12 +1,73 @@
-"use strict";
+"use strict"
 
 //import dependencies
-import React from "react";
-import cookie from "react-cookie";
-import { Button } from "react-bootstrap";
+import React from "react"
+import cookie from "react-cookie"
+import { Link } from "react-router"
+import { Panel, Button } from "react-bootstrap"
 
 export default class Contact extends React.Component {
+
+	constructor() {
+		super()
+		this.state = {
+			login: cookie.load("login"),
+			messages: [
+				{
+					"id": 1,
+					"date": "11/30/15",
+					"text": "dfasdfasdfasdfas"
+				},
+				{
+					"id": 2,
+					"date": "12/15/17",
+					"text": "asjdlfjsaldkf"
+				}
+			]
+		}
+	}
+
 	render() {
+
+		let messageBlk;
+
+		if(this.state.login) {
+			messageBlk = (
+				<div className="message-area">				
+					<div className="page-header message-area-title">
+						<h4>Hi User, here are your messages!</h4>
+					</div>
+					<div className="message-lists">
+						<ul>
+							{
+								this.state.messages.map((message, index) => {
+									return (
+										<li key={index}>
+											<Panel header={message.date} bsStyle="warning">
+												<div className="message-post">
+													<span className="message-text">{message.text}</span>
+												</div>
+												<div className="message-response">
+													<h5>WeiYing: </h5>
+													<span className="message-text">Hello</span>
+												</div>
+											</Panel>
+										</li>
+									)
+								})
+							}
+						</ul>
+					</div>
+					<form>
+						<div className="form-group">
+							<textarea ref="message" className="form-control" placeholder="Message.."></textarea>
+						</div>
+						<Button>Send</Button>
+					</form>
+				</div>
+			)
+		}
+
 		return (
 			<div className="contact-sec">
 				<div className="page-header">
@@ -14,20 +75,18 @@ export default class Contact extends React.Component {
 					<h4 className="contact-info">weiyinglee1009@yahoo.com</h4>
 				</div>
 				<div className="page-header">
-					<h3 className="contact-tool">Address</h3>
-					<h4 className="contact-info">USA: 127 N.Prospectors Rd, Diamond Bar, CA, 91765</h4>
-				</div>
-				<div className="page-header">
 					<h3 className="contact-tool">Facebook</h3>
-					<h4 className="contact-info"><a target="_blank" href="https://www.facebook.com/weiyinglee">My Facebook Link</a></h4>
+					<h4 className="contact-info">
+						<Link target="_blank" to="https://www.facebook.com/weiyinglee" role="button" className="btn btn-primary">
+							My Facebook Link
+						</Link>
+					</h4>
 				</div>
 				<div className="page-header">
-					<h3 className="contact-tool">Linkedin</h3>
-					<h4 className="contact-info"><a target="_blank" href="https://www.linkedin.com/in/weiyinglee">My Linkedin Link</a></h4>
-				</div>
-				<div className="page-header">
-					<h3 className="contact-tool">GitHub</h3>
-					<h4 className="contact-info"><a target="_blank" href="https://www.github.com/weiyinglee">My GitHub Link</a></h4>
+					<h3 className="contact-tool">Leave A Message</h3>
+					<h4 className="contact-info">
+						{messageBlk}
+					</h4>
 				</div>
 			</div>
 		)

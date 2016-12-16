@@ -23320,7 +23320,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  min-height: 100%; }\n  html body {\n    margin: 0;\n    padding: 0;\n    /*\r\n\t\tbackground: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(\"../../images/sec-bg.png\") no-repeat fixed center;\r\n\t\tbackground-size: cover;\r\n\t\t*/\n    background: white;\n    width: 100%;\n    height: 100%; }\n    html body .unselectableText {\n      -webkit-user-select: none;\n      -khtml-user-select: none;\n      -moz-user-select: none;\n      -o-user-select: none;\n      user-select: none; }\n    html body #content {\n      height: 100%;\n      width: 100%;\n      display: inline;\n      position: relative;\n      margin: 0;\n      padding: 0; }\n\n#nav-frame {\n  height: 40%;\n  padding-top: 1%;\n  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(" + __webpack_require__(212) + ") no-repeat scroll bottom;\n  background-color: white;\n  backgroud-size: 100%; }\n  #nav-frame .navbar {\n    padding: 1%;\n    background: rgba(0, 0, 0, 0.4);\n    border: none;\n    /* override active class */ }\n    #nav-frame .navbar #page-title {\n      font-weight: bold;\n      font-size: 30px; }\n    #nav-frame .navbar a {\n      color: white; }\n    #nav-frame .navbar a:hover {\n      color: red;\n      transition: color 1s ease-out; }\n    #nav-frame .navbar .active a {\n      color: orange;\n      font-weight: bold;\n      background: transparent; }\n    #nav-frame .navbar #admin-btn {\n      color: darkred; }\n\n#header-frame {\n  padding: 10%; }\n  #header-frame #myname {\n    color: orange; }\n  #header-frame textarea {\n    color: black;\n    resize: none; }\n\n.profile-pic-frame {\n  border: 1px white solid;\n  border-radius: 100px;\n  box-shadow: 5px 5px 5px #111;\n  width: 80%;\n  height: 80%;\n  margin-right: 5%;\n  margin-bottom: 5%;\n  float: right; }\n  .profile-pic-frame img {\n    width: 100%;\n    height: 100%;\n    border-radius: 100px; }\n\n.profile-info {\n  border: 1px white solid;\n  background: rgba(255, 255, 255, 0.1);\n  width: 100%;\n  height: 100%;\n  padding: 10%;\n  margin-top: 1%;\n  color: white;\n  text-align: center; }\n  .profile-info h3 {\n    font-size: 20px;\n    font-weight: bold; }\n\n.sub-header-title {\n  border: none;\n  background: rgba(255, 255, 255, 0.1);\n  padding: 5%;\n  margin: 1%; }\n  .sub-header-title h2 {\n    color: white;\n    font-weight: bold;\n    text-align: center;\n    text-shadow: 10px 10px 10px #000;\n    padding: 2%; }\n  .sub-header-title .project-add-btn {\n    margin-left: 48%; }\n  .sub-header-title .project-fields {\n    margin-top: 1%; }\n    .sub-header-title .project-fields li {\n      margin: 1%;\n      list-style: none; }\n\n#footer-frame {\n  background: #111;\n  position: relative;\n  width: 100%;\n  height: 300px;\n  bottom: 0; }\n  #footer-frame a {\n    color: white;\n    background: transparent; }\n  #footer-frame #footer-header-title {\n    color: white;\n    padding-top: 1%;\n    margin-left: 3%; }\n  #footer-frame #link-list {\n    padding: 1%;\n    margin-left: 1%; }\n    #footer-frame #link-list li {\n      list-style: none;\n      display: inline;\n      margin: 1%; }\n    #footer-frame #link-list img {\n      weight: 30px;\n      height: 30px; }\n  #footer-frame #copyright-sec {\n    background: #222;\n    padding: 2%; }\n    #footer-frame #copyright-sec h5 {\n      color: white;\n      text-align: center; }\n  #footer-frame .footer-bar {\n    padding: 2%;\n    /* override active */ }\n    #footer-frame .footer-bar .active a {\n      background: transparent;\n      color: yellow; }\n\n.contact-sec, .login-sec {\n  margin: 5%;\n  padding: 2%;\n  background: white;\n  border: 1px black solid;\n  text-align: center;\n  color: black;\n  font-weight: bold; }\n  .contact-sec a, .login-sec a {\n    color: brown; }\n  .contact-sec a:hover, .login-sec a:hover {\n    text-decoration: none; }\n\n.about-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .about-sec .about-sec-title {\n    text-align: center;\n    padding: 3%;\n    font-size: 72px;\n    font-weight: bold; }\n    .about-sec .about-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .about-sec .about-sec-title .title-subHead {\n      font-weight: bold; }\n  .about-sec .intro-sec {\n    background-color: white; }\n    .about-sec .intro-sec .intro-sec-content .intro-summary {\n      font-size: 16px; }\n    .about-sec .intro-sec .intro-sec-content pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n  .about-sec .experience-sec {\n    background-color: #e6fffa;\n    padding: 2%; }\n  .about-sec .education-sec {\n    background-color: white; }\n  .about-sec .skill-sec {\n    background-color: #e6fffa; }\n  .about-sec .award-sec {\n    background-color: white; }\n\n.project-sec {\n  padding: 2%; }\n  .project-sec .project-btn {\n    background: darkred;\n    color: white; }\n  .project-sec a {\n    color: brown; }\n  .project-sec a:hover {\n    text-decoration: none; }\n  .project-sec .jumbotron {\n    background: white;\n    border: 1px solid black; }\n  .project-sec .form-control {\n    margin-top: 1%; }\n  .project-sec .project-frame .project-description {\n    color: #888; }\n  .project-sec .project-frame .project-title {\n    color: darkred;\n    font-weight: bold; }\n  .project-sec .project-frame .project-date {\n    font-style: italic; }\n  .project-sec .project-frame .project-link {\n    text-decoration: underline; }\n\n.home-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .home-sec .home-sec-title {\n    text-align: center;\n    padding: 3%;\n    font-size: 72px;\n    font-weight: bold; }\n    .home-sec .home-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .home-sec .home-sec-title .title-subHead {\n      font-weight: bold; }\n  .home-sec .home-sec-content {\n    padding-bottom: 5%;\n    font-weight: bold;\n    color: #888; }\n    .home-sec .home-sec-content .home-project-title {\n      font-weight: bold;\n      font-size: 28px;\n      color: darkred; }\n    .home-sec .home-sec-content .home-project-date {\n      font-style: italic;\n      font-size: 16px;\n      color: darkorange; }\n  .home-sec .more-btn-row {\n    margin: 2%; }\n  .home-sec .home-project-sec {\n    background: #e6fffa;\n    text-align: center; }\n  .home-sec .home-summary-sec .home-sec-content .profile-pic {\n    padding: 0; }\n    .home-sec .home-summary-sec .home-sec-content .profile-pic img {\n      width: 230px;\n      height: 230px;\n      border-radius: 130px; }\n  .home-sec .home-summary-sec .home-sec-content .profile-summary {\n    margin: 1%; }\n    .home-sec .home-summary-sec .home-sec-content .profile-summary pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n  .home-sec .home-contact-sec {\n    background: white;\n    text-align: center; }\n    .home-sec .home-contact-sec .home-contact-title {\n      font-size: 18px;\n      font-weight: bold;\n      color: brown; }\n\n#admin-title {\n  color: red;\n  text-align: center;\n  font-weight: bold;\n  padding: 5%;\n  background: rgba(255, 0, 0, 0.1); }\n", ""]);
+	exports.push([module.id, "html {\n  min-height: 100%; }\n  html body {\n    margin: 0;\n    padding: 0;\n    /*\r\n\t\tbackground: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(\"../../images/sec-bg.png\") no-repeat fixed center;\r\n\t\tbackground-size: cover;\r\n\t\t*/\n    background: white;\n    width: 100%;\n    height: 100%; }\n    html body .unselectableText {\n      -webkit-user-select: none;\n      -khtml-user-select: none;\n      -moz-user-select: none;\n      -o-user-select: none;\n      user-select: none; }\n    html body #content {\n      height: 100%;\n      width: 100%;\n      display: inline;\n      position: relative;\n      margin: 0;\n      padding: 0; }\n\n#nav-frame {\n  height: 40%;\n  padding-top: 1%;\n  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(" + __webpack_require__(212) + ") no-repeat scroll bottom;\n  background-color: white;\n  backgroud-size: 100%; }\n  #nav-frame .navbar {\n    padding: 1%;\n    background: rgba(0, 0, 0, 0.4);\n    border: none;\n    /* override active class */ }\n    #nav-frame .navbar #page-title {\n      font-weight: bold;\n      font-size: 30px; }\n    #nav-frame .navbar a {\n      color: white; }\n    #nav-frame .navbar a:hover {\n      color: red;\n      transition: color 1s ease-out; }\n    #nav-frame .navbar .active a {\n      color: orange;\n      font-weight: bold;\n      background: transparent; }\n    #nav-frame .navbar #admin-btn {\n      color: darkred; }\n\n#header-frame {\n  padding: 10%; }\n  #header-frame #myname {\n    color: orange; }\n  #header-frame textarea {\n    color: black;\n    resize: none; }\n\n.profile-pic-frame {\n  border: 1px white solid;\n  border-radius: 100px;\n  box-shadow: 5px 5px 5px #111;\n  width: 80%;\n  height: 80%;\n  margin-right: 5%;\n  margin-bottom: 5%;\n  float: right; }\n  .profile-pic-frame img {\n    width: 100%;\n    height: 100%;\n    border-radius: 100px; }\n\n.profile-info {\n  border: 1px white solid;\n  background: rgba(255, 255, 255, 0.1);\n  width: 100%;\n  height: 100%;\n  padding: 10%;\n  margin-top: 1%;\n  color: white;\n  text-align: center; }\n  .profile-info h3 {\n    font-size: 20px;\n    font-weight: bold; }\n\n.sub-header-title {\n  border: none;\n  background: rgba(255, 255, 255, 0.1);\n  padding: 5%;\n  margin: 1%; }\n  .sub-header-title h2 {\n    color: white;\n    font-weight: bold;\n    text-align: center;\n    text-shadow: 10px 10px 10px #000;\n    padding: 2%; }\n  .sub-header-title .project-add-btn {\n    margin-left: 48%; }\n  .sub-header-title .project-fields {\n    margin-top: 1%; }\n    .sub-header-title .project-fields li {\n      margin: 1%;\n      list-style: none; }\n\n#footer-frame {\n  background: #111;\n  position: relative;\n  width: 100%;\n  height: 300px;\n  bottom: 0; }\n  #footer-frame a {\n    color: white;\n    background: transparent; }\n  #footer-frame #footer-header-title {\n    color: white;\n    padding-top: 1%;\n    margin-left: 3%; }\n  #footer-frame #link-list {\n    padding: 1%;\n    margin-left: 1%; }\n    #footer-frame #link-list li {\n      list-style: none;\n      display: inline;\n      margin: 1%; }\n    #footer-frame #link-list img {\n      weight: 30px;\n      height: 30px; }\n  #footer-frame #copyright-sec {\n    background: #222;\n    padding: 2%; }\n    #footer-frame #copyright-sec h5 {\n      color: white;\n      text-align: center; }\n  #footer-frame .footer-bar {\n    padding: 2%;\n    /* override active */ }\n    #footer-frame .footer-bar .active a {\n      background: transparent;\n      color: yellow; }\n\n.contact-sec {\n  margin: 5%;\n  padding: 2%;\n  background: white;\n  border: 1px black solid;\n  text-align: center;\n  color: black;\n  font-weight: bold; }\n  .contact-sec .message-area {\n    text-align: left; }\n    .contact-sec .message-area .message-area-title {\n      text-align: center; }\n    .contact-sec .message-area .message-lists li {\n      list-style: none; }\n      .contact-sec .message-area .message-lists li .message-post {\n        padding: 1%; }\n      .contact-sec .message-area .message-lists li .message-response {\n        margin-top: 1%;\n        padding: 1%;\n        border-top: 1px solid #999; }\n      .contact-sec .message-area .message-lists li .message-text {\n        color: #888; }\n\n.about-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .about-sec .about-sec-title {\n    text-align: center;\n    padding: 3%;\n    font-size: 72px;\n    font-weight: bold; }\n    .about-sec .about-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .about-sec .about-sec-title .title-subHead {\n      font-weight: bold; }\n  .about-sec .intro-sec {\n    background-color: white; }\n    .about-sec .intro-sec .intro-sec-content .intro-summary {\n      font-size: 16px; }\n    .about-sec .intro-sec .intro-sec-content pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n  .about-sec .experience-sec {\n    background-color: #e6fffa;\n    padding: 2%; }\n  .about-sec .education-sec {\n    background-color: white; }\n  .about-sec .skill-sec {\n    background-color: #e6fffa; }\n  .about-sec .award-sec {\n    background-color: white; }\n\n.project-sec {\n  padding: 2%; }\n  .project-sec .project-btn {\n    background: darkred;\n    color: white; }\n  .project-sec a {\n    color: brown; }\n  .project-sec a:hover {\n    text-decoration: none; }\n  .project-sec .jumbotron {\n    background: white;\n    border: 1px solid black; }\n  .project-sec .form-control {\n    margin-top: 1%; }\n  .project-sec .project-frame .project-description {\n    color: #888; }\n  .project-sec .project-frame .project-title {\n    color: darkred;\n    font-weight: bold; }\n  .project-sec .project-frame .project-date {\n    font-style: italic; }\n  .project-sec .project-frame .project-link {\n    text-decoration: underline; }\n\n.home-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .home-sec .home-sec-title {\n    text-align: center;\n    padding: 3%;\n    font-size: 72px;\n    font-weight: bold; }\n    .home-sec .home-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .home-sec .home-sec-title .title-subHead {\n      font-weight: bold; }\n  .home-sec .home-sec-content {\n    padding-bottom: 5%;\n    font-weight: bold;\n    color: #888; }\n    .home-sec .home-sec-content .home-project-title {\n      font-weight: bold;\n      font-size: 28px;\n      color: darkred; }\n    .home-sec .home-sec-content .home-project-date {\n      font-style: italic;\n      font-size: 16px;\n      color: darkorange; }\n  .home-sec .more-btn-row {\n    margin: 2%; }\n  .home-sec .home-project-sec {\n    background: #e6fffa;\n    text-align: center; }\n  .home-sec .home-summary-sec .home-sec-content .profile-pic {\n    padding: 0; }\n    .home-sec .home-summary-sec .home-sec-content .profile-pic img {\n      width: 230px;\n      height: 230px;\n      border-radius: 130px; }\n  .home-sec .home-summary-sec .home-sec-content .profile-summary {\n    margin: 1%; }\n    .home-sec .home-summary-sec .home-sec-content .profile-summary pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n  .home-sec .home-contact-sec {\n    background: white;\n    text-align: center; }\n    .home-sec .home-contact-sec .home-contact-title {\n      font-size: 18px;\n      font-weight: bold;\n      color: brown; }\n\n.login-sec {\n  background: white;\n  width: auto;\n  height: auto;\n  margin: 0; }\n  .login-sec .login-area, .login-sec .reg-area {\n    background: white; }\n    .login-sec .login-area .login-sec-title, .login-sec .reg-area .login-sec-title {\n      text-align: center;\n      padding: 3%;\n      font-size: 72px;\n      font-weight: bold; }\n      .login-sec .login-area .login-sec-title .title-head, .login-sec .reg-area .login-sec-title .title-head {\n        font-weight: bold; }\n    .login-sec .login-area .login-panel, .login-sec .reg-area .login-panel {\n      padding: 2%;\n      margin-bottom: 5%;\n      background: #ffe680; }\n  .login-sec .reg-area {\n    background: #e6fffa; }\n    .login-sec .reg-area .login-panel {\n      padding: 2%;\n      margin-bottom: 5%;\n      background: #99ff99; }\n", ""]);
 
 	// exports
 
@@ -28658,7 +28658,7 @@
 			value: function render() {
 
 				var extendedHeader = void 0,
-				    adminLogin = void 0,
+				    userlogin = void 0,
 				    loginAddBtn = void 0;
 
 				//This is for project, when login, can see the add project button
@@ -28672,7 +28672,7 @@
 
 				//This is for admin login in section, can see when its unlogin, otherwise, show logout
 				if (this.state.login) {
-					adminLogin = _react2.default.createElement(
+					userlogin = _react2.default.createElement(
 						_reactBootstrap.NavItem,
 						{ eventKey: 5, id: "admin-btn" },
 						"Logout"
@@ -28721,11 +28721,11 @@
 					case "/login":
 						extendedHeader = _react2.default.createElement(
 							"div",
-							{ id: "admin-title" },
+							{ className: "sub-header-title" },
 							_react2.default.createElement(
 								"h2",
 								null,
-								"Note: This is for only Administrator used!"
+								"USER LOGIN"
 							)
 						);
 						break;
@@ -28793,7 +28793,16 @@
 										"Contact"
 									)
 								),
-								adminLogin
+								_react2.default.createElement(
+									_reactRouterBootstrap.LinkContainer,
+									{ to: "/login" },
+									_react2.default.createElement(
+										_reactBootstrap.NavItem,
+										{ eventKey: 5 },
+										"Login"
+									)
+								),
+								userlogin
 							)
 						)
 					),
@@ -59182,16 +59191,16 @@
 									_react2.default.createElement(
 										"span",
 										{ className: "home-contact-title" },
-										"Address"
+										"Facebook"
 									)
 								),
 								_react2.default.createElement(
 									_reactBootstrap.Col,
 									{ md: 6, sm: 6 },
 									_react2.default.createElement(
-										"span",
-										{ className: "home-contact-info" },
-										"USA 127 N.Prospectors Rd, Diamond Bar, CA, 91765"
+										_reactRouter.Link,
+										{ to: "https://www.facebook.com/weiyinglee", role: "button", className: "btn btn-primary", target: "_blank" },
+										"My Facebook Link"
 									)
 								)
 							),
@@ -60186,6 +60195,8 @@
 
 	var _reactCookie2 = _interopRequireDefault(_reactCookie);
 
+	var _reactRouter = __webpack_require__(215);
+
 	var _reactBootstrap = __webpack_require__(270);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -60202,12 +60213,100 @@
 		function Contact() {
 			_classCallCheck(this, Contact);
 
-			return _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).call(this));
+
+			_this.state = {
+				login: _reactCookie2.default.load("login"),
+				messages: [{
+					"id": 1,
+					"date": "11/30/15",
+					"text": "dfasdfasdfasdfas"
+				}, {
+					"id": 2,
+					"date": "12/15/17",
+					"text": "asjdlfjsaldkf"
+				}]
+			};
+			return _this;
 		}
 
 		_createClass(Contact, [{
 			key: "render",
 			value: function render() {
+
+				var messageBlk = void 0;
+
+				if (this.state.login) {
+					messageBlk = _react2.default.createElement(
+						"div",
+						{ className: "message-area" },
+						_react2.default.createElement(
+							"div",
+							{ className: "page-header message-area-title" },
+							_react2.default.createElement(
+								"h4",
+								null,
+								"Hi User, here are your messages!"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "message-lists" },
+							_react2.default.createElement(
+								"ul",
+								null,
+								this.state.messages.map(function (message, index) {
+									return _react2.default.createElement(
+										"li",
+										{ key: index },
+										_react2.default.createElement(
+											_reactBootstrap.Panel,
+											{ header: message.date, bsStyle: "warning" },
+											_react2.default.createElement(
+												"div",
+												{ className: "message-post" },
+												_react2.default.createElement(
+													"span",
+													{ className: "message-text" },
+													message.text
+												)
+											),
+											_react2.default.createElement(
+												"div",
+												{ className: "message-response" },
+												_react2.default.createElement(
+													"h5",
+													null,
+													"WeiYing: "
+												),
+												_react2.default.createElement(
+													"span",
+													{ className: "message-text" },
+													"Hello"
+												)
+											)
+										)
+									);
+								})
+							)
+						),
+						_react2.default.createElement(
+							"form",
+							null,
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement("textarea", { ref: "message", className: "form-control", placeholder: "Message.." })
+							),
+							_react2.default.createElement(
+								_reactBootstrap.Button,
+								null,
+								"Send"
+							)
+						)
+					);
+				}
+
 				return _react2.default.createElement(
 					"div",
 					{ className: "contact-sec" },
@@ -60231,28 +60330,14 @@
 						_react2.default.createElement(
 							"h3",
 							{ className: "contact-tool" },
-							"Address"
-						),
-						_react2.default.createElement(
-							"h4",
-							{ className: "contact-info" },
-							"USA: 127 N.Prospectors Rd, Diamond Bar, CA, 91765"
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "page-header" },
-						_react2.default.createElement(
-							"h3",
-							{ className: "contact-tool" },
 							"Facebook"
 						),
 						_react2.default.createElement(
 							"h4",
 							{ className: "contact-info" },
 							_react2.default.createElement(
-								"a",
-								{ target: "_blank", href: "https://www.facebook.com/weiyinglee" },
+								_reactRouter.Link,
+								{ target: "_blank", to: "https://www.facebook.com/weiyinglee", role: "button", className: "btn btn-primary" },
 								"My Facebook Link"
 							)
 						)
@@ -60263,34 +60348,12 @@
 						_react2.default.createElement(
 							"h3",
 							{ className: "contact-tool" },
-							"Linkedin"
+							"Leave A Message"
 						),
 						_react2.default.createElement(
 							"h4",
 							{ className: "contact-info" },
-							_react2.default.createElement(
-								"a",
-								{ target: "_blank", href: "https://www.linkedin.com/in/weiyinglee" },
-								"My Linkedin Link"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "page-header" },
-						_react2.default.createElement(
-							"h3",
-							{ className: "contact-tool" },
-							"GitHub"
-						),
-						_react2.default.createElement(
-							"h4",
-							{ className: "contact-info" },
-							_react2.default.createElement(
-								"a",
-								{ target: "_blank", href: "https://www.github.com/weiyinglee" },
-								"My GitHub Link"
-							)
+							messageBlk
 						)
 					)
 				);
@@ -60392,25 +60455,119 @@
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
-					"div",
+					_reactBootstrap.Grid,
 					{ className: "login-sec" },
 					_react2.default.createElement(
-						"form",
-						null,
+						_reactBootstrap.Row,
+						{ className: "login-area" },
 						_react2.default.createElement(
-							"div",
-							{ className: "form-group" },
-							_react2.default.createElement("input", { ref: "account", type: "text", className: "form-control", placeholder: "Enter account" })
-						),
+							_reactBootstrap.Col,
+							null,
+							_react2.default.createElement(
+								_reactBootstrap.Row,
+								{ className: "login-sec-title" },
+								_react2.default.createElement(
+									"div",
+									{ className: "page-header" },
+									_react2.default.createElement(
+										"h1",
+										{ className: "title-head" },
+										"LOGIN SECTION"
+									)
+								)
+							),
+							_react2.default.createElement(
+								_reactBootstrap.Row,
+								null,
+								_react2.default.createElement(_reactBootstrap.Col, { md: 3 }),
+								_react2.default.createElement(
+									_reactBootstrap.Col,
+									{ md: 6 },
+									_react2.default.createElement(
+										_reactBootstrap.Panel,
+										{ className: "login-panel", bsStyle: "warning" },
+										_react2.default.createElement(
+											"form",
+											null,
+											_react2.default.createElement(
+												"div",
+												{ className: "form-group" },
+												_react2.default.createElement("input", { ref: "account", type: "text", className: "form-control", placeholder: "Enter account" })
+											),
+											_react2.default.createElement(
+												"div",
+												{ className: "form-group" },
+												_react2.default.createElement("input", { ref: "password", type: "password", className: "form-control", placeholder: "Enter password" })
+											),
+											_react2.default.createElement(
+												_reactBootstrap.Button,
+												{ onClick: this.login.bind(this), bsStyle: "warning" },
+												"Login"
+											)
+										)
+									)
+								),
+								_react2.default.createElement(_reactBootstrap.Col, { md: 3 })
+							)
+						)
+					),
+					_react2.default.createElement(
+						_reactBootstrap.Row,
+						{ className: "reg-area" },
 						_react2.default.createElement(
-							"div",
-							{ className: "form-group" },
-							_react2.default.createElement("input", { ref: "password", type: "password", className: "form-control", placeholder: "Enter password" })
-						),
-						_react2.default.createElement(
-							_reactBootstrap.Button,
-							{ onClick: this.login.bind(this) },
-							"Login"
+							_reactBootstrap.Col,
+							null,
+							_react2.default.createElement(
+								_reactBootstrap.Row,
+								{ className: "login-sec-title" },
+								_react2.default.createElement(
+									"div",
+									{ className: "page-header" },
+									_react2.default.createElement(
+										"h1",
+										{ className: "title-head" },
+										"REGISTER SECTION"
+									)
+								)
+							),
+							_react2.default.createElement(
+								_reactBootstrap.Row,
+								null,
+								_react2.default.createElement(_reactBootstrap.Col, { md: 3 }),
+								_react2.default.createElement(
+									_reactBootstrap.Col,
+									{ md: 6 },
+									_react2.default.createElement(
+										_reactBootstrap.Panel,
+										{ className: "login-panel", bsStyle: "success" },
+										_react2.default.createElement(
+											"form",
+											null,
+											_react2.default.createElement(
+												"div",
+												{ className: "form-group" },
+												_react2.default.createElement("input", { ref: "new_account", type: "text", className: "form-control", placeholder: "Create account" })
+											),
+											_react2.default.createElement(
+												"div",
+												{ className: "form-group" },
+												_react2.default.createElement("input", { ref: "new_password", type: "password", className: "form-control", placeholder: "Create password" })
+											),
+											_react2.default.createElement(
+												"div",
+												{ className: "form-group" },
+												_react2.default.createElement("input", { ref: "new_password2", type: "password", className: "form-control", placeholder: "Enter password Again" })
+											),
+											_react2.default.createElement(
+												_reactBootstrap.Button,
+												{ onClick: this.reg.bind(this), bsStyle: "success" },
+												"Register"
+											)
+										)
+									)
+								),
+								_react2.default.createElement(_reactBootstrap.Col, { md: 3 })
+							)
 						)
 					)
 				);
@@ -60464,8 +60621,6 @@
 				account: acct,
 				password: pw
 			}, function (res) {
-				console.log(res);
-
 				if (res.login) {
 					_reactCookie2.default.save("login", res.login);
 					location.reload();

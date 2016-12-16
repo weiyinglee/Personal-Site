@@ -3,20 +3,23 @@ var passport = require("passport");
 
 var LocalStrategy = require("passport-local").Strategy;
 
-// passport.use(new LocalStrategy(function(email, password, done) {
+// passport.use("local", new LocalStrategy({passReqToCallback: true}, function(req, email, password, done) {
 // 	var acct = req.body.account;
 // 	var pw = req.body.password;
 
+// 	console.log(req)
+
 // 	db("user")
 // 		.where({
-// 			account: acct,
-// 			password: pw
-// 		}).then(function(data){
-// 			if(data) {
-// 				return res.json({ login: true });
+// 			account: acct
+// 		})
+// 		.first()
+// 		.then(function(user){
+// 			if(bcrypt.compareSync(pw, user.password)) {
+// 				done(null, user, { login: true });
 // 			}
-// 			res.json({ login: false });
+// 			done(null, user, { login: false });
 // 		}, function(err) {
-// 			res.send(err);
+// 			done(err, null, { Message: "Username or Password is invalid."});
 // 		});
 // }));

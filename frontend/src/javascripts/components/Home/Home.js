@@ -94,8 +94,12 @@ class Home extends React.Component {
 							<Col md={6} sm={6}><span className="home-contact-info">weiyinglee1009@yahoo.com</span></Col>						
 						</Row>
 						<Row className="home-sec-content">
-							<Col md={6} sm={6}><span className="home-contact-title">Address</span></Col>
-							<Col md={6} sm={6}><span className="home-contact-info">USA 127 N.Prospectors Rd, Diamond Bar, CA, 91765</span></Col>						
+							<Col md={6} sm={6}><span className="home-contact-title">Facebook</span></Col>
+							<Col md={6} sm={6}>
+								<Link to="https://www.facebook.com/weiyinglee" role="button" className="btn btn-primary" target="_blank">
+									My Facebook Link
+								</Link>
+							</Col>						
 						</Row>
 						<Row className="more-btn-row">
 							<Col md={10} sm={8} xs={4}></Col>
