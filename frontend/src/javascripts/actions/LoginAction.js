@@ -13,12 +13,32 @@ export function loginUser(acct, pw) {
 			password: pw
 		}, (res) => {
 			if(res.login){
-				cookie.save("login", res.login)
+				cookie.save("user", res)
 				location.reload()
 			}else{
-				alert("Account or Password is not right!")
+				alert(res.message)
 				$("input").val("")
 			}	
+
+			dispatch({type: "USER_LOGIN", payload: res.login})
+		})
+	}
+}
+
+//reg user
+export function regUser(acct, pw) {
+	return function(dispatch) {
+		$.post("http://localhost:3000/api/reg", {
+			account: acct,
+			password: pw
+		}, (res) => {
+			if(res.login) {
+				cookie.save("user", res)
+				location.reload()
+			}else {
+				alert(res.message)
+				$("input").val("")
+			}
 
 			dispatch({type: "USER_LOGIN", payload: res.login})
 		})

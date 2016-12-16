@@ -47,7 +47,7 @@ class HeaderFrame extends React.Component {
 		let editBtn, editBlock
 
 		//if this is logined in
-		if(this.props.login) {
+		if(this.props.user && this.props.user.admin) {
 			editBtn = (<Button bsSize="xsmall" bsStyle="danger" onClick={this.editingHandler.bind(this)}>Edit</Button>)
 		}
 

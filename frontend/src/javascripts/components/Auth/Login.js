@@ -5,7 +5,7 @@ import React from "react"
 import { connect } from "react-redux"
 import cookie from "react-cookie"
 import { Grid, Row, Col, Button, Panel } from "react-bootstrap"
-import { loginUser } from "../../actions/LoginAction"
+import { loginUser, regUser } from "../../actions/LoginAction"
 import $ from "jquery"
 
 class Login extends React.Component {
@@ -13,7 +13,7 @@ class Login extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-			login: cookie.load("login")
+			user: cookie.load("user")
 		}
 	}
 
@@ -26,16 +26,20 @@ class Login extends React.Component {
 
 	//reg
 	reg() {
-		$.post("http://localhost:3000/api/reg", {
-			account: "EricLee1009",
-			password: "Spider1009"
-		}, (res) => {
-			console.log(res)
-		})
+		let acct = this.refs.new_account.value
+		let pw = this.refs.new_password.value
+		let pw2 = this.refs.new_password2.value
+
+		if(pw !== pw2){
+			$("input").val("");
+			return alert("Two passwords are not matched!")
+		}
+
+		this.props.dispatch(regUser(acct, pw))
 	}
 
 	componentWillMount() {
-		if(this.state.login) {
+		if(this.state.user && this.state.user.login) {
 			location.replace("/")
 		}
 	}

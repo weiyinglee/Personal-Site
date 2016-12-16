@@ -19,7 +19,7 @@ class Header extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-			login: cookie.load("login")
+			user: cookie.load("user")
 		}
 	}
 
@@ -33,8 +33,8 @@ class Header extends React.Component {
 
 	logout(e) {
 		if(e == 5){
-			cookie.remove("login");
-			this.setState({login: false})
+			cookie.remove("user")
+			location.reload()
 		}
 	}
 
@@ -43,12 +43,12 @@ class Header extends React.Component {
 		let extendedHeader, userlogin, loginAddBtn
 
 		//This is for project, when login, can see the add project button
-		if(this.state.login){
+		if(this.state.user && this.state.user.admin){
 			loginAddBtn = (<Button bsStyle="success" bsSize="small" className="project-add-btn" onClick={this.addProject.bind(this)}>Add</Button>)
 		}
 
 		//This is for admin login in section, can see when its unlogin, otherwise, show logout
-		if(this.state.login){
+		if(this.state.user && this.state.user.login){
 			userlogin = (
 				<NavItem eventKey={5}>Logout</NavItem>
 			)
@@ -63,7 +63,7 @@ class Header extends React.Component {
 		//Depends on the path, show different headings
 		switch(this.props.path) {
 			case "/":
-				extendedHeader = (<HeaderFrame login={this.state.login}/>)
+				extendedHeader = (<HeaderFrame user={this.state.user}/>)
 				break
 			case "/about":
 				extendedHeader = (

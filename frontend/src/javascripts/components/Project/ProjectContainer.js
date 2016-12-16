@@ -57,7 +57,7 @@ class ProjectContainer extends React.Component {
 
 		let editBtns, editBlock
 
-		if(this.props.login){
+		if(this.props.user && this.props.user.admin){
 			editBtns = (
 				<div className="project-edit">
 					<Button bsSize="xsmall" onClick={this.edit.bind(this)}>Edit</Button>

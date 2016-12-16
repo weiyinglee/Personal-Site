@@ -18,7 +18,7 @@ class About extends React.Component {
 	constructor(){
 		super()
 		this.state = {
-			login: cookie.load("login"),
+			user: cookie.load("user"),
 			open: false
 		}
 	}
@@ -42,7 +42,7 @@ class About extends React.Component {
 
 		let introEditBtn, workBtn
 
-		if(this.state.login){
+		if(this.state.user && this.state.user.admin){
 			introEditBtn = (<Button bsStyle="danger" bsSize="xsmall" onClick={this.openBtn.bind(this)}>Edit</Button>)
 			workBtn = (<Button bsStyle="success" bsSize="xsmall" onClick={this.addWork.bind(this)}>Add</Button>)
 		}
@@ -83,7 +83,7 @@ class About extends React.Component {
 							{
 								this.props.experience.map((elem, index) => {
 									return (
-										<Experience login={this.state.login} title={elem.Title} description={elem.Description} year={elem.Year} _id={elem.id} key={index}/>
+										<Experience user={this.state.user} title={elem.Title} description={elem.Description} year={elem.Year} _id={elem.id} key={index}/>
 									)
 								})
 							}

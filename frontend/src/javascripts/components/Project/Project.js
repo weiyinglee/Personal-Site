@@ -16,7 +16,7 @@ class Project extends React.Component {
 	constructor(){
 		super()
 		this.state = {
-			login: cookie.load("login")
+			user: cookie.load("user")
 		}
 	}
 
@@ -35,7 +35,7 @@ class Project extends React.Component {
 				{
 					this.props.projects.map((elem, index) => {
 						return (
-							<ProjectContainer login={this.state.login} title={elem.Title} description={elem.Description} year={elem.Year} link={elem.Link} _id={elem.id} key={index}/>
+							<ProjectContainer user={this.state.user} title={elem.Title} description={elem.Description} year={elem.Year} link={elem.Link} _id={elem.id} key={index}/>
 						)
 					})
 				}

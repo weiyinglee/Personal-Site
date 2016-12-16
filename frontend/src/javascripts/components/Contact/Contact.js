@@ -11,7 +11,7 @@ export default class Contact extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-			login: cookie.load("login"),
+			user: cookie.load("user"),
 			messages: [
 				{
 					"id": 1,
@@ -31,11 +31,11 @@ export default class Contact extends React.Component {
 
 		let messageBlk;
 
-		if(this.state.login) {
+		if(this.state.user && this.state.user.login) {
 			messageBlk = (
 				<div className="message-area">				
 					<div className="page-header message-area-title">
-						<h4>Hi User, here are your messages!</h4>
+						<h4>Hi {this.state.user.username}, here are your messages!</h4>
 					</div>
 					<div className="message-lists">
 						<ul>

@@ -28629,7 +28629,7 @@
 			var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
 
 			_this.state = {
-				login: _reactCookie2.default.load("login")
+				user: _reactCookie2.default.load("user")
 			};
 			return _this;
 		}
@@ -28649,8 +28649,8 @@
 			key: "logout",
 			value: function logout(e) {
 				if (e == 5) {
-					_reactCookie2.default.remove("login");
-					this.setState({ login: false });
+					_reactCookie2.default.remove("user");
+					location.reload();
 				}
 			}
 		}, {
@@ -28662,7 +28662,7 @@
 				    loginAddBtn = void 0;
 
 				//This is for project, when login, can see the add project button
-				if (this.state.login) {
+				if (this.state.user && this.state.user.admin) {
 					loginAddBtn = _react2.default.createElement(
 						_reactBootstrap.Button,
 						{ bsStyle: "success", bsSize: "small", className: "project-add-btn", onClick: this.addProject.bind(this) },
@@ -28671,7 +28671,7 @@
 				}
 
 				//This is for admin login in section, can see when its unlogin, otherwise, show logout
-				if (this.state.login) {
+				if (this.state.user && this.state.user.login) {
 					userlogin = _react2.default.createElement(
 						_reactBootstrap.NavItem,
 						{ eventKey: 5 },
@@ -28692,7 +28692,7 @@
 				//Depends on the path, show different headings
 				switch (this.props.path) {
 					case "/":
-						extendedHeader = _react2.default.createElement(_HeaderFrame2.default, { login: this.state.login });
+						extendedHeader = _react2.default.createElement(_HeaderFrame2.default, { user: this.state.user });
 						break;
 					case "/about":
 						extendedHeader = _react2.default.createElement(
@@ -58484,7 +58484,7 @@
 				    editBlock = void 0;
 
 				//if this is logined in
-				if (this.props.login) {
+				if (this.props.user && this.props.user.admin) {
 					editBtn = _react2.default.createElement(
 						_reactBootstrap.Button,
 						{ bsSize: "xsmall", bsStyle: "danger", onClick: this.editingHandler.bind(this) },
@@ -59307,7 +59307,7 @@
 			var _this = _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).call(this));
 
 			_this.state = {
-				login: _reactCookie2.default.load("login"),
+				user: _reactCookie2.default.load("user"),
 				open: false
 			};
 			return _this;
@@ -59339,7 +59339,7 @@
 				var introEditBtn = void 0,
 				    workBtn = void 0;
 
-				if (this.state.login) {
+				if (this.state.user && this.state.user.admin) {
 					introEditBtn = _react2.default.createElement(
 						_reactBootstrap.Button,
 						{ bsStyle: "danger", bsSize: "xsmall", onClick: this.openBtn.bind(this) },
@@ -59429,7 +59429,7 @@
 								_reactBootstrap.Col,
 								null,
 								this.props.experience.map(function (elem, index) {
-									return _react2.default.createElement(_Experience2.default, { login: _this2.state.login, title: elem.Title, description: elem.Description, year: elem.Year, _id: elem.id, key: index });
+									return _react2.default.createElement(_Experience2.default, { user: _this2.state.user, title: elem.Title, description: elem.Description, year: elem.Year, _id: elem.id, key: index });
 								})
 							)
 						)
@@ -59760,7 +59760,7 @@
 				var editBtn = void 0,
 				    editBlk = void 0;
 
-				if (this.props.login) {
+				if (this.props.user && this.props.user.admin) {
 					editBtn = _react2.default.createElement(
 						"div",
 						{ className: "experience-edit" },
@@ -59904,7 +59904,7 @@
 			var _this = _possibleConstructorReturn(this, (Project.__proto__ || Object.getPrototypeOf(Project)).call(this));
 
 			_this.state = {
-				login: _reactCookie2.default.load("login")
+				user: _reactCookie2.default.load("user")
 			};
 			return _this;
 		}
@@ -59946,7 +59946,7 @@
 						)
 					),
 					this.props.projects.map(function (elem, index) {
-						return _react2.default.createElement(_ProjectContainer2.default, { login: _this2.state.login, title: elem.Title, description: elem.Description, year: elem.Year, link: elem.Link, _id: elem.id, key: index });
+						return _react2.default.createElement(_ProjectContainer2.default, { user: _this2.state.user, title: elem.Title, description: elem.Description, year: elem.Year, link: elem.Link, _id: elem.id, key: index });
 					})
 				);
 			}
@@ -60076,7 +60076,7 @@
 				var editBtns = void 0,
 				    editBlock = void 0;
 
-				if (this.props.login) {
+				if (this.props.user && this.props.user.admin) {
 					editBtns = _react2.default.createElement(
 						"div",
 						{ className: "project-edit" },
@@ -60217,7 +60217,7 @@
 			var _this = _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).call(this));
 
 			_this.state = {
-				login: _reactCookie2.default.load("login"),
+				user: _reactCookie2.default.load("user"),
 				messages: [{
 					"id": 1,
 					"date": "11/30/15",
@@ -60237,7 +60237,7 @@
 
 				var messageBlk = void 0;
 
-				if (this.state.login) {
+				if (this.state.user && this.state.user.login) {
 					messageBlk = _react2.default.createElement(
 						"div",
 						{ className: "message-area" },
@@ -60247,7 +60247,9 @@
 							_react2.default.createElement(
 								"h4",
 								null,
-								"Hi User, here are your messages!"
+								"Hi ",
+								this.state.user.username,
+								", here are your messages!"
 							)
 						),
 						_react2.default.createElement(
@@ -60419,7 +60421,7 @@
 			var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this));
 
 			_this.state = {
-				login: _reactCookie2.default.load("login")
+				user: _reactCookie2.default.load("user")
 			};
 			return _this;
 		}
@@ -60438,17 +60440,21 @@
 		}, {
 			key: "reg",
 			value: function reg() {
-				_jquery2.default.post("http://localhost:3000/api/reg", {
-					account: "EricLee1009",
-					password: "Spider1009"
-				}, function (res) {
-					console.log(res);
-				});
+				var acct = this.refs.new_account.value;
+				var pw = this.refs.new_password.value;
+				var pw2 = this.refs.new_password2.value;
+
+				if (pw !== pw2) {
+					(0, _jquery2.default)("input").val("");
+					return alert("Two passwords are not matched!");
+				}
+
+				this.props.dispatch((0, _LoginAction.regUser)(acct, pw));
 			}
 		}, {
 			key: "componentWillMount",
 			value: function componentWillMount() {
-				if (this.state.login) {
+				if (this.state.user && this.state.user.login) {
 					location.replace("/");
 				}
 			}
@@ -60604,6 +60610,7 @@
 		value: true
 	});
 	exports.loginUser = loginUser;
+	exports.regUser = regUser;
 
 	var _jquery = __webpack_require__(525);
 
@@ -60623,10 +60630,30 @@
 				password: pw
 			}, function (res) {
 				if (res.login) {
-					_reactCookie2.default.save("login", res.login);
+					_reactCookie2.default.save("user", res);
 					location.reload();
 				} else {
-					alert("Account or Password is not right!");
+					alert(res.message);
+					(0, _jquery2.default)("input").val("");
+				}
+
+				dispatch({ type: "USER_LOGIN", payload: res.login });
+			});
+		};
+	}
+
+	//reg user
+	function regUser(acct, pw) {
+		return function (dispatch) {
+			_jquery2.default.post("http://localhost:3000/api/reg", {
+				account: acct,
+				password: pw
+			}, function (res) {
+				if (res.login) {
+					_reactCookie2.default.save("user", res);
+					location.reload();
+				} else {
+					alert(res.message);
 					(0, _jquery2.default)("input").val("");
 				}
 

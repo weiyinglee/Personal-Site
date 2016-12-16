@@ -24,7 +24,7 @@ function fetchDB(req, res, table) {
 
 /* GET */
 router.get('/about-info', function(req, res){
-	fetchDB(req, res, "user");
+	fetchDB(req, res, "about");
 });
 
 router.get('/skill-info', function(req, res){
@@ -52,8 +52,7 @@ router.put('/update-about-info', function(req, res){
 
 	var intro = req.body.newIntro;
 
-	db("user")
-		.where("account", "EricLee")
+	db("about")
 		.update("Intro", intro)
 		.then(function(result) {
 			res.json({Message: "successfully updated intro"});
@@ -66,8 +65,7 @@ router.put('/update-about-summary', function(req, res) {
 
 	var summary = req.body.newSummary;
 	
-	db("user")
-		.where("account", "EricLee")
+	db("about")
 		.update("Summary", summary)
 		.then(function(result) {
 			res.json({Message: "successfully updated summary"});
@@ -133,17 +131,24 @@ router.post('/Authentication', function(req, res){
 		})
 		.first()
 		.then(function(user){
-			if(bcrypt.compareSync(pw, user.password)) {
-				return res.json({ login: true });
+			if(user && bcrypt.compareSync(pw, user.password)) {
+				return res.json({ 
+					login: true,
+					username: user.account,
+					admin: user.admin,
+					message: "Successfully login!"
+				});
 			}
-			res.json({ login: false });
+			res.json({ 
+				login: false,
+				message: "Account or Password is not correct!"
+		  });
 		}, function(err) {
 			res.send(err);
 		});
 });
 
 
-//OPTION
 router.post('/reg', function(req, res){
 	var acct = req.body.account;
 	var pw = req.body.password;
@@ -152,16 +157,36 @@ router.post('/reg', function(req, res){
 	var hashPw = bcrypt.hashSync(pw, bcrypt.genSaltSync(10));
 	
 	db("user")
-		.where("account", "EricLee")
-		.update({
-			"account": acct,
-			"password": hashPw
-		})
-		.then(function(result) {
-			return res.json({login: true})
-		})
-		.catch(function(err) {
-			return res.send(err)
+		.where("account", acct)
+		.first()
+		.then(function(user) {
+			if(user) {
+				res.json({
+					login: false,
+					message: "This user is already existed!"
+				})
+			}else {
+				//create new user
+				var newUser = {
+					account: acct,
+					password: hashPw,
+					isAdmin: 0
+				}
+
+				db("user")
+					.insert(newUser)
+					.then(function(response) {
+						res.json({
+							login: true,
+							username: acct,
+							admin: 0,
+							message: "successfully created user"
+						})
+					}, function(err) {
+						console.log(err);
+						res.json({message: "Something went wrong"});
+					})
+			}
 		})
 
 });

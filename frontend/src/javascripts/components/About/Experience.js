@@ -45,7 +45,7 @@ class Experience extends React.Component {
 
 		let editBtn, editBlk
 
-		if(this.props.login) {
+		if(this.props.user && this.props.user.admin) {
 			editBtn = (
 				<div className="experience-edit">
 					<Button bsStyle="default" bsSize="xsmall" onClick={this.editing.bind(this)}>Edit</Button>
