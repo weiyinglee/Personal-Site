@@ -58,7 +58,6 @@ export function addResponse(id, data) {
 			type: "PUT",
 			url: "http://localhost:3000/api/add-response/" + id,
 			data: data,
-			contentType: "application/json; charset=utf-8",
 			dataType: "json",
 			success: function(response){
 				dispatch({ type: "ADD_RESPONSE", payload: response.message })

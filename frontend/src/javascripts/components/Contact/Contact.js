@@ -8,7 +8,7 @@ import { Link } from "react-router"
 import { Panel, Button } from "react-bootstrap"
 
 //import source
-import { fetchMessage, addMessage, updateMessage, deleteMessage } from "../../actions/ContactAction"
+import { fetchMessage, addMessage, updateMessage, deleteMessage, addResponse } from "../../actions/ContactAction"
 
 class Contact extends React.Component {
 
@@ -16,12 +16,12 @@ class Contact extends React.Component {
 		super()
 		this.state = {
 			user: cookie.load("user"),
-			edit: false
+			editId: -1
 		}
 	}
 
 	addZeroBefore(n) {
-		return (n < 10 ? '0' : '') + n;
+		return (n < 10 ? '0' : '') + n
 	}
 
 	addPost() {
@@ -45,7 +45,8 @@ class Contact extends React.Component {
 
 	updatePost(id) {
 		
-		let newMessage = this.refs.new_message.value
+		let refValue = "new_message_" + id
+		let newMessage = this.refs[refValue].value
 		let date = new Date()
 		let dateFormat = date.getFullYear() + "-" +
 		 									date.getMonth() + "-" + 
@@ -61,12 +62,53 @@ class Contact extends React.Component {
 		this.props.dispatch(updateMessage(id, data))
 	}
 
-	editPost() {
-		this.setState({edit: !this.state.edit})
+	updateResponse(id) {
+
+		let refValue = "new_response_" + id
+		let newResponse = this.refs[refValue].value
+		let data = {response: newResponse}
+
+
+		this.props.dispatch(addResponse(id, data))
+	}
+
+	editPost(id) {
+		if(this.state.editId == -1) {
+			this.setState({editId: id})
+		}else {
+			this.setState({editId: -1})
+		}
 	}
 
 	deletePost(id) {
 		this.props.dispatch(deleteMessage(id))
+	}
+
+	groupPostsForAdmin(messages) {
+	
+		let groups = {}
+		let myArray = []
+		
+		messages.map((message, index) => {
+			let groupName = message.user
+			if(!groups[groupName]) {
+				groups[groupName] = []
+			}
+			groups[groupName].push({
+				id: message.id,
+				posts: message.posts,
+				response: message.response
+			})
+		})
+
+		for(var groupName in groups) {
+			myArray.push({
+				user: groupName,
+				user_posts: groups[groupName]
+			})
+		}
+		
+		return myArray
 	}
 
 	componentWillMount() {
@@ -77,7 +119,60 @@ class Contact extends React.Component {
 
 		let messageBlk
 
-		if(this.state.user && this.state.user.login) {
+		if(this.state.user && this.state.user.admin){
+			messageBlk = (
+				<div>
+				{
+					this.groupPostsForAdmin(this.props.messages).map((group, index) => {
+						
+						let postBlk = (
+							<div>
+							{
+								group.user_posts.map((message, index) => {
+									let ref = "new_response_" + message.id
+									return (
+										<li key={index}>
+											<Panel header={message.date} bsStyle="warning">
+												<div className="message-post">
+													<span className="message-text">{message.posts}</span>
+													<a className="btn btn-xs" onClick={this.deletePost.bind(this, message.id)}>
+														<span className="glyphicon glyphicon-remove" aria-hidden="true"></span>
+													</a>
+												</div>
+												<div className="message-response">
+													<h5>WeiYing: </h5>
+													<div className="form-group">
+														<textarea ref={ref} className="form-control" placeholder="New response.." defaultValue={message.response}></textarea>
+														<Button bsSize="xsmall" bsStyle="warning" onClick={this.updateResponse.bind(this, message.id)}>Update</Button>
+													</div>
+												</div>
+											</Panel>
+										</li>
+									)	
+								})
+							}
+							</div>
+						)
+
+						return (
+							<div className="message-area" key={index}>				
+								<div className="page-header message-area-title">
+									<h4>Message from {group.user}</h4>
+								</div>
+								<div className="message-lists">
+									<ul>
+										{postBlk}
+									</ul>
+								</div>
+							</div>
+						)
+
+					})
+				}
+				</div>
+			)
+		}
+		else if(this.state.user && this.state.user.login) {
 			messageBlk = (
 				<div className="message-area">				
 					<div className="page-header message-area-title">
@@ -87,6 +182,7 @@ class Contact extends React.Component {
 						<ul>
 							{
 								this.props.messages.map((message, index) => {
+									let ref = "new_message_" + message.id
 									if(this.state.user.username === message.user) {
 										let response, editBlk
 										if(message.response){
@@ -97,10 +193,10 @@ class Contact extends React.Component {
 												</div>												
 											)
 										}
-										if(this.state.edit){
+										if(this.state.editId == message.id){
 											editBlk = (
 												<div className="form-group">
-													<textarea ref="new_message" className="form-control" placeholder="New message.." defaultValue={message.posts}></textarea>
+													<textarea ref={ref} className="form-control" placeholder="New message.." defaultValue={message.posts}></textarea>
 													<Button bsSize="xsmall" bsStyle="warning" onClick={this.updatePost.bind(this, message.id)}>Update</Button>
 												</div>
 											)
@@ -114,7 +210,7 @@ class Contact extends React.Component {
 												<Panel header={message.date} bsStyle="warning">
 													<div className="message-post">
 														{editBlk}
-														<a className="btn btn-xs" onClick={this.editPost.bind(this)}>
+														<a className="btn btn-xs" onClick={this.editPost.bind(this, message.id)}>
 															<span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 														</a>
 														<a className="btn btn-xs" onClick={this.deletePost.bind(this, message.id)}>

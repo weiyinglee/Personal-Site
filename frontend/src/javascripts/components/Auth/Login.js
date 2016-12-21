@@ -24,6 +24,10 @@ class Login extends React.Component {
 		this.props.dispatch(loginUser(acct, pw))
 	}
 
+	loginFaceBook() {
+
+	}
+
 	//reg
 	reg() {
 		let acct = this.refs.new_account.value
@@ -69,7 +73,8 @@ class Login extends React.Component {
 									</form>
 								</Panel>
 							</Col>
-							<Col md={3}></Col>
+							<Col md={3}>
+							</Col>
 						</Row>
 					</Col>
 				</Row>

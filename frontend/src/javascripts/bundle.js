@@ -60225,7 +60225,7 @@
 
 			_this.state = {
 				user: _reactCookie2.default.load("user"),
-				edit: false
+				editId: -1
 			};
 			return _this;
 		}
@@ -60254,7 +60254,8 @@
 			key: "updatePost",
 			value: function updatePost(id) {
 
-				var newMessage = this.refs.new_message.value;
+				var refValue = "new_message_" + id;
+				var newMessage = this.refs[refValue].value;
 				var date = new Date();
 				var dateFormat = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate() + " " + this.addZeroBefore(date.getHours()) + ":" + this.addZeroBefore(date.getMinutes()) + ":" + this.addZeroBefore(date.getSeconds());
 				var data = {
@@ -60265,14 +60266,56 @@
 				this.props.dispatch((0, _ContactAction.updateMessage)(id, data));
 			}
 		}, {
+			key: "updateResponse",
+			value: function updateResponse(id) {
+
+				var refValue = "new_response_" + id;
+				var newResponse = this.refs[refValue].value;
+				var data = { response: newResponse };
+
+				this.props.dispatch((0, _ContactAction.addResponse)(id, data));
+			}
+		}, {
 			key: "editPost",
-			value: function editPost() {
-				this.setState({ edit: !this.state.edit });
+			value: function editPost(id) {
+				if (this.state.editId == -1) {
+					this.setState({ editId: id });
+				} else {
+					this.setState({ editId: -1 });
+				}
 			}
 		}, {
 			key: "deletePost",
 			value: function deletePost(id) {
 				this.props.dispatch((0, _ContactAction.deleteMessage)(id));
+			}
+		}, {
+			key: "groupPostsForAdmin",
+			value: function groupPostsForAdmin(messages) {
+
+				var groups = {};
+				var myArray = [];
+
+				messages.map(function (message, index) {
+					var groupName = message.user;
+					if (!groups[groupName]) {
+						groups[groupName] = [];
+					}
+					groups[groupName].push({
+						id: message.id,
+						posts: message.posts,
+						response: message.response
+					});
+				});
+
+				for (var groupName in groups) {
+					myArray.push({
+						user: groupName,
+						user_posts: groups[groupName]
+					});
+				}
+
+				return myArray;
 			}
 		}, {
 			key: "componentWillMount",
@@ -60286,7 +60329,87 @@
 
 				var messageBlk = void 0;
 
-				if (this.state.user && this.state.user.login) {
+				if (this.state.user && this.state.user.admin) {
+					messageBlk = _react2.default.createElement(
+						"div",
+						null,
+						this.groupPostsForAdmin(this.props.messages).map(function (group, index) {
+
+							var postBlk = _react2.default.createElement(
+								"div",
+								null,
+								group.user_posts.map(function (message, index) {
+									var ref = "new_response_" + message.id;
+									return _react2.default.createElement(
+										"li",
+										{ key: index },
+										_react2.default.createElement(
+											_reactBootstrap.Panel,
+											{ header: message.date, bsStyle: "warning" },
+											_react2.default.createElement(
+												"div",
+												{ className: "message-post" },
+												_react2.default.createElement(
+													"span",
+													{ className: "message-text" },
+													message.posts
+												),
+												_react2.default.createElement(
+													"a",
+													{ className: "btn btn-xs", onClick: _this2.deletePost.bind(_this2, message.id) },
+													_react2.default.createElement("span", { className: "glyphicon glyphicon-remove", "aria-hidden": "true" })
+												)
+											),
+											_react2.default.createElement(
+												"div",
+												{ className: "message-response" },
+												_react2.default.createElement(
+													"h5",
+													null,
+													"WeiYing: "
+												),
+												_react2.default.createElement(
+													"div",
+													{ className: "form-group" },
+													_react2.default.createElement("textarea", { ref: ref, className: "form-control", placeholder: "New response..", defaultValue: message.response }),
+													_react2.default.createElement(
+														_reactBootstrap.Button,
+														{ bsSize: "xsmall", bsStyle: "warning", onClick: _this2.updateResponse.bind(_this2, message.id) },
+														"Update"
+													)
+												)
+											)
+										)
+									);
+								})
+							);
+
+							return _react2.default.createElement(
+								"div",
+								{ className: "message-area", key: index },
+								_react2.default.createElement(
+									"div",
+									{ className: "page-header message-area-title" },
+									_react2.default.createElement(
+										"h4",
+										null,
+										"Message from ",
+										group.user
+									)
+								),
+								_react2.default.createElement(
+									"div",
+									{ className: "message-lists" },
+									_react2.default.createElement(
+										"ul",
+										null,
+										postBlk
+									)
+								)
+							);
+						})
+					);
+				} else if (this.state.user && this.state.user.login) {
 					messageBlk = _react2.default.createElement(
 						"div",
 						{ className: "message-area" },
@@ -60308,6 +60431,7 @@
 								"ul",
 								null,
 								this.props.messages.map(function (message, index) {
+									var ref = "new_message_" + message.id;
 									if (_this2.state.user.username === message.user) {
 										var response = void 0,
 										    editBlk = void 0;
@@ -60327,11 +60451,11 @@
 												)
 											);
 										}
-										if (_this2.state.edit) {
+										if (_this2.state.editId == message.id) {
 											editBlk = _react2.default.createElement(
 												"div",
 												{ className: "form-group" },
-												_react2.default.createElement("textarea", { ref: "new_message", className: "form-control", placeholder: "New message..", defaultValue: message.posts }),
+												_react2.default.createElement("textarea", { ref: ref, className: "form-control", placeholder: "New message..", defaultValue: message.posts }),
 												_react2.default.createElement(
 													_reactBootstrap.Button,
 													{ bsSize: "xsmall", bsStyle: "warning", onClick: _this2.updatePost.bind(_this2, message.id) },
@@ -60357,7 +60481,7 @@
 													editBlk,
 													_react2.default.createElement(
 														"a",
-														{ className: "btn btn-xs", onClick: _this2.editPost.bind(_this2) },
+														{ className: "btn btn-xs", onClick: _this2.editPost.bind(_this2, message.id) },
 														_react2.default.createElement("span", { className: "glyphicon glyphicon-pencil", "aria-hidden": "true" })
 													),
 													_react2.default.createElement(
@@ -60543,7 +60667,6 @@
 				type: "PUT",
 				url: "http://localhost:3000/api/add-response/" + id,
 				data: data,
-				contentType: "application/json; charset=utf-8",
 				dataType: "json",
 				success: function success(response) {
 					dispatch({ type: "ADD_RESPONSE", payload: response.message });
@@ -60619,6 +60742,9 @@
 
 				this.props.dispatch((0, _LoginAction.loginUser)(acct, pw));
 			}
+		}, {
+			key: "loginFaceBook",
+			value: function loginFaceBook() {}
 
 			//reg
 

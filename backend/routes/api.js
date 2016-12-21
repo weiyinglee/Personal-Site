@@ -172,10 +172,11 @@ router.post('/Authentication', function(req, res){
 		.first()
 		.then(function(user){
 			if(user && bcrypt.compareSync(pw, user.password)) {
+				console.log(user)
 				return res.json({ 
 					login: true,
 					username: user.account,
-					admin: user.admin,
+					admin: user.isAdmin,
 					message: "Successfully login!"
 				});
 			}
