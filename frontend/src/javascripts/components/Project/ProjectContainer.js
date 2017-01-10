@@ -88,7 +88,7 @@ class ProjectContainer extends React.Component {
 					</div>
 					<p className="project-description">{this.props.description}</p>
 					<h6 className="project-link">
-						<Link to="/project" onClick={this.goLink.bind(this)}>Project Link</Link>
+						<Link to="/project" className="links" onClick={this.goLink.bind(this)}>Project Link</Link>
 					</h6>
 				</div>
 			)

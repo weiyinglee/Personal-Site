@@ -26,11 +26,11 @@ class Project extends React.Component {
 
 	render() {
 		return (
-			<div className="container project-sec">
+			<div className="project-sec">
 				<Jumbotron className="jumbotron">
 					<h1>Project List</h1>
 					<p>Please click the project title to see more detail.</p>
-					<p><a target="_blank" href="https://github.com/weiyinglee">Click here to learn more on GitHub</a></p>
+					<p><a target="_blank" role="button" className="btn btn-warning" href="https://github.com/weiyinglee">My GitHub</a></p>
 				</Jumbotron>
 				{
 					this.props.projects.map((elem, index) => {

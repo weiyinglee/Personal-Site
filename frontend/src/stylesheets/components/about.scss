@@ -11,7 +11,7 @@ $transparent: rgba(0,0,0,0);
 
 	.about-sec-title {
 		text-align: center;
-		padding: 3%;
+		padding: 2%;
 		font-size: 72px;
 		font-weight: bold;
 
@@ -27,8 +27,24 @@ $transparent: rgba(0,0,0,0);
 
 	.intro-sec {
 		background-color: $backgroundOdd;
+		padding: 2%;
 		
 		.intro-sec-content {
+
+			.profile-pic {
+				padding: 0;
+
+				img {
+					width: 200px;
+					height: 200px;
+					border-radius: 130px;
+				}
+			}
+
+			#intro-title, #skill-title, #achivement-title {
+				color: darkred;
+				font-weight: bold;
+			}
 
 			.intro-summary {
 				font-size: 16px;
@@ -50,8 +66,19 @@ $transparent: rgba(0,0,0,0);
 
 		.experience-sec-content {
 
-			.experience-edit {
+			.experience-title {
+				color: darkred;
+				font-weight: bold;
+				font-size: 28px;
+			}
 
+			.experience-date {
+				color: darkorange;
+				font-style: italic;
+			}
+
+			.project-description {
+				font-weight: bold;
 			}
 
 		}
@@ -59,6 +86,27 @@ $transparent: rgba(0,0,0,0);
 
 	.education-sec {
 		background-color: $backgroundOdd;
+		padding: 2%;
+		margin-bottom: 3%;
+		
+		.education-sec-content {
+			
+			#edu-year {
+				color: darkorange;
+				font-style: italic;
+			}
+
+			#edu-school {
+				color: darkred;
+				font-weight: bold;
+			}
+
+			#edu-degree {
+				font-style: italic;
+				font-size: 20px;
+				color: #777;
+			}
+		}
 	}
 
 	.skill-sec {

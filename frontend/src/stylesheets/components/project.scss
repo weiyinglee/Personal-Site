@@ -1,5 +1,6 @@
 .project-sec {
 	
+	background: white;
 	padding: 2%;
 
 	.project-btn {
@@ -7,12 +8,13 @@
 		color: white;
 	}
 
-	a {
+	.links {
 		color: $linkColor;
-	}
+		
+		a:hover {
+			text-decoration: none;
+		}
 
-	a:hover {
-		text-decoration: none;
 	}
 
 	.jumbotron {

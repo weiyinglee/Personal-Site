@@ -12,6 +12,12 @@ import { fetchAboutSummary } from "../../actions/AboutAction"
 import { fetchWork, addWork } from "../../actions/WorkAction"
 import Intro from "./Intro"
 import Experience from "./Experience"
+import Education from "./Education"
+import Skills from "./Skills"
+import Award from "./Award"
+
+//import img
+import selfImg from "../../../images/profile-pic.png"
 
 class About extends React.Component {
 
@@ -58,16 +64,37 @@ class About extends React.Component {
 						</div>
 					</Row>
 					<Row className="intro-sec-content">
-						<div className="container">
-							<Col md={6}>
-								<Intro content={this.props.summary} edit={this.state.open} />
-							</Col>
-							<Col md={6}>
-								<Panel>
-									SKILLS
-								</Panel>
-							</Col>
-						</div>
+						<Row>
+							<div className="container">
+								<Col md={1} xs={1}></Col>
+								<Col md={5} xs={12} className="profile-pic">
+									<img src={selfImg}/>
+								</Col>
+								<Col md={6} xs={12}>
+									<Intro content={this.props.summary} edit={this.state.open} />
+								</Col>
+							</div>
+						</Row>
+						<Row>
+							<div className="container">
+								<Col md={6} xs={12}>
+									<div className="page-header">
+										<h4 id="achivement-title">ACHIEVEMENT</h4>
+									</div>
+									<div className="achivement-content">
+
+									</div>
+								</Col>
+								<Col md={6} xs={12}>
+									<div className="page-header">
+										<h4 id="skill-title">SKILLS</h4>
+									</div>
+									<div className="skill-content">
+
+									</div>
+								</Col>
+							</div>
+						</Row>
 					</Row>
 				</Row>
 				<Row className="experience-sec">
@@ -83,7 +110,9 @@ class About extends React.Component {
 							{
 								this.props.experience.map((elem, index) => {
 									return (
-										<Experience user={this.state.user} title={elem.Title} description={elem.Description} year={elem.Year} _id={elem.id} key={index}/>
+										<div className="experience-item">
+											<Experience user={this.state.user} title={elem.Title} description={elem.Description} year={elem.Year} _id={elem.id} key={index}/>
+										</div>
 									)
 								})
 							}
@@ -95,16 +124,16 @@ class About extends React.Component {
 						<div className="page-header">
 							<h5 className="title-head">EDUCATION</h5>
 							<h1 className="title-subHead">My Academic</h1>
-							
 						</div>
 					</Row>
 					<Row className="education-sec-content">
-						<Col md={6}></Col>
-						<Col md={6}>
-							<Panel>
-								ACHIEVEMENT
-							</Panel>
-						</Col>
+						<Row>
+							<Col md={1} xs={3}></Col>
+							<Col md={9} xs={6}>
+								<Education />
+							</Col>
+							<Col md={1} xs={3}></Col>
+						</Row>
 					</Row>
 				</Row>
 			</Grid>

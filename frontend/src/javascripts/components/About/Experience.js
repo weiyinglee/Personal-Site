@@ -80,7 +80,7 @@ class Experience extends React.Component {
 
 		return (
 			<div className="container">
-				<Panel header={this.props.title}>
+				<Panel>
 					{editBtn}
 					{editBlk}
 				</Panel>
