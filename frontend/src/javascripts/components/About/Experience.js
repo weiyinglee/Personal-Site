@@ -4,7 +4,6 @@
 import React from "react"
 import { connect } from "react-redux"
 import { Panel, Button } from "react-bootstrap"
-import cookie from "react-cookie"
 
 //import source
 import { updateWork, delWork } from "../../actions/WorkAction"
@@ -37,7 +36,7 @@ class Experience extends React.Component {
 		}else{
 			let data = '{"Title":"' + title + '","Description":"' + des + '","Year":"' + date + '"}'
 
-			this.props.dispatch(updateWork(this.props._id, data))
+			this.props.dispatch(updateWork(id, data))
 		}
 	}
 

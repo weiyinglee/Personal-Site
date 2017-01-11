@@ -35,12 +35,7 @@ class Intro extends React.Component {
 
 		return (
 			<div>
-				<div className="page-header">
-					<h4 id="intro-title">ABOUT ME</h4>
-				</div>
-				<div className="intro-content">
-					{introBlk}
-				</div>
+				{introBlk}
 			</div>
 		)
 	}

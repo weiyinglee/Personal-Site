@@ -10,6 +10,7 @@ import cookie from "react-cookie"
 //import source
 import { fetchAboutSummary } from "../../actions/AboutAction"
 import { fetchWork, addWork } from "../../actions/WorkAction"
+import { fetchSkills, addSkill } from "../../actions/SkillsAction"
 import Intro from "./Intro"
 import Experience from "./Experience"
 import Education from "./Education"
@@ -39,18 +40,26 @@ class About extends React.Component {
 		this.props.dispatch(addWork(data))
 	}
 
+	addSkill() {
+		let data = {Title: "Title", Proficiency: "proficiency"}
+
+		this.props.dispatch(addSkill(data))
+	}
+
 	componentWillMount() {
 		this.props.dispatch(fetchAboutSummary())
 		this.props.dispatch(fetchWork())
+		this.props.dispatch(fetchSkills())
 	}
 
 	render() {
 
-		let introEditBtn, workBtn
+		let introEditBtn, workBtn, skillBtn
 
 		if(this.state.user && this.state.user.admin){
 			introEditBtn = (<Button bsStyle="danger" bsSize="xsmall" onClick={this.openBtn.bind(this)}>Edit</Button>)
 			workBtn = (<Button bsStyle="success" bsSize="xsmall" onClick={this.addWork.bind(this)}>Add</Button>)
+			skillBtn = (<Button bsStyle="success" bsSize="xsmall" onClick={this.addSkill.bind(this)}>Add</Button>)
 		}
 
 		return (
@@ -60,7 +69,6 @@ class About extends React.Component {
 						<div className="page-header">
 							<h5 className="title-head">INTRODUCTION</h5>
 							<h1 className="title-subHead">Learn about Me</h1>
-							{introEditBtn}
 						</div>
 					</Row>
 					<Row className="intro-sec-content">
@@ -71,7 +79,13 @@ class About extends React.Component {
 									<img src={selfImg}/>
 								</Col>
 								<Col md={6} xs={12}>
-									<Intro content={this.props.summary} edit={this.state.open} />
+									<div className="page-header">
+										<h4 id="intro-title">ABOUT ME</h4>
+										{introEditBtn}
+									</div>
+									<div className="intro-content">
+										<Intro content={this.props.summary} edit={this.state.open} />
+									</div>
 								</Col>
 							</div>
 						</Row>
@@ -88,9 +102,18 @@ class About extends React.Component {
 								<Col md={6} xs={12}>
 									<div className="page-header">
 										<h4 id="skill-title">SKILLS</h4>
+										{skillBtn}
 									</div>
 									<div className="skill-content">
-
+										{
+											this.props.skills.map((elem, index) => {
+												return (
+													<div className="skill-item">
+														<Skills user={this.state.user} title={elem.Title} proficiency={elem.Proficiency} _id={elem.id} key={index}/>
+													</div>
+												)
+											})
+										}
 									</div>
 								</Col>
 							</div>
@@ -145,7 +168,8 @@ function mapStateToProps(state) {
 	return {
 		summary: state.about.summary,
 		Message: state.experience.message,
-		experience: state.experience.experience
+		experience: state.experience.experience,
+		skills: state.skills.skills
 	}
 }
 

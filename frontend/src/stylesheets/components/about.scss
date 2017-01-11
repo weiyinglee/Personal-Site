@@ -58,6 +58,23 @@ $transparent: rgba(0,0,0,0);
 			}
 		}
 
+		.skill-item {
+			margin-bottom: 2%;
+
+			.skill-title {
+				font-weight: bold;
+			}
+
+			.skill-proficiency {
+				color: #777;
+				font-size: 14px;
+			}
+
+			input {
+				width: auto;
+			}
+		}
+
 	}
 
 	.experience-sec {
@@ -109,11 +126,4 @@ $transparent: rgba(0,0,0,0);
 		}
 	}
 
-	.skill-sec {
-		background-color: $backgroundDefault;
-	}
-
-	.award-sec {
-		background-color: $backgroundOdd;
-	}
 }

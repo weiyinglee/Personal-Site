@@ -72,7 +72,7 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _reducers = __webpack_require__(547);
+	var _reducers = __webpack_require__(550);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -23320,7 +23320,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  min-height: 100%; }\n  html body {\n    margin: 0;\n    padding: 0;\n    /*\r\n\t\tbackground: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(\"../../images/sec-bg.png\") no-repeat fixed center;\r\n\t\tbackground-size: cover;\r\n\t\t*/\n    background: #111;\n    width: 100%;\n    height: 100%; }\n    html body .unselectableText {\n      -webkit-user-select: none;\n      -khtml-user-select: none;\n      -moz-user-select: none;\n      -o-user-select: none;\n      user-select: none; }\n    html body #content {\n      height: 100%;\n      width: 100%;\n      display: inline;\n      position: relative;\n      margin: 0;\n      padding: 0; }\n\n#nav-frame {\n  height: 40%;\n  padding-top: 1%;\n  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(" + __webpack_require__(212) + ") no-repeat scroll bottom;\n  background-color: white;\n  backgroud-size: 100%; }\n  #nav-frame .navbar {\n    padding: 1%;\n    background: rgba(0, 0, 0, 0.4);\n    border: none;\n    /* override active class */ }\n    #nav-frame .navbar #page-title {\n      font-weight: bold;\n      font-size: 30px; }\n    #nav-frame .navbar a {\n      color: white; }\n    #nav-frame .navbar a:hover {\n      color: red;\n      transition: color 1s ease-out; }\n    #nav-frame .navbar .active a {\n      color: orange;\n      font-weight: bold;\n      background: transparent; }\n    #nav-frame .navbar #admin-btn {\n      color: darkred; }\n\n#header-frame {\n  padding: 10%; }\n  #header-frame #myname {\n    color: orange; }\n  #header-frame textarea {\n    color: black;\n    resize: none; }\n\n.profile-pic-frame {\n  border: 1px white solid;\n  border-radius: 100px;\n  box-shadow: 5px 5px 5px #111;\n  width: 80%;\n  height: 80%;\n  margin-right: 5%;\n  margin-bottom: 5%;\n  float: right; }\n  .profile-pic-frame img {\n    width: 100%;\n    height: 100%;\n    border-radius: 100px; }\n\n.profile-info {\n  border: 1px white solid;\n  background: rgba(255, 255, 255, 0.1);\n  width: 100%;\n  height: 100%;\n  padding: 10%;\n  margin-top: 1%;\n  color: white;\n  text-align: center; }\n  .profile-info h3 {\n    font-size: 20px;\n    font-weight: bold; }\n\n.sub-header-title {\n  border: none;\n  background: rgba(255, 255, 255, 0.1);\n  padding: 5%;\n  margin: 1%; }\n  .sub-header-title h2 {\n    color: white;\n    font-weight: bold;\n    text-align: center;\n    text-shadow: 10px 10px 10px #000;\n    padding: 2%; }\n  .sub-header-title .project-add-btn {\n    margin-left: 48%; }\n  .sub-header-title .project-fields {\n    margin-top: 1%; }\n    .sub-header-title .project-fields li {\n      margin: 1%;\n      list-style: none; }\n\n#footer-frame {\n  background: #111;\n  position: relative;\n  width: 100%;\n  height: 300px;\n  bottom: 0; }\n  #footer-frame a {\n    color: white;\n    background: transparent; }\n  #footer-frame #footer-header-title {\n    color: white;\n    padding-top: 1%;\n    margin-left: 3%; }\n  #footer-frame #link-list {\n    padding: 1%;\n    margin-left: 1%; }\n    #footer-frame #link-list li {\n      list-style: none;\n      display: inline;\n      margin: 1%; }\n    #footer-frame #link-list img {\n      weight: 30px;\n      height: 30px; }\n  #footer-frame #copyright-sec {\n    background: #222;\n    padding: 2%; }\n    #footer-frame #copyright-sec h5 {\n      color: white;\n      text-align: center; }\n  #footer-frame .footer-bar {\n    padding: 2%;\n    /* override active */ }\n    #footer-frame .footer-bar .active a {\n      background: transparent;\n      color: yellow; }\n\n.contact-sec {\n  padding: 2%;\n  background: white;\n  border: 1px black solid;\n  text-align: center;\n  color: black;\n  font-weight: bold; }\n  .contact-sec .message-area {\n    text-align: left; }\n    .contact-sec .message-area .message-area-title {\n      text-align: center; }\n    .contact-sec .message-area .message-lists li {\n      list-style: none; }\n      .contact-sec .message-area .message-lists li .message-post {\n        padding: 1%; }\n      .contact-sec .message-area .message-lists li .message-response {\n        margin-top: 1%;\n        padding: 1%;\n        border-top: 1px solid #999; }\n      .contact-sec .message-area .message-lists li .message-text {\n        color: #888; }\n\n.about-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .about-sec .about-sec-title {\n    text-align: center;\n    padding: 2%;\n    font-size: 72px;\n    font-weight: bold; }\n    .about-sec .about-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .about-sec .about-sec-title .title-subHead {\n      font-weight: bold; }\n  .about-sec .intro-sec {\n    background-color: white;\n    padding: 2%; }\n    .about-sec .intro-sec .intro-sec-content .profile-pic {\n      padding: 0; }\n      .about-sec .intro-sec .intro-sec-content .profile-pic img {\n        width: 200px;\n        height: 200px;\n        border-radius: 130px; }\n    .about-sec .intro-sec .intro-sec-content #intro-title, .about-sec .intro-sec .intro-sec-content #skill-title, .about-sec .intro-sec .intro-sec-content #achivement-title {\n      color: darkred;\n      font-weight: bold; }\n    .about-sec .intro-sec .intro-sec-content .intro-summary {\n      font-size: 16px; }\n    .about-sec .intro-sec .intro-sec-content pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n  .about-sec .experience-sec {\n    background-color: #e6fffa;\n    padding: 2%; }\n    .about-sec .experience-sec .experience-sec-content .experience-title {\n      color: darkred;\n      font-weight: bold;\n      font-size: 28px; }\n    .about-sec .experience-sec .experience-sec-content .experience-date {\n      color: darkorange;\n      font-style: italic; }\n    .about-sec .experience-sec .experience-sec-content .project-description {\n      font-weight: bold; }\n  .about-sec .education-sec {\n    background-color: white;\n    padding: 2%;\n    margin-bottom: 3%; }\n    .about-sec .education-sec .education-sec-content #edu-year {\n      color: darkorange;\n      font-style: italic; }\n    .about-sec .education-sec .education-sec-content #edu-school {\n      color: darkred;\n      font-weight: bold; }\n    .about-sec .education-sec .education-sec-content #edu-degree {\n      font-style: italic;\n      font-size: 20px;\n      color: #777; }\n  .about-sec .skill-sec {\n    background-color: #e6fffa; }\n  .about-sec .award-sec {\n    background-color: white; }\n\n.project-sec {\n  background: white;\n  padding: 2%; }\n  .project-sec .project-btn {\n    background: darkred;\n    color: white; }\n  .project-sec .links {\n    color: brown; }\n    .project-sec .links a:hover {\n      text-decoration: none; }\n  .project-sec .jumbotron {\n    background: white;\n    border: 1px solid black; }\n  .project-sec .form-control {\n    margin-top: 1%; }\n  .project-sec .project-frame .project-description {\n    color: #888; }\n  .project-sec .project-frame .project-title {\n    color: darkred;\n    font-weight: bold; }\n  .project-sec .project-frame .project-date {\n    font-style: italic; }\n  .project-sec .project-frame .project-link {\n    text-decoration: underline; }\n\n.home-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .home-sec .home-sec-title {\n    text-align: center;\n    padding: 3%;\n    font-size: 72px;\n    font-weight: bold; }\n    .home-sec .home-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .home-sec .home-sec-title .title-subHead {\n      font-weight: bold; }\n  .home-sec .home-sec-content {\n    padding-bottom: 5%;\n    font-weight: bold;\n    color: #888; }\n    .home-sec .home-sec-content .home-project-title {\n      font-weight: bold;\n      font-size: 28px;\n      color: darkred; }\n    .home-sec .home-sec-content .home-project-date {\n      font-style: italic;\n      font-size: 16px;\n      color: darkorange; }\n  .home-sec .more-btn-row {\n    margin: 2%; }\n  .home-sec .home-project-sec {\n    background: #e6fffa;\n    text-align: center; }\n  .home-sec .home-summary-sec .home-sec-content .profile-pic {\n    padding: 0; }\n    .home-sec .home-summary-sec .home-sec-content .profile-pic img {\n      width: 230px;\n      height: 230px;\n      border-radius: 130px; }\n  .home-sec .home-summary-sec .home-sec-content .profile-summary {\n    margin: 1%; }\n    .home-sec .home-summary-sec .home-sec-content .profile-summary pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n  .home-sec .home-contact-sec {\n    background: white;\n    text-align: center; }\n    .home-sec .home-contact-sec .home-contact-title {\n      font-size: 18px;\n      font-weight: bold;\n      color: brown; }\n\n.login-sec {\n  background: white;\n  width: auto;\n  height: auto;\n  margin: 0; }\n  .login-sec .login-area, .login-sec .reg-area {\n    background: white; }\n    .login-sec .login-area .login-sec-title, .login-sec .reg-area .login-sec-title {\n      text-align: center;\n      padding: 3%;\n      font-size: 72px;\n      font-weight: bold; }\n      .login-sec .login-area .login-sec-title .title-head, .login-sec .reg-area .login-sec-title .title-head {\n        font-weight: bold; }\n    .login-sec .login-area .login-panel, .login-sec .reg-area .login-panel {\n      padding: 2%;\n      margin-bottom: 5%;\n      background: white; }\n  .login-sec .reg-area {\n    background: #e6fffa; }\n    .login-sec .reg-area .login-panel {\n      padding: 2%;\n      margin-bottom: 5%;\n      background: white; }\n", ""]);
+	exports.push([module.id, "html {\n  min-height: 100%; }\n  html body {\n    margin: 0;\n    padding: 0;\n    /*\r\n\t\tbackground: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(\"../../images/sec-bg.png\") no-repeat fixed center;\r\n\t\tbackground-size: cover;\r\n\t\t*/\n    background: #111;\n    width: 100%;\n    height: 100%; }\n    html body .unselectableText {\n      -webkit-user-select: none;\n      -khtml-user-select: none;\n      -moz-user-select: none;\n      -o-user-select: none;\n      user-select: none; }\n    html body #content {\n      height: 100%;\n      width: 100%;\n      display: inline;\n      position: relative;\n      margin: 0;\n      padding: 0; }\n\n#nav-frame {\n  height: 40%;\n  padding-top: 1%;\n  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(" + __webpack_require__(212) + ") no-repeat scroll bottom;\n  background-color: white;\n  backgroud-size: 100%; }\n  #nav-frame .navbar {\n    padding: 1%;\n    background: rgba(0, 0, 0, 0.4);\n    border: none;\n    /* override active class */ }\n    #nav-frame .navbar #page-title {\n      font-weight: bold;\n      font-size: 30px; }\n    #nav-frame .navbar a {\n      color: white; }\n    #nav-frame .navbar a:hover {\n      color: red;\n      transition: color 1s ease-out; }\n    #nav-frame .navbar .active a {\n      color: orange;\n      font-weight: bold;\n      background: transparent; }\n    #nav-frame .navbar #admin-btn {\n      color: darkred; }\n\n#header-frame {\n  padding: 10%; }\n  #header-frame #myname {\n    color: orange; }\n  #header-frame textarea {\n    color: black;\n    resize: none; }\n\n.profile-pic-frame {\n  border: 1px white solid;\n  border-radius: 100px;\n  box-shadow: 5px 5px 5px #111;\n  width: 80%;\n  height: 80%;\n  margin-right: 5%;\n  margin-bottom: 5%;\n  float: right; }\n  .profile-pic-frame img {\n    width: 100%;\n    height: 100%;\n    border-radius: 100px; }\n\n.profile-info {\n  border: 1px white solid;\n  background: rgba(255, 255, 255, 0.1);\n  width: 100%;\n  height: 100%;\n  padding: 10%;\n  margin-top: 1%;\n  color: white;\n  text-align: center; }\n  .profile-info h3 {\n    font-size: 20px;\n    font-weight: bold; }\n\n.sub-header-title {\n  border: none;\n  background: rgba(255, 255, 255, 0.1);\n  padding: 5%;\n  margin: 1%; }\n  .sub-header-title h2 {\n    color: white;\n    font-weight: bold;\n    text-align: center;\n    text-shadow: 10px 10px 10px #000;\n    padding: 2%; }\n  .sub-header-title .project-add-btn {\n    margin-left: 48%; }\n  .sub-header-title .project-fields {\n    margin-top: 1%; }\n    .sub-header-title .project-fields li {\n      margin: 1%;\n      list-style: none; }\n\n#footer-frame {\n  background: #111;\n  position: relative;\n  width: 100%;\n  height: 300px;\n  bottom: 0; }\n  #footer-frame a {\n    color: white;\n    background: transparent; }\n  #footer-frame #footer-header-title {\n    color: white;\n    padding-top: 1%;\n    margin-left: 3%; }\n  #footer-frame #link-list {\n    padding: 1%;\n    margin-left: 1%; }\n    #footer-frame #link-list li {\n      list-style: none;\n      display: inline;\n      margin: 1%; }\n    #footer-frame #link-list img {\n      weight: 30px;\n      height: 30px; }\n  #footer-frame #copyright-sec {\n    background: #222;\n    padding: 2%; }\n    #footer-frame #copyright-sec h5 {\n      color: white;\n      text-align: center; }\n  #footer-frame .footer-bar {\n    padding: 2%;\n    /* override active */ }\n    #footer-frame .footer-bar .active a {\n      background: transparent;\n      color: yellow; }\n\n.contact-sec {\n  padding: 2%;\n  background: white;\n  border: 1px black solid;\n  text-align: center;\n  color: black;\n  font-weight: bold; }\n  .contact-sec .message-area {\n    text-align: left; }\n    .contact-sec .message-area .message-area-title {\n      text-align: center; }\n    .contact-sec .message-area .message-lists li {\n      list-style: none; }\n      .contact-sec .message-area .message-lists li .message-post {\n        padding: 1%; }\n      .contact-sec .message-area .message-lists li .message-response {\n        margin-top: 1%;\n        padding: 1%;\n        border-top: 1px solid #999; }\n      .contact-sec .message-area .message-lists li .message-text {\n        color: #888; }\n\n.about-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .about-sec .about-sec-title {\n    text-align: center;\n    padding: 2%;\n    font-size: 72px;\n    font-weight: bold; }\n    .about-sec .about-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .about-sec .about-sec-title .title-subHead {\n      font-weight: bold; }\n  .about-sec .intro-sec {\n    background-color: white;\n    padding: 2%; }\n    .about-sec .intro-sec .intro-sec-content .profile-pic {\n      padding: 0; }\n      .about-sec .intro-sec .intro-sec-content .profile-pic img {\n        width: 200px;\n        height: 200px;\n        border-radius: 130px; }\n    .about-sec .intro-sec .intro-sec-content #intro-title, .about-sec .intro-sec .intro-sec-content #skill-title, .about-sec .intro-sec .intro-sec-content #achivement-title {\n      color: darkred;\n      font-weight: bold; }\n    .about-sec .intro-sec .intro-sec-content .intro-summary {\n      font-size: 16px; }\n    .about-sec .intro-sec .intro-sec-content pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n    .about-sec .intro-sec .skill-item {\n      margin-bottom: 2%; }\n      .about-sec .intro-sec .skill-item .skill-title {\n        font-weight: bold; }\n      .about-sec .intro-sec .skill-item .skill-proficiency {\n        color: #777;\n        font-size: 14px; }\n      .about-sec .intro-sec .skill-item input {\n        width: auto; }\n  .about-sec .experience-sec {\n    background-color: #e6fffa;\n    padding: 2%; }\n    .about-sec .experience-sec .experience-sec-content .experience-title {\n      color: darkred;\n      font-weight: bold;\n      font-size: 28px; }\n    .about-sec .experience-sec .experience-sec-content .experience-date {\n      color: darkorange;\n      font-style: italic; }\n    .about-sec .experience-sec .experience-sec-content .project-description {\n      font-weight: bold; }\n  .about-sec .education-sec {\n    background-color: white;\n    padding: 2%;\n    margin-bottom: 3%; }\n    .about-sec .education-sec .education-sec-content #edu-year {\n      color: darkorange;\n      font-style: italic; }\n    .about-sec .education-sec .education-sec-content #edu-school {\n      color: darkred;\n      font-weight: bold; }\n    .about-sec .education-sec .education-sec-content #edu-degree {\n      font-style: italic;\n      font-size: 20px;\n      color: #777; }\n\n.project-sec {\n  background: white;\n  padding: 2%; }\n  .project-sec .project-btn {\n    background: darkred;\n    color: white; }\n  .project-sec .links {\n    color: brown; }\n    .project-sec .links a:hover {\n      text-decoration: none; }\n  .project-sec .jumbotron {\n    background: white;\n    border: 1px solid black; }\n  .project-sec .form-control {\n    margin-top: 1%; }\n  .project-sec .project-frame .project-description {\n    color: #888; }\n  .project-sec .project-frame .project-title {\n    color: darkred;\n    font-weight: bold; }\n  .project-sec .project-frame .project-date {\n    font-style: italic; }\n  .project-sec .project-frame .project-link {\n    text-decoration: underline; }\n\n.home-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .home-sec .home-sec-title {\n    text-align: center;\n    padding: 3%;\n    font-size: 72px;\n    font-weight: bold; }\n    .home-sec .home-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .home-sec .home-sec-title .title-subHead {\n      font-weight: bold; }\n  .home-sec .home-sec-content {\n    padding-bottom: 5%;\n    font-weight: bold;\n    color: #888; }\n    .home-sec .home-sec-content .home-project-title {\n      font-weight: bold;\n      font-size: 28px;\n      color: darkred; }\n    .home-sec .home-sec-content .home-project-date {\n      font-style: italic;\n      font-size: 16px;\n      color: darkorange; }\n  .home-sec .more-btn-row {\n    margin: 2%; }\n  .home-sec .home-project-sec {\n    background: #e6fffa;\n    text-align: center; }\n  .home-sec .home-summary-sec .home-sec-content .profile-pic {\n    padding: 0; }\n    .home-sec .home-summary-sec .home-sec-content .profile-pic img {\n      width: 230px;\n      height: 230px;\n      border-radius: 130px; }\n  .home-sec .home-summary-sec .home-sec-content .profile-summary {\n    margin: 1%; }\n    .home-sec .home-summary-sec .home-sec-content .profile-summary pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n  .home-sec .home-contact-sec {\n    background: white;\n    text-align: center; }\n    .home-sec .home-contact-sec .home-contact-title {\n      font-size: 18px;\n      font-weight: bold;\n      color: brown; }\n\n.login-sec {\n  background: white;\n  width: auto;\n  height: auto;\n  margin: 0; }\n  .login-sec .login-area, .login-sec .reg-area {\n    background: white; }\n    .login-sec .login-area .login-sec-title, .login-sec .reg-area .login-sec-title {\n      text-align: center;\n      padding: 3%;\n      font-size: 72px;\n      font-weight: bold; }\n      .login-sec .login-area .login-sec-title .title-head, .login-sec .reg-area .login-sec-title .title-head {\n        font-weight: bold; }\n    .login-sec .login-area .login-panel, .login-sec .reg-area .login-panel {\n      padding: 2%;\n      margin-bottom: 5%;\n      background: white; }\n  .login-sec .reg-area {\n    background: #e6fffa; }\n    .login-sec .reg-area .login-panel {\n      padding: 2%;\n      margin-bottom: 5%;\n      background: white; }\n", ""]);
 
 	// exports
 
@@ -23671,15 +23671,15 @@
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Project = __webpack_require__(541);
+	var _Project = __webpack_require__(544);
 
 	var _Project2 = _interopRequireDefault(_Project);
 
-	var _Contact = __webpack_require__(543);
+	var _Contact = __webpack_require__(546);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
-	var _Login = __webpack_require__(545);
+	var _Login = __webpack_require__(548);
 
 	var _Login2 = _interopRequireDefault(_Login);
 
@@ -59278,6 +59278,8 @@
 
 	var _WorkAction = __webpack_require__(538);
 
+	var _SkillsAction = __webpack_require__(557);
+
 	var _Intro = __webpack_require__(539);
 
 	var _Intro2 = _interopRequireDefault(_Intro);
@@ -59286,15 +59288,15 @@
 
 	var _Experience2 = _interopRequireDefault(_Experience);
 
-	var _Education = __webpack_require__(553);
+	var _Education = __webpack_require__(541);
 
 	var _Education2 = _interopRequireDefault(_Education);
 
-	var _Skills = __webpack_require__(554);
+	var _Skills = __webpack_require__(542);
 
 	var _Skills2 = _interopRequireDefault(_Skills);
 
-	var _Award = __webpack_require__(555);
+	var _Award = __webpack_require__(543);
 
 	var _Award2 = _interopRequireDefault(_Award);
 
@@ -59344,10 +59346,18 @@
 				this.props.dispatch((0, _WorkAction.addWork)(data));
 			}
 		}, {
+			key: "addSkill",
+			value: function addSkill() {
+				var data = { Title: "Title", Proficiency: "proficiency" };
+
+				this.props.dispatch((0, _SkillsAction.addSkill)(data));
+			}
+		}, {
 			key: "componentWillMount",
 			value: function componentWillMount() {
 				this.props.dispatch((0, _AboutAction.fetchAboutSummary)());
 				this.props.dispatch((0, _WorkAction.fetchWork)());
+				this.props.dispatch((0, _SkillsAction.fetchSkills)());
 			}
 		}, {
 			key: "render",
@@ -59355,7 +59365,8 @@
 				var _this2 = this;
 
 				var introEditBtn = void 0,
-				    workBtn = void 0;
+				    workBtn = void 0,
+				    skillBtn = void 0;
 
 				if (this.state.user && this.state.user.admin) {
 					introEditBtn = _react2.default.createElement(
@@ -59366,6 +59377,11 @@
 					workBtn = _react2.default.createElement(
 						_reactBootstrap.Button,
 						{ bsStyle: "success", bsSize: "xsmall", onClick: this.addWork.bind(this) },
+						"Add"
+					);
+					skillBtn = _react2.default.createElement(
+						_reactBootstrap.Button,
+						{ bsStyle: "success", bsSize: "xsmall", onClick: this.addSkill.bind(this) },
 						"Add"
 					);
 				}
@@ -59391,8 +59407,7 @@
 									"h1",
 									{ className: "title-subHead" },
 									"Learn about Me"
-								),
-								introEditBtn
+								)
 							)
 						),
 						_react2.default.createElement(
@@ -59413,7 +59428,21 @@
 									_react2.default.createElement(
 										_reactBootstrap.Col,
 										{ md: 6, xs: 12 },
-										_react2.default.createElement(_Intro2.default, { content: this.props.summary, edit: this.state.open })
+										_react2.default.createElement(
+											"div",
+											{ className: "page-header" },
+											_react2.default.createElement(
+												"h4",
+												{ id: "intro-title" },
+												"ABOUT ME"
+											),
+											introEditBtn
+										),
+										_react2.default.createElement(
+											"div",
+											{ className: "intro-content" },
+											_react2.default.createElement(_Intro2.default, { content: this.props.summary, edit: this.state.open })
+										)
 									)
 								)
 							),
@@ -59447,9 +59476,20 @@
 												"h4",
 												{ id: "skill-title" },
 												"SKILLS"
-											)
+											),
+											skillBtn
 										),
-										_react2.default.createElement("div", { className: "skill-content" })
+										_react2.default.createElement(
+											"div",
+											{ className: "skill-content" },
+											this.props.skills.map(function (elem, index) {
+												return _react2.default.createElement(
+													"div",
+													{ className: "skill-item" },
+													_react2.default.createElement(_Skills2.default, { user: _this2.state.user, title: elem.Title, proficiency: elem.Proficiency, _id: elem.id, key: index })
+												);
+											})
+										)
 									)
 								)
 							)
@@ -59541,7 +59581,8 @@
 		return {
 			summary: state.about.summary,
 			Message: state.experience.message,
-			experience: state.experience.experience
+			experience: state.experience.experience,
+			skills: state.skills.skills
 		};
 	}
 
@@ -59710,20 +59751,7 @@
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(
-						"div",
-						{ className: "page-header" },
-						_react2.default.createElement(
-							"h4",
-							{ id: "intro-title" },
-							"ABOUT ME"
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "intro-content" },
-						introBlk
-					)
+					introBlk
 				);
 			}
 		}]);
@@ -59764,10 +59792,6 @@
 	var _reactRedux = __webpack_require__(200);
 
 	var _reactBootstrap = __webpack_require__(270);
-
-	var _reactCookie = __webpack_require__(523);
-
-	var _reactCookie2 = _interopRequireDefault(_reactCookie);
 
 	var _WorkAction = __webpack_require__(538);
 
@@ -59819,7 +59843,7 @@
 				} else {
 					var data = '{"Title":"' + title + '","Description":"' + des + '","Year":"' + date + '"}';
 
-					this.props.dispatch((0, _WorkAction.updateWork)(this.props._id, data));
+					this.props.dispatch((0, _WorkAction.updateWork)(id, data));
 				}
 			}
 		}, {
@@ -59923,6 +59947,292 @@
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Education = function (_React$Component) {
+		_inherits(Education, _React$Component);
+
+		function Education() {
+			_classCallCheck(this, Education);
+
+			return _possibleConstructorReturn(this, (Education.__proto__ || Object.getPrototypeOf(Education)).apply(this, arguments));
+		}
+
+		_createClass(Education, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"h3",
+						{ id: "edu-school" },
+						"California State Polytechnic University-Pomona"
+					),
+					_react2.default.createElement(
+						"h3",
+						{ id: "edu-year" },
+						"2012 - 2017"
+					),
+					_react2.default.createElement(
+						"h3",
+						{ id: "edu-degree" },
+						"Bachelor Science Degree - Computer Science"
+					)
+				);
+			}
+		}]);
+
+		return Education;
+	}(_react2.default.Component);
+
+	exports.default = Education;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Education.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 542 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	"use strict";
+
+	//import dependencies
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(200);
+
+	var _reactBootstrap = __webpack_require__(270);
+
+	var _SkillsAction = __webpack_require__(557);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	//import source
+
+
+	var Skills = function (_React$Component) {
+		_inherits(Skills, _React$Component);
+
+		function Skills() {
+			_classCallCheck(this, Skills);
+
+			var _this = _possibleConstructorReturn(this, (Skills.__proto__ || Object.getPrototypeOf(Skills)).call(this));
+
+			_this.state = {
+				edit: false
+			};
+			return _this;
+		}
+
+		_createClass(Skills, [{
+			key: "editing",
+			value: function editing() {
+				this.setState({ edit: !this.state.edit });
+			}
+		}, {
+			key: "update",
+			value: function update() {
+				var title = this.refs.newSkillTitle.value;
+				var proficiency = this.refs.newSKillProficiency.value;
+				var id = this.props._id;
+
+				if (title == "" || proficiency == "") {
+					alert("Fields can not be empty");
+				} else {
+					var data = '{"Title":"' + title + '","Proficiency":"' + proficiency + '"}';
+
+					this.props.dispatch((0, _SkillsAction.updateSkill)(id, data));
+				}
+			}
+		}, {
+			key: "del",
+			value: function del() {
+				this.props.dispatch((0, _SkillsAction.deleteSkill)(this.props._id));
+			}
+		}, {
+			key: "render",
+			value: function render() {
+
+				var editBtn = void 0,
+				    editBlk = void 0;
+
+				if (this.props.user && this.props.user.admin) {
+					editBtn = _react2.default.createElement(
+						"div",
+						{ className: "skills-edit" },
+						_react2.default.createElement(
+							_reactBootstrap.Button,
+							{ bsStyle: "default", bsSize: "xsmall", onClick: this.editing.bind(this) },
+							"Edit"
+						),
+						_react2.default.createElement(
+							_reactBootstrap.Button,
+							{ bsStyle: "danger", bsSize: "xsmall", onClick: this.del.bind(this) },
+							"Delete"
+						)
+					);
+				}
+
+				if (this.state.edit) {
+					editBlk = _react2.default.createElement(
+						"div",
+						null,
+						editBtn,
+						_react2.default.createElement(
+							"form",
+							null,
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement("input", { type: "text", className: "form-control", ref: "newSkillTitle", placeholder: "Title", defaultValue: this.props.title }),
+								_react2.default.createElement("input", { type: "text", className: "form-control", ref: "newSKillProficiency", placeholder: "Proficiency", defaultValue: this.props.proficiency })
+							),
+							_react2.default.createElement(
+								_reactBootstrap.Button,
+								{ bsSize: "xsmall", onClick: this.update.bind(this) },
+								"Update"
+							)
+						)
+					);
+				} else {
+					editBlk = _react2.default.createElement(
+						"div",
+						null,
+						_react2.default.createElement(
+							"div",
+							null,
+							editBtn,
+							_react2.default.createElement(
+								"h4",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "skill-title" },
+									this.props.title
+								),
+								_react2.default.createElement(
+									"span",
+									{ className: "skill-proficiency" },
+									"(",
+									this.props.proficiency,
+									")"
+								)
+							)
+						)
+					);
+				}
+
+				return _react2.default.createElement(
+					"div",
+					{ className: "container" },
+					editBlk
+				);
+			}
+		}]);
+
+		return Skills;
+	}(_react2.default.Component);
+
+	function mapStateToProps(state) {
+		return {
+			message: state.skills.message
+		};
+	}
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Skills);
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Skills.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 543 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Award = function (_React$Component) {
+		_inherits(Award, _React$Component);
+
+		function Award() {
+			_classCallCheck(this, Award);
+
+			return _possibleConstructorReturn(this, (Award.__proto__ || Object.getPrototypeOf(Award)).apply(this, arguments));
+		}
+
+		_createClass(Award, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement("div", null);
+			}
+		}]);
+
+		return Award;
+	}(_react2.default.Component);
+
+	exports.default = Award;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Award.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 544 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	"use strict";
+
 	//import dependencies
 
 	Object.defineProperty(exports, "__esModule", {
@@ -59949,7 +60259,7 @@
 
 	var _ProjectAction = __webpack_require__(526);
 
-	var _ProjectContainer = __webpack_require__(542);
+	var _ProjectContainer = __webpack_require__(545);
 
 	var _ProjectContainer2 = _interopRequireDefault(_ProjectContainer);
 
@@ -60035,7 +60345,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Project.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 542 */
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -60242,7 +60552,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "ProjectContainer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 543 */
+/* 546 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -60271,7 +60581,7 @@
 
 	var _reactBootstrap = __webpack_require__(270);
 
-	var _ContactAction = __webpack_require__(544);
+	var _ContactAction = __webpack_require__(547);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60658,7 +60968,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Contact.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 544 */
+/* 547 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -60748,7 +61058,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "ContactAction.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 545 */
+/* 548 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -60775,7 +61085,7 @@
 
 	var _reactBootstrap = __webpack_require__(270);
 
-	var _LoginAction = __webpack_require__(546);
+	var _LoginAction = __webpack_require__(549);
 
 	var _jquery = __webpack_require__(525);
 
@@ -60975,7 +61285,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Login.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 546 */
+/* 549 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -61045,7 +61355,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "LoginAction.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 547 */
+/* 550 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -61058,25 +61368,29 @@
 
 	var _redux = __webpack_require__(178);
 
-	var _userLoginReducer = __webpack_require__(548);
+	var _userLoginReducer = __webpack_require__(551);
 
 	var _userLoginReducer2 = _interopRequireDefault(_userLoginReducer);
 
-	var _aboutReducer = __webpack_require__(549);
+	var _aboutReducer = __webpack_require__(552);
 
 	var _aboutReducer2 = _interopRequireDefault(_aboutReducer);
 
-	var _messageReducer = __webpack_require__(550);
+	var _messageReducer = __webpack_require__(553);
 
 	var _messageReducer2 = _interopRequireDefault(_messageReducer);
 
-	var _projectReducer = __webpack_require__(551);
+	var _projectReducer = __webpack_require__(554);
 
 	var _projectReducer2 = _interopRequireDefault(_projectReducer);
 
-	var _workReducer = __webpack_require__(552);
+	var _workReducer = __webpack_require__(555);
 
 	var _workReducer2 = _interopRequireDefault(_workReducer);
+
+	var _skillsReducer = __webpack_require__(556);
+
+	var _skillsReducer2 = _interopRequireDefault(_skillsReducer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61085,7 +61399,8 @@
 		message: _messageReducer2.default,
 		about: _aboutReducer2.default,
 		experience: _workReducer2.default,
-		project: _projectReducer2.default
+		project: _projectReducer2.default,
+		skills: _skillsReducer2.default
 	});
 
 	exports.default = allReducers;
@@ -61093,7 +61408,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 548 */
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -61124,7 +61439,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "userLoginReducer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 549 */
+/* 552 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -61173,7 +61488,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "aboutReducer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 550 */
+/* 553 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -61217,7 +61532,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "messageReducer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 551 */
+/* 554 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -61266,7 +61581,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "projectReducer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 552 */
+/* 555 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -61307,7 +61622,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "workReducer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 553 */
+/* 556 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -61318,80 +61633,109 @@
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _react = __webpack_require__(1);
+	exports.default = reducer;
+	function reducer() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+			skills: [],
+			message: ""
+		};
+		var action = arguments[1];
 
-	var _react2 = _interopRequireDefault(_react);
+		switch (action.type) {
+			case "FETCH_SKILLS":
+				return _extends({}, state, { skills: action.payload });
+				break;
+			case "ADD_SKILL":
+				return _extends({}, state, { message: action.payload });
+				break;
+			case "UPDATE_SKILL":
+				return _extends({}, state, { message: action.payload });
+				break;
+			case "DELETE_SKILL":
+				return _extends({}, state, { message: action.payload });
+				break;
+		}
+		return state;
+	}
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "skillsReducer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 557 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.fetchSkills = fetchSkills;
+	exports.addSkill = addSkill;
+	exports.updateSkill = updateSkill;
+	exports.deleteSkill = deleteSkill;
+
+	var _jquery = __webpack_require__(525);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function fetchSkills() {
+		return function (dispatch) {
+			_jquery2.default.get("http://localhost:3000/api/skill-info", function (response) {
+				dispatch({
+					type: "FETCH_SKILLS",
+					payload: response
+				});
+			});
+		};
+	} //import dependencies
+	function addSkill(data) {
+		return function (dispatch) {
+			_jquery2.default.post("http://localhost:3000/api/add-skill", data, function (response) {
+				dispatch({
+					type: "ADD_SKILL",
+					payload: response.Message
+				});
+				location.reload();
+			});
+		};
+	}
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	function updateSkill(id, data) {
+		return function (dispatch) {
+			_jquery2.default.ajax({
+				type: "PUT",
+				url: "http://localhost:3000/api/update-skill/" + id,
+				data: data,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function success(response) {
+					dispatch({ type: "UPDATE_SKILL", payload: response.Message });
+					location.reload();
+				}
+			});
+		};
+	}
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function deleteSkill(id) {
+		return function (dispatch) {
+			_jquery2.default.ajax({
+				url: 'http://localhost:3000/api/delete-skill/' + id,
+				type: 'DELETE',
+				success: function success(response) {
+					dispatch({ type: "DELETE_SKILL", payload: response.Message });
+					location.reload();
+				}
+			});
+		};
+	}
 
-	var Education = function (_React$Component) {
-		_inherits(Education, _React$Component);
-
-		function Education() {
-			_classCallCheck(this, Education);
-
-			return _possibleConstructorReturn(this, (Education.__proto__ || Object.getPrototypeOf(Education)).apply(this, arguments));
-		}
-
-		_createClass(Education, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(
-						"h3",
-						{ id: "edu-school" },
-						"California State Polytechnic University-Pomona"
-					),
-					_react2.default.createElement(
-						"h3",
-						{ id: "edu-year" },
-						"2012 - 2017"
-					),
-					_react2.default.createElement(
-						"h3",
-						{ id: "edu-degree" },
-						"Bachelor Science Degree - Computer Science"
-					)
-				);
-			}
-		}]);
-
-		return Education;
-	}(_react2.default.Component);
-
-	exports.default = Education;
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Education.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 554 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	"use strict";
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Skills.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 555 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	"use strict";
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Award.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Eric\\Desktop\\my-site\\frontend\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "SkillsAction.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }
 /******/ ]);
