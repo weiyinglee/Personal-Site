@@ -84,7 +84,7 @@ $transparent: rgba(0,0,0,0);
 			.award-title {
 				font-weight: bold;
 				font-size: 18px;
-				color: brown;
+				color: #000;
 			}
 
 			.award-time {
@@ -109,12 +109,14 @@ $transparent: rgba(0,0,0,0);
 			}
 
 			.experience-date {
-				color: darkorange;
+				color: #000;
+				font-weight: bold;
 				font-style: italic;
 			}
 
 			.project-description {
 				font-weight: bold;
+				color: #777;
 			}
 
 		}
@@ -128,7 +130,9 @@ $transparent: rgba(0,0,0,0);
 		.education-sec-content {
 			
 			#edu-year {
-				color: darkorange;
+				color: #000;
+				font-size: 18px;
+				font-weight: bold;
 				font-style: italic;
 			}
 
@@ -141,6 +145,26 @@ $transparent: rgba(0,0,0,0);
 				font-style: italic;
 				font-size: 20px;
 				color: #777;
+			}
+
+			#achivement-title {
+				color: darkorange;
+				font-weight: bold;
+			}
+
+			.award-item {
+				@extend .skill-item;
+
+				.award-title {
+					font-weight: bold;
+					font-size: 16px;
+				}
+
+				.award-time {
+					font-weight: bold;
+					font-size: 14px;
+					color: #777;
+				}
 			}
 		}
 	}

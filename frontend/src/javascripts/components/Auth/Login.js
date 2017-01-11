@@ -61,7 +61,7 @@ class Login extends React.Component {
 						<Row>
 							<Col md={3}></Col>
 							<Col md={6}>
-								<Panel className="login-panel" bsStyle="warning">
+								<Panel className="login-panel">
 									<form>
 										<div className="form-group">
 											<input ref="account" type="text" className="form-control" placeholder="Enter account"/>
@@ -69,7 +69,7 @@ class Login extends React.Component {
 										<div className="form-group">
 											<input ref="password" type="password" className="form-control" placeholder="Enter password"/>
 										</div>
-										<Button onClick={this.login.bind(this)} bsStyle="warning">Login</Button>
+										<Button onClick={this.login.bind(this)} bsStyle="success">Login</Button>
 									</form>
 								</Panel>
 							</Col>
@@ -99,7 +99,7 @@ class Login extends React.Component {
 										<div className="form-group">
 											<input ref="new_password2" type="password" className="form-control" placeholder="Enter password Again"/>
 										</div>
-										<Button onClick={this.reg.bind(this)} bsStyle="success">Register</Button>
+										<Button onClick={this.reg.bind(this)} bsStyle="warning">Register</Button>
 									</form>
 								</Panel>
 							</Col>

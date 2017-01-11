@@ -1,4 +1,4 @@
-"use strict"
+	"use strict"
 
 //import dependencies
 import React from "react"

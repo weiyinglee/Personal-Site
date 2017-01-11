@@ -71,8 +71,6 @@ class About extends React.Component {
 			awardBtn = (<Button bsStyle="success" bsSize="xsmall" onClick={this.addAward.bind(this)}>Add</Button>)
 		}
 
-		console.log(this.props.award)
-
 		return (
 			<Grid className="about-sec">
 				<Row className="intro-sec">
@@ -88,35 +86,12 @@ class About extends React.Component {
 								<Col md={1} xs={1}></Col>
 								<Col md={5} xs={12} className="profile-pic">
 									<img src={selfImg}/>
-								</Col>
-								<Col md={6} xs={12}>
 									<div className="page-header">
 										<h4 id="intro-title">ABOUT ME</h4>
 										{introEditBtn}
 									</div>
 									<div className="intro-content">
 										<Intro content={this.props.summary} edit={this.state.open} />
-									</div>
-								</Col>
-							</div>
-						</Row>
-						<Row>
-							<div className="container">
-								<Col md={6} xs={12}>
-									<div className="page-header">
-										<h4 id="achivement-title">ACHIEVEMENT</h4>
-										{awardBtn}
-									</div>
-									<div className="achivement-content">
-										{
-											this.props.award.map((elem, index) => {
-												return (
-													<div className="award-item">
-														<Award user={this.state.user} title={elem.Title} time={elem.Time} _id={elem.id} key={index}/>
-													</div>
-												)
-											})
-										}
 									</div>
 								</Col>
 								<Col md={6} xs={12}>
@@ -169,13 +144,28 @@ class About extends React.Component {
 							<h1 className="title-subHead">My Academic</h1>
 						</div>
 					</Row>
-					<Row className="education-sec-content">
+					<Row className="education-sec-content container">
 						<Row>
-							<Col md={1} xs={3}></Col>
-							<Col md={9} xs={6}>
+							<Col md={1} xs-hidden></Col>
+							<Col md={6} sm={12} xs={12}>
 								<Education />
 							</Col>
-							<Col md={1} xs={3}></Col>
+							<Col md={5} sm={12} xs={12}>
+								<Panel header="ACHIEVEMENT" bsStyle="warning">
+									{awardBtn}
+									<div className="achivement-content">
+										{
+											this.props.award.map((elem, index) => {
+												return (
+													<div className="award-item">
+														<Award user={this.state.user} title={elem.Title} time={elem.Time} _id={elem.id} key={index}/>
+													</div>
+												)
+											})
+										}
+									</div>
+								</Panel>
+							</Col>
 						</Row>
 					</Row>
 				</Row>

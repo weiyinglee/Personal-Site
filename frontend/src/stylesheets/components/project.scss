@@ -3,6 +3,11 @@
 	background: white;
 	padding: 2%;
 
+	#project-heading {
+		font-weight: bold;
+		font-style: italic;
+	}
+
 	.project-btn {
 		background: darkred;
 		color: white;
@@ -17,18 +22,13 @@
 
 	}
 
-	.jumbotron {
-		background: white;
-		border: 1px solid black;
-	}
-
 	.form-control {
 		margin-top: 1%;
 	}
 
 	.project-frame {
 		.project-description {
-			color: #888;
+			color: #444;
 		}
 		.project-title {
 			color: darkred;
@@ -37,9 +37,12 @@
 		}
 		.project-date {
 			font-style: italic;
+			font-weight: bold;
+			color: #777;
 		}
 		.project-link {
 			text-decoration: underline;
+			font-style: italic;
 		}
 	}
 }

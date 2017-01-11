@@ -23320,7 +23320,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  min-height: 100%; }\n  html body {\n    margin: 0;\n    padding: 0;\n    /*\r\n\t\tbackground: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(\"../../images/sec-bg.png\") no-repeat fixed center;\r\n\t\tbackground-size: cover;\r\n\t\t*/\n    background: #111;\n    width: 100%;\n    height: 100%; }\n    html body .unselectableText {\n      -webkit-user-select: none;\n      -khtml-user-select: none;\n      -moz-user-select: none;\n      -o-user-select: none;\n      user-select: none; }\n    html body #content {\n      height: 100%;\n      width: 100%;\n      display: inline;\n      position: relative;\n      margin: 0;\n      padding: 0; }\n\n#nav-frame {\n  height: 40%;\n  padding-top: 1%;\n  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(" + __webpack_require__(212) + ") no-repeat scroll bottom;\n  background-color: white;\n  backgroud-size: 100%; }\n  #nav-frame .navbar {\n    padding: 1%;\n    background: rgba(0, 0, 0, 0.4);\n    border: none;\n    /* override active class */ }\n    #nav-frame .navbar #page-title {\n      font-weight: bold;\n      font-size: 30px; }\n    #nav-frame .navbar a {\n      color: white; }\n    #nav-frame .navbar a:hover {\n      color: red;\n      transition: color 1s ease-out; }\n    #nav-frame .navbar .active a {\n      color: orange;\n      font-weight: bold;\n      background: transparent; }\n    #nav-frame .navbar #admin-btn {\n      color: darkred; }\n\n#header-frame {\n  padding: 10%; }\n  #header-frame #myname {\n    color: orange; }\n  #header-frame textarea {\n    color: black;\n    resize: none; }\n\n.profile-pic-frame {\n  border: 1px white solid;\n  border-radius: 100px;\n  box-shadow: 5px 5px 5px #111;\n  width: 80%;\n  height: 80%;\n  margin-right: 5%;\n  margin-bottom: 5%;\n  float: right; }\n  .profile-pic-frame img {\n    width: 100%;\n    height: 100%;\n    border-radius: 100px; }\n\n.profile-info {\n  border: 1px white solid;\n  background: rgba(255, 255, 255, 0.1);\n  width: 100%;\n  height: 100%;\n  padding: 10%;\n  margin-top: 1%;\n  color: white;\n  text-align: center; }\n  .profile-info h3 {\n    font-size: 20px;\n    font-weight: bold; }\n\n.sub-header-title {\n  border: none;\n  background: rgba(255, 255, 255, 0.1);\n  padding: 5%;\n  margin: 1%; }\n  .sub-header-title h2 {\n    color: white;\n    font-weight: bold;\n    text-align: center;\n    text-shadow: 10px 10px 10px #000;\n    padding: 2%; }\n  .sub-header-title .project-add-btn {\n    margin-left: 48%; }\n  .sub-header-title .project-fields {\n    margin-top: 1%; }\n    .sub-header-title .project-fields li {\n      margin: 1%;\n      list-style: none; }\n\n#footer-frame {\n  background: #111;\n  position: relative;\n  width: 100%;\n  height: 300px;\n  bottom: 0; }\n  #footer-frame a {\n    color: white;\n    background: transparent; }\n  #footer-frame #footer-header-title {\n    color: white;\n    padding-top: 1%;\n    margin-left: 3%; }\n  #footer-frame #link-list {\n    padding: 1%;\n    margin-left: 1%; }\n    #footer-frame #link-list li {\n      list-style: none;\n      display: inline;\n      margin: 1%; }\n    #footer-frame #link-list img {\n      weight: 30px;\n      height: 30px; }\n  #footer-frame #copyright-sec {\n    background: #222;\n    padding: 2%; }\n    #footer-frame #copyright-sec h5 {\n      color: white;\n      text-align: center; }\n  #footer-frame .footer-bar {\n    padding: 2%;\n    /* override active */ }\n    #footer-frame .footer-bar .active a {\n      background: transparent;\n      color: yellow; }\n\n.contact-sec {\n  padding: 2%;\n  background: white;\n  border: 1px black solid;\n  text-align: center;\n  color: black;\n  font-weight: bold; }\n  .contact-sec .message-area {\n    text-align: left; }\n    .contact-sec .message-area .message-area-title {\n      text-align: center; }\n    .contact-sec .message-area .message-lists li {\n      list-style: none; }\n      .contact-sec .message-area .message-lists li .message-post {\n        padding: 1%; }\n      .contact-sec .message-area .message-lists li .message-response {\n        margin-top: 1%;\n        padding: 1%;\n        border-top: 1px solid #999; }\n      .contact-sec .message-area .message-lists li .message-text {\n        color: #888; }\n\n.about-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .about-sec .about-sec-title {\n    text-align: center;\n    padding: 2%;\n    font-size: 72px;\n    font-weight: bold; }\n    .about-sec .about-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .about-sec .about-sec-title .title-subHead {\n      font-weight: bold; }\n  .about-sec .intro-sec {\n    background-color: white;\n    padding: 2%; }\n    .about-sec .intro-sec .intro-sec-content .profile-pic {\n      padding: 0; }\n      .about-sec .intro-sec .intro-sec-content .profile-pic img {\n        width: 200px;\n        height: 200px;\n        border-radius: 130px; }\n    .about-sec .intro-sec .intro-sec-content #intro-title, .about-sec .intro-sec .intro-sec-content #skill-title, .about-sec .intro-sec .intro-sec-content #achivement-title {\n      color: darkred;\n      font-weight: bold; }\n    .about-sec .intro-sec .intro-sec-content .intro-summary {\n      font-size: 16px; }\n    .about-sec .intro-sec .intro-sec-content pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n    .about-sec .intro-sec .skill-item, .about-sec .intro-sec .award-item {\n      margin-bottom: 2%; }\n      .about-sec .intro-sec .skill-item .skill-title, .about-sec .intro-sec .award-item .skill-title {\n        font-weight: bold;\n        font-size: 18px;\n        color: #000; }\n      .about-sec .intro-sec .skill-item .skill-proficiency, .about-sec .intro-sec .award-item .skill-proficiency {\n        color: #777;\n        font-weight: bold;\n        font-size: 12px; }\n      .about-sec .intro-sec .skill-item input, .about-sec .intro-sec .award-item input {\n        width: auto; }\n    .about-sec .intro-sec .award-item .award-title {\n      font-weight: bold;\n      font-size: 18px;\n      color: brown; }\n    .about-sec .intro-sec .award-item .award-time {\n      font-weight: bold;\n      font-size: 14px;\n      color: #777; }\n  .about-sec .experience-sec {\n    background-color: #e6fffa;\n    padding: 2%; }\n    .about-sec .experience-sec .experience-sec-content .experience-title {\n      color: darkred;\n      font-weight: bold;\n      font-size: 28px; }\n    .about-sec .experience-sec .experience-sec-content .experience-date {\n      color: darkorange;\n      font-style: italic; }\n    .about-sec .experience-sec .experience-sec-content .project-description {\n      font-weight: bold; }\n  .about-sec .education-sec {\n    background-color: white;\n    padding: 2%;\n    margin-bottom: 3%; }\n    .about-sec .education-sec .education-sec-content #edu-year {\n      color: darkorange;\n      font-style: italic; }\n    .about-sec .education-sec .education-sec-content #edu-school {\n      color: darkred;\n      font-weight: bold; }\n    .about-sec .education-sec .education-sec-content #edu-degree {\n      font-style: italic;\n      font-size: 20px;\n      color: #777; }\n\n.project-sec {\n  background: white;\n  padding: 2%; }\n  .project-sec .project-btn {\n    background: darkred;\n    color: white; }\n  .project-sec .links {\n    color: brown; }\n    .project-sec .links a:hover {\n      text-decoration: none; }\n  .project-sec .jumbotron {\n    background: white;\n    border: 1px solid black; }\n  .project-sec .form-control {\n    margin-top: 1%; }\n  .project-sec .project-frame .project-description {\n    color: #888; }\n  .project-sec .project-frame .project-title {\n    color: darkred;\n    font-weight: bold; }\n  .project-sec .project-frame .project-date {\n    font-style: italic; }\n  .project-sec .project-frame .project-link {\n    text-decoration: underline; }\n\n.home-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .home-sec .home-sec-title {\n    text-align: center;\n    padding: 3%;\n    font-size: 72px;\n    font-weight: bold; }\n    .home-sec .home-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .home-sec .home-sec-title .title-subHead {\n      font-weight: bold; }\n  .home-sec .home-sec-content {\n    padding-bottom: 5%;\n    font-weight: bold;\n    color: #888; }\n    .home-sec .home-sec-content .home-project-title {\n      font-weight: bold;\n      font-size: 28px;\n      color: darkred; }\n    .home-sec .home-sec-content .home-project-date {\n      font-style: italic;\n      font-size: 16px;\n      color: darkorange; }\n  .home-sec .more-btn-row {\n    margin: 2%; }\n  .home-sec .home-project-sec {\n    background: #e6fffa;\n    text-align: center; }\n  .home-sec .home-summary-sec .home-sec-content .profile-pic {\n    padding: 0; }\n    .home-sec .home-summary-sec .home-sec-content .profile-pic img {\n      width: 230px;\n      height: 230px;\n      border-radius: 130px; }\n  .home-sec .home-summary-sec .home-sec-content .profile-summary {\n    margin: 1%; }\n    .home-sec .home-summary-sec .home-sec-content .profile-summary pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n  .home-sec .home-contact-sec {\n    background: white;\n    text-align: center; }\n    .home-sec .home-contact-sec .home-contact-title {\n      font-size: 18px;\n      font-weight: bold;\n      color: brown; }\n\n.login-sec {\n  background: white;\n  width: auto;\n  height: auto;\n  margin: 0; }\n  .login-sec .login-area, .login-sec .reg-area {\n    background: white; }\n    .login-sec .login-area .login-sec-title, .login-sec .reg-area .login-sec-title {\n      text-align: center;\n      padding: 3%;\n      font-size: 72px;\n      font-weight: bold; }\n      .login-sec .login-area .login-sec-title .title-head, .login-sec .reg-area .login-sec-title .title-head {\n        font-weight: bold; }\n    .login-sec .login-area .login-panel, .login-sec .reg-area .login-panel {\n      padding: 2%;\n      margin-bottom: 5%;\n      background: white; }\n  .login-sec .reg-area {\n    background: #e6fffa; }\n    .login-sec .reg-area .login-panel {\n      padding: 2%;\n      margin-bottom: 5%;\n      background: white; }\n", ""]);
+	exports.push([module.id, "html {\n  min-height: 100%; }\n  html body {\n    margin: 0;\n    padding: 0;\n    /*\r\n\t\tbackground: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(\"../../images/sec-bg.png\") no-repeat fixed center;\r\n\t\tbackground-size: cover;\r\n\t\t*/\n    background: #111;\n    width: 100%;\n    height: 100%; }\n    html body .unselectableText {\n      -webkit-user-select: none;\n      -khtml-user-select: none;\n      -moz-user-select: none;\n      -o-user-select: none;\n      user-select: none; }\n    html body #content {\n      height: 100%;\n      width: 100%;\n      display: inline;\n      position: relative;\n      margin: 0;\n      padding: 0; }\n\n#nav-frame {\n  height: 40%;\n  padding-top: 1%;\n  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(" + __webpack_require__(212) + ") no-repeat scroll bottom;\n  background-color: white;\n  backgroud-size: 100%; }\n  #nav-frame .navbar {\n    padding: 1%;\n    background: rgba(0, 0, 0, 0.4);\n    border: none;\n    /* override active class */ }\n    #nav-frame .navbar #page-title {\n      font-weight: bold;\n      font-size: 30px; }\n    #nav-frame .navbar a {\n      color: white; }\n    #nav-frame .navbar a:hover {\n      color: red;\n      transition: color 1s ease-out; }\n    #nav-frame .navbar .active a {\n      color: orange;\n      font-weight: bold;\n      background: transparent; }\n    #nav-frame .navbar #admin-btn {\n      color: darkred; }\n\n#header-frame {\n  padding: 10%; }\n  #header-frame #myname {\n    color: orange; }\n  #header-frame textarea {\n    color: black;\n    resize: none; }\n\n.profile-pic-frame {\n  border: 1px white solid;\n  border-radius: 100px;\n  box-shadow: 5px 5px 5px #111;\n  width: 80%;\n  height: 80%;\n  margin-right: 5%;\n  margin-bottom: 5%;\n  float: right; }\n  .profile-pic-frame img {\n    width: 100%;\n    height: 100%;\n    border-radius: 100px; }\n\n.profile-info {\n  border: 1px white solid;\n  background: rgba(255, 255, 255, 0.1);\n  width: 100%;\n  height: 100%;\n  padding: 10%;\n  margin-top: 1%;\n  color: white;\n  text-align: center; }\n  .profile-info h3 {\n    font-size: 20px;\n    font-weight: bold; }\n\n.sub-header-title {\n  border: none;\n  background: rgba(255, 255, 255, 0.1);\n  padding: 5%;\n  margin: 1%; }\n  .sub-header-title h2 {\n    color: white;\n    font-weight: bold;\n    text-align: center;\n    text-shadow: 10px 10px 10px #000;\n    padding: 2%; }\n  .sub-header-title .project-add-btn {\n    margin-left: 48%; }\n  .sub-header-title .project-fields {\n    margin-top: 1%; }\n    .sub-header-title .project-fields li {\n      margin: 1%;\n      list-style: none; }\n\n#footer-frame {\n  background: #111;\n  position: relative;\n  width: 100%;\n  height: 300px;\n  bottom: 0; }\n  #footer-frame a {\n    color: white;\n    background: transparent; }\n  #footer-frame #footer-header-title {\n    color: white;\n    padding-top: 1%;\n    margin-left: 3%; }\n  #footer-frame #link-list {\n    padding: 1%;\n    margin-left: 1%; }\n    #footer-frame #link-list li {\n      list-style: none;\n      display: inline;\n      margin: 1%; }\n    #footer-frame #link-list img {\n      weight: 30px;\n      height: 30px; }\n  #footer-frame #copyright-sec {\n    background: #222;\n    padding: 2%; }\n    #footer-frame #copyright-sec h5 {\n      color: white;\n      text-align: center; }\n  #footer-frame .footer-bar {\n    padding: 2%;\n    /* override active */ }\n    #footer-frame .footer-bar .active a {\n      background: transparent;\n      color: yellow; }\n\n.contact-sec {\n  padding: 2%;\n  background: white;\n  border: 1px black solid;\n  text-align: center;\n  color: black;\n  font-weight: bold; }\n  .contact-sec .message-area {\n    text-align: left; }\n    .contact-sec .message-area .message-area-title {\n      text-align: center; }\n    .contact-sec .message-area .message-lists li {\n      list-style: none; }\n      .contact-sec .message-area .message-lists li .message-post {\n        padding: 1%; }\n      .contact-sec .message-area .message-lists li .message-response {\n        margin-top: 1%;\n        padding: 1%;\n        border-top: 1px solid #999; }\n      .contact-sec .message-area .message-lists li .message-text {\n        color: #888; }\n\n.about-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .about-sec .about-sec-title {\n    text-align: center;\n    padding: 2%;\n    font-size: 72px;\n    font-weight: bold; }\n    .about-sec .about-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .about-sec .about-sec-title .title-subHead {\n      font-weight: bold; }\n  .about-sec .intro-sec {\n    background-color: white;\n    padding: 2%; }\n    .about-sec .intro-sec .intro-sec-content .profile-pic {\n      padding: 0; }\n      .about-sec .intro-sec .intro-sec-content .profile-pic img {\n        width: 200px;\n        height: 200px;\n        border-radius: 130px; }\n    .about-sec .intro-sec .intro-sec-content #intro-title, .about-sec .intro-sec .intro-sec-content #skill-title, .about-sec .intro-sec .intro-sec-content #achivement-title {\n      color: darkred;\n      font-weight: bold; }\n    .about-sec .intro-sec .intro-sec-content .intro-summary {\n      font-size: 16px; }\n    .about-sec .intro-sec .intro-sec-content pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n    .about-sec .intro-sec .skill-item, .about-sec .intro-sec .award-item, .about-sec .intro-sec .education-sec .education-sec-content .award-item, .about-sec .education-sec .education-sec-content .intro-sec .award-item {\n      margin-bottom: 2%; }\n      .about-sec .intro-sec .skill-item .skill-title, .about-sec .intro-sec .award-item .skill-title {\n        font-weight: bold;\n        font-size: 18px;\n        color: #000; }\n      .about-sec .intro-sec .skill-item .skill-proficiency, .about-sec .intro-sec .award-item .skill-proficiency {\n        color: #777;\n        font-weight: bold;\n        font-size: 12px; }\n      .about-sec .intro-sec .skill-item input, .about-sec .intro-sec .award-item input, .about-sec .intro-sec .education-sec .education-sec-content .award-item input, .about-sec .education-sec .education-sec-content .intro-sec .award-item input {\n        width: auto; }\n    .about-sec .intro-sec .award-item .award-title {\n      font-weight: bold;\n      font-size: 18px;\n      color: #000; }\n    .about-sec .intro-sec .award-item .award-time {\n      font-weight: bold;\n      font-size: 14px;\n      color: #777; }\n  .about-sec .experience-sec {\n    background-color: #e6fffa;\n    padding: 2%; }\n    .about-sec .experience-sec .experience-sec-content .experience-title {\n      color: darkred;\n      font-weight: bold;\n      font-size: 28px; }\n    .about-sec .experience-sec .experience-sec-content .experience-date {\n      color: #000;\n      font-weight: bold;\n      font-style: italic; }\n    .about-sec .experience-sec .experience-sec-content .project-description {\n      font-weight: bold;\n      color: #777; }\n  .about-sec .education-sec {\n    background-color: white;\n    padding: 2%;\n    margin-bottom: 3%; }\n    .about-sec .education-sec .education-sec-content #edu-year {\n      color: #000;\n      font-size: 18px;\n      font-weight: bold;\n      font-style: italic; }\n    .about-sec .education-sec .education-sec-content #edu-school {\n      color: darkred;\n      font-weight: bold; }\n    .about-sec .education-sec .education-sec-content #edu-degree {\n      font-style: italic;\n      font-size: 20px;\n      color: #777; }\n    .about-sec .education-sec .education-sec-content #achivement-title {\n      color: darkorange;\n      font-weight: bold; }\n    .about-sec .education-sec .education-sec-content .award-item .award-title {\n      font-weight: bold;\n      font-size: 16px; }\n    .about-sec .education-sec .education-sec-content .award-item .award-time {\n      font-weight: bold;\n      font-size: 14px;\n      color: #777; }\n\n.project-sec {\n  background: white;\n  padding: 2%; }\n  .project-sec #project-heading {\n    font-weight: bold;\n    font-style: italic; }\n  .project-sec .project-btn {\n    background: darkred;\n    color: white; }\n  .project-sec .links {\n    color: brown; }\n    .project-sec .links a:hover {\n      text-decoration: none; }\n  .project-sec .form-control {\n    margin-top: 1%; }\n  .project-sec .project-frame .project-description {\n    color: #444; }\n  .project-sec .project-frame .project-title {\n    color: darkred;\n    font-weight: bold; }\n  .project-sec .project-frame .project-date {\n    font-style: italic;\n    font-weight: bold;\n    color: #777; }\n  .project-sec .project-frame .project-link {\n    text-decoration: underline;\n    font-style: italic; }\n\n.home-sec {\n  background: white;\n  height: auto;\n  width: auto;\n  margin-bottom: 0; }\n  .home-sec .home-sec-title {\n    text-align: center;\n    padding: 3%;\n    font-size: 72px;\n    font-weight: bold; }\n    .home-sec .home-sec-title .title-head {\n      color: #777;\n      font-weight: bold; }\n    .home-sec .home-sec-title .title-subHead {\n      font-weight: bold; }\n  .home-sec .home-sec-content {\n    padding-bottom: 5%;\n    font-weight: bold;\n    color: #888; }\n    .home-sec .home-sec-content .home-project-title {\n      font-weight: bold;\n      font-size: 28px;\n      color: darkred; }\n    .home-sec .home-sec-content .home-project-date {\n      font-style: italic;\n      font-size: 16px;\n      color: darkorange; }\n  .home-sec .more-btn-row {\n    margin: 2%; }\n  .home-sec .home-project-sec {\n    background: #e6fffa;\n    text-align: center; }\n  .home-sec .home-summary-sec .home-sec-content .profile-pic {\n    padding: 0; }\n    .home-sec .home-summary-sec .home-sec-content .profile-pic img {\n      width: 230px;\n      height: 230px;\n      border-radius: 130px; }\n  .home-sec .home-summary-sec .home-sec-content .profile-summary {\n    margin: 1%; }\n    .home-sec .home-summary-sec .home-sec-content .profile-summary pre {\n      background: transparent;\n      border: none;\n      white-space: pre-wrap;\n      word-wrap: break-word; }\n  .home-sec .home-contact-sec {\n    background: white;\n    text-align: center; }\n    .home-sec .home-contact-sec .home-contact-title {\n      font-size: 18px;\n      font-weight: bold;\n      color: brown; }\n\n.login-sec {\n  background: white;\n  width: auto;\n  height: auto;\n  margin: 0; }\n  .login-sec .login-area, .login-sec .reg-area {\n    background: white; }\n    .login-sec .login-area .login-sec-title, .login-sec .reg-area .login-sec-title {\n      text-align: center;\n      padding: 3%;\n      font-size: 72px;\n      font-weight: bold; }\n      .login-sec .login-area .login-sec-title .title-head, .login-sec .reg-area .login-sec-title .title-head {\n        font-weight: bold; }\n    .login-sec .login-area .login-panel, .login-sec .reg-area .login-panel {\n      padding: 2%;\n      margin-bottom: 5%;\n      background: white; }\n  .login-sec .reg-area {\n    background: #e6fffa; }\n    .login-sec .reg-area .login-panel {\n      padding: 2%;\n      margin-bottom: 5%;\n      background: white; }\n", ""]);
 
 	// exports
 
@@ -59402,8 +59402,6 @@
 					);
 				}
 
-				console.log(this.props.award);
-
 				return _react2.default.createElement(
 					_reactBootstrap.Grid,
 					{ className: "about-sec" },
@@ -59441,11 +59439,7 @@
 									_react2.default.createElement(
 										_reactBootstrap.Col,
 										{ md: 5, xs: 12, className: "profile-pic" },
-										_react2.default.createElement("img", { src: _profilePic2.default })
-									),
-									_react2.default.createElement(
-										_reactBootstrap.Col,
-										{ md: 6, xs: 12 },
+										_react2.default.createElement("img", { src: _profilePic2.default }),
 										_react2.default.createElement(
 											"div",
 											{ className: "page-header" },
@@ -59460,39 +59454,6 @@
 											"div",
 											{ className: "intro-content" },
 											_react2.default.createElement(_Intro2.default, { content: this.props.summary, edit: this.state.open })
-										)
-									)
-								)
-							),
-							_react2.default.createElement(
-								_reactBootstrap.Row,
-								null,
-								_react2.default.createElement(
-									"div",
-									{ className: "container" },
-									_react2.default.createElement(
-										_reactBootstrap.Col,
-										{ md: 6, xs: 12 },
-										_react2.default.createElement(
-											"div",
-											{ className: "page-header" },
-											_react2.default.createElement(
-												"h4",
-												{ id: "achivement-title" },
-												"ACHIEVEMENT"
-											),
-											awardBtn
-										),
-										_react2.default.createElement(
-											"div",
-											{ className: "achivement-content" },
-											this.props.award.map(function (elem, index) {
-												return _react2.default.createElement(
-													"div",
-													{ className: "award-item" },
-													_react2.default.createElement(_Award2.default, { user: _this2.state.user, title: elem.Title, time: elem.Time, _id: elem.id, key: index })
-												);
-											})
 										)
 									),
 									_react2.default.createElement(
@@ -59585,17 +59546,36 @@
 						),
 						_react2.default.createElement(
 							_reactBootstrap.Row,
-							{ className: "education-sec-content" },
+							{ className: "education-sec-content container" },
 							_react2.default.createElement(
 								_reactBootstrap.Row,
 								null,
-								_react2.default.createElement(_reactBootstrap.Col, { md: 1, xs: 3 }),
+								_react2.default.createElement(_reactBootstrap.Col, { md: 1, "xs-hidden": true }),
 								_react2.default.createElement(
 									_reactBootstrap.Col,
-									{ md: 9, xs: 6 },
+									{ md: 6, sm: 12, xs: 12 },
 									_react2.default.createElement(_Education2.default, null)
 								),
-								_react2.default.createElement(_reactBootstrap.Col, { md: 1, xs: 3 })
+								_react2.default.createElement(
+									_reactBootstrap.Col,
+									{ md: 5, sm: 12, xs: 12 },
+									_react2.default.createElement(
+										_reactBootstrap.Panel,
+										{ header: "ACHIEVEMENT", bsStyle: "warning" },
+										awardBtn,
+										_react2.default.createElement(
+											"div",
+											{ className: "achivement-content" },
+											this.props.award.map(function (elem, index) {
+												return _react2.default.createElement(
+													"div",
+													{ className: "award-item" },
+													_react2.default.createElement(_Award2.default, { user: _this2.state.user, title: elem.Title, time: elem.Time, _id: elem.id, key: index })
+												);
+											})
+										)
+									)
+								)
 							)
 						)
 					)
@@ -60361,7 +60341,7 @@
 
 				return _react2.default.createElement(
 					"div",
-					{ className: "container" },
+					null,
 					editBlk
 				);
 			}
@@ -60457,21 +60437,12 @@
 					"div",
 					{ className: "project-sec" },
 					_react2.default.createElement(
-						_reactBootstrap.Jumbotron,
-						{ className: "jumbotron" },
+						"div",
+						{ className: "page-header", id: "project-heading" },
 						_react2.default.createElement(
-							"h1",
-							null,
-							"Project List"
-						),
-						_react2.default.createElement(
-							"p",
-							null,
-							"Please click the project title to see more detail."
-						),
-						_react2.default.createElement(
-							"p",
-							null,
+							"h3",
+							{ className: "project-heading-text" },
+							"Find more details about my projects on ",
 							_react2.default.createElement(
 								"a",
 								{ target: "_blank", role: "button", className: "btn btn-warning", href: "https://github.com/weiyinglee" },
@@ -60674,7 +60645,7 @@
 							_react2.default.createElement(
 								_reactRouter.Link,
 								{ to: "/project", className: "links", onClick: this.goLink.bind(this) },
-								"Project Link"
+								"GitHub Link"
 							)
 						)
 					);
@@ -61337,7 +61308,7 @@
 									{ md: 6 },
 									_react2.default.createElement(
 										_reactBootstrap.Panel,
-										{ className: "login-panel", bsStyle: "warning" },
+										{ className: "login-panel" },
 										_react2.default.createElement(
 											"form",
 											null,
@@ -61353,7 +61324,7 @@
 											),
 											_react2.default.createElement(
 												_reactBootstrap.Button,
-												{ onClick: this.login.bind(this), bsStyle: "warning" },
+												{ onClick: this.login.bind(this), bsStyle: "success" },
 												"Login"
 											)
 										)
@@ -61412,7 +61383,7 @@
 											),
 											_react2.default.createElement(
 												_reactBootstrap.Button,
-												{ onClick: this.reg.bind(this), bsStyle: "success" },
+												{ onClick: this.reg.bind(this), bsStyle: "warning" },
 												"Register"
 											)
 										)

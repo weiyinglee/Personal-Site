@@ -82,7 +82,7 @@ class Award extends React.Component {
 		}
 
 		return (
-			<div className="container">
+			<div>
 				{editBlk}
 			</div>
 		)
