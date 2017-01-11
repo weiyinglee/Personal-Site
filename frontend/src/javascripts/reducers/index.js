@@ -6,6 +6,7 @@ import messageReducer from "./messageReducer"
 import projectReducer from "./projectReducer"
 import workReducer from "./workReducer"
 import skillsReducer from "./skillsReducer"
+import awardReducer from "./awardReducer"
 
 const allReducers = combineReducers({
 	userLogin: userLoginReducer,
@@ -13,7 +14,8 @@ const allReducers = combineReducers({
 	about: aboutReducer,
 	experience: workReducer,
 	project: projectReducer,
-	skills: skillsReducer
+	skills: skillsReducer,
+	award: awardReducer
 })
 
 export default allReducers

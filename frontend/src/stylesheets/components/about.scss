@@ -63,15 +63,34 @@ $transparent: rgba(0,0,0,0);
 
 			.skill-title {
 				font-weight: bold;
+				font-size: 18px;
+				color: #000;
 			}
 
 			.skill-proficiency {
 				color: #777;
-				font-size: 14px;
+				font-weight: bold;
+				font-size: 12px;
 			}
 
 			input {
 				width: auto;
+			}
+		}
+
+		.award-item {
+			@extend .skill-item;
+
+			.award-title {
+				font-weight: bold;
+				font-size: 18px;
+				color: brown;
+			}
+
+			.award-time {
+				font-weight: bold;
+				font-size: 14px;
+				color: #777;
 			}
 		}
 

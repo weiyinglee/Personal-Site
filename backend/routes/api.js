@@ -180,6 +180,26 @@ router.put('/update-skill/:id', function(req, res) {
 
 });
 
+router.put('/update-award/:id', function(req, res) {
+
+	var title = req.body.Title;
+	var time = req.body.Time;
+	var id = req.params.id;
+
+	db("award")
+		.where("id", id)
+		.update({
+			Title: title,
+			Time: time
+		})
+		.then(function(result) {
+			res.json({Message: "successfully updated award"});
+		},function(err) {
+			res.json({Message: err});
+		});
+
+});
+
 /* POST */
 router.post('/Authentication', function(req, res){
 	var acct = req.body.account;
@@ -343,6 +363,26 @@ router.post('/add-skill', function(req, res) {
 
 });
 
+router.post('/add-award', function(req, res) {
+
+	var title = req.body.Title;
+	var time = req.body.Time;
+
+	var data = {
+		Title: title,
+		Time: time
+	}
+
+	db("award")
+		.insert(data)
+		.then(function(response) {
+			res.json({Message: "successfully added award"});
+		}, function(err) {
+			res.send(err);
+		});
+
+});
+
 /* DELETE */
 router.delete('/delete-message/:id', function(req, res){
 
@@ -392,6 +432,20 @@ router.delete('/delete-skill/:id', function(req, res) {
 	var id = req.params.id;
 
 	db("skills")
+		.where("id", id)
+		.delete()
+		.then(function(result){
+			res.json({Message: "successfully deleted skill"});
+		}, function(err) {
+			res.send(err);
+		});
+});
+
+router.delete('/delete-award/:id', function(req, res) {
+	
+	var id = req.params.id;
+
+	db("award")
 		.where("id", id)
 		.delete()
 		.then(function(result){

@@ -11,6 +11,7 @@ import cookie from "react-cookie"
 import { fetchAboutSummary } from "../../actions/AboutAction"
 import { fetchWork, addWork } from "../../actions/WorkAction"
 import { fetchSkills, addSkill } from "../../actions/SkillsAction"
+import { fetchAward, addAward } from "../../actions/AwardAction"
 import Intro from "./Intro"
 import Experience from "./Experience"
 import Education from "./Education"
@@ -46,21 +47,31 @@ class About extends React.Component {
 		this.props.dispatch(addSkill(data))
 	}
 
+	addAward() {
+		let data = {Title: "Title", Time: "Time"}
+		
+		this.props.dispatch(addAward(data))
+	}
+
 	componentWillMount() {
 		this.props.dispatch(fetchAboutSummary())
 		this.props.dispatch(fetchWork())
 		this.props.dispatch(fetchSkills())
+		this.props.dispatch(fetchAward())
 	}
 
 	render() {
 
-		let introEditBtn, workBtn, skillBtn
+		let introEditBtn, workBtn, skillBtn, awardBtn
 
 		if(this.state.user && this.state.user.admin){
 			introEditBtn = (<Button bsStyle="danger" bsSize="xsmall" onClick={this.openBtn.bind(this)}>Edit</Button>)
 			workBtn = (<Button bsStyle="success" bsSize="xsmall" onClick={this.addWork.bind(this)}>Add</Button>)
 			skillBtn = (<Button bsStyle="success" bsSize="xsmall" onClick={this.addSkill.bind(this)}>Add</Button>)
+			awardBtn = (<Button bsStyle="success" bsSize="xsmall" onClick={this.addAward.bind(this)}>Add</Button>)
 		}
+
+		console.log(this.props.award)
 
 		return (
 			<Grid className="about-sec">
@@ -94,9 +105,18 @@ class About extends React.Component {
 								<Col md={6} xs={12}>
 									<div className="page-header">
 										<h4 id="achivement-title">ACHIEVEMENT</h4>
+										{awardBtn}
 									</div>
 									<div className="achivement-content">
-
+										{
+											this.props.award.map((elem, index) => {
+												return (
+													<div className="award-item">
+														<Award user={this.state.user} title={elem.Title} time={elem.Time} _id={elem.id} key={index}/>
+													</div>
+												)
+											})
+										}
 									</div>
 								</Col>
 								<Col md={6} xs={12}>
@@ -169,7 +189,8 @@ function mapStateToProps(state) {
 		summary: state.about.summary,
 		Message: state.experience.message,
 		experience: state.experience.experience,
-		skills: state.skills.skills
+		skills: state.skills.skills,
+		award: state.award.award
 	}
 }
 

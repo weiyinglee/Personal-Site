@@ -72,7 +72,9 @@ class Skills extends React.Component {
 						{editBtn}
 						<h4>
 							<span className="skill-title">{this.props.title}</span> 
-							<span className="skill-proficiency">({this.props.proficiency})</span>
+						</h4>
+						<h4>
+							<span className="skill-proficiency">{this.props.proficiency}</span>
 						</h4>
 					</div>
 				</div>
