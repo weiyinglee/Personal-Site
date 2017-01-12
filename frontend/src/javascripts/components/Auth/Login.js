@@ -24,10 +24,6 @@ class Login extends React.Component {
 		this.props.dispatch(loginUser(acct, pw))
 	}
 
-	loginFaceBook() {
-
-	}
-
 	//reg
 	reg() {
 		let acct = this.refs.new_account.value

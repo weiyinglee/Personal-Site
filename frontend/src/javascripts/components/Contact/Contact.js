@@ -237,7 +237,7 @@ class Contact extends React.Component {
 		//if the user is not login, juat ask for login
 		}else {
 			messageBlk = (
-				<Link to="/login" role="button" className="btn btn-default">
+				<Link to="/login" role="button" className="btn btn-default default-button">
 					Login First !
 				</Link>
 			)

@@ -32,7 +32,7 @@ class Header extends React.Component {
 	}
 
 	logout(e) {
-		if(e == 5){
+		if(this.state.user && this.state.user.login && e == 5){
 			cookie.remove("user")
 			location.reload()
 		}
@@ -40,11 +40,11 @@ class Header extends React.Component {
 
 	render() {
 
-		let extendedHeader, userlogin, loginAddBtn
+		let extendedHeader, userlogin, projectAddBtn
 
 		//This is for project, when login, can see the add project button
 		if(this.state.user && this.state.user.admin){
-			loginAddBtn = (<Button bsStyle="success" bsSize="small" className="project-add-btn" onClick={this.addProject.bind(this)}>Add</Button>)
+			projectAddBtn = (<Button bsStyle="success" bsSize="small" className="project-add-btn" onClick={this.addProject.bind(this)}>Add</Button>)
 		}
 
 		//This is for admin login in section, can see when its unlogin, otherwise, show logout
@@ -76,7 +76,7 @@ class Header extends React.Component {
 				extendedHeader = (
 					<div className="sub-header-title">
 						<h2>MY PROJECTS</h2>
-						{loginAddBtn}
+						{projectAddBtn}
 					</div>
 				)					
 				break
@@ -101,7 +101,7 @@ class Header extends React.Component {
 				<Navbar inverse className="navbar">
 					<Navbar.Header>
 					  	<Navbar.Brand>
-					    	<Link to="/" id="page-title">ERICLEE PORTFOLIO</Link>
+					    	<Link to="/" id="page-title">WeiYingLee Portfolio</Link>
 					  	</Navbar.Brand>
 					  	<Navbar.Toggle />
 					</Navbar.Header>
