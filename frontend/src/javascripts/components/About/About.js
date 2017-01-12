@@ -146,7 +146,7 @@ class About extends React.Component {
 					</Row>
 					<Row className="education-sec-content container">
 						<Row>
-							<Col md={1} xs-hidden></Col>
+							<Col md={1}></Col>
 							<Col md={6} sm={12} xs={12}>
 								<Education />
 							</Col>
@@ -157,7 +157,7 @@ class About extends React.Component {
 										{
 											this.props.award.map((elem, index) => {
 												return (
-													<div className="award-item">
+													<div className="award-item" key={index}>
 														<Award user={this.state.user} title={elem.Title} time={elem.Time} _id={elem.id} key={index}/>
 													</div>
 												)

@@ -2,7 +2,7 @@
 
 //import dependencies
 import React from "react"
-import { Router, Route, IndexRoute, browserHistory } from "react-router"
+import { Router, Route, IndexRoute, browserHistory, Redirect } from "react-router"
 
 //import the routes components
 import Layout from "./components/layout"
@@ -20,6 +20,7 @@ const router = (
 			<Route path="/project" component={Project} />
 			<Route path="/contact" component={Contact} />
 			<Route path="/login" component={Login} />
+			<Redirect from="*" to="/" />
 		</Route>
 	</Router>
 )

@@ -82,7 +82,7 @@ class Award extends React.Component {
 		}
 
 		return (
-			<div>
+			<div key={this.props.key}>
 				{editBlk}
 			</div>
 		)
