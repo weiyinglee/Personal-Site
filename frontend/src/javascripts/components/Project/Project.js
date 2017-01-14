@@ -29,7 +29,7 @@ class Project extends React.Component {
 			<div className="project-sec">
 				<div className="page-header" id="project-heading">
 					<h3 className="project-heading-text">
-						Find more details about my projects on <a target="_blank" role="button" className="btn btn-warning" href="https://github.com/weiyinglee">My GitHub</a>
+						Find more details about my projects on <a target="_blank" role="button" className="btn btn-warning default-button" href="https://github.com/weiyinglee">My GitHub</a>
 					</h3>
 				</div>
 				{

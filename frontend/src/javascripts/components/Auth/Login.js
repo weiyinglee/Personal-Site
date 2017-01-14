@@ -21,6 +21,11 @@ class Login extends React.Component {
 		let acct = this.refs.account.value
 		let pw = this.refs.password.value
 
+		if(acct == "" || pw == "") {
+			$("input").val("")
+			return alert("The Fields can not be empty!")
+		}
+
 		this.props.dispatch(loginUser(acct, pw))
 	}
 
@@ -30,8 +35,11 @@ class Login extends React.Component {
 		let pw = this.refs.new_password.value
 		let pw2 = this.refs.new_password2.value
 
-		if(pw !== pw2){
-			$("input").val("");
+		if(acct == "" || pw == "" || pw2 == "") {
+			$("input").val("")
+			return alert("The fields can not be empty!")
+		}else if(pw !== pw2){
+			$("input").val("")
 			return alert("Two passwords are not matched!")
 		}
 
@@ -65,7 +73,7 @@ class Login extends React.Component {
 										<div className="form-group">
 											<input ref="password" type="password" className="form-control" placeholder="Enter password"/>
 										</div>
-										<Button onClick={this.login.bind(this)} bsStyle="success">Login</Button>
+										<Button onClick={this.login.bind(this)} bsStyle="primary" className="form-btn">Login</Button>
 									</form>
 								</Panel>
 							</Col>
@@ -95,7 +103,7 @@ class Login extends React.Component {
 										<div className="form-group">
 											<input ref="new_password2" type="password" className="form-control" placeholder="Enter password Again"/>
 										</div>
-										<Button onClick={this.reg.bind(this)} bsStyle="warning">Register</Button>
+										<Button onClick={this.reg.bind(this)} bsStyle="primary" className="form-btn">Register</Button>
 									</form>
 								</Panel>
 							</Col>

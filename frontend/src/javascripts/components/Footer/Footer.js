@@ -34,7 +34,7 @@ class Footer extends React.Component {
 				</Nav>
 				<div id="copyright-sec">
 					<h5>
-						© 2016 ERICLEE PORTFOLIO. All Rights Reserved | Degisn inspired from <a target="_blank" href="https://w3layouts.com/agronomic-agriculture-category-flat-bootstrap-responsive-web-template/">W3layouts</a>
+						© 2017 WEIYINGLEE PORTFOLIO. All Rights Reserved
 					</h5>
 				</div>
 			</div>

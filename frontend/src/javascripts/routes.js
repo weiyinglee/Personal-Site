@@ -16,7 +16,7 @@ import Login from "./components/Auth/Login"
 const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={Layout}>
-			<Route path="/about" component={About} />
+			<IndexRoute component={About} />
 			<Route path="/project" component={Project} />
 			<Route path="/contact" component={Contact} />
 			<Route path="/login" component={Login} />

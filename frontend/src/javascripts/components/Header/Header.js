@@ -32,7 +32,7 @@ class Header extends React.Component {
 	}
 
 	logout(e) {
-		if(this.state.user && this.state.user.login && e == 5){
+		if(this.state.user && this.state.user.login && e == 4){
 			cookie.remove("user")
 			location.reload()
 		}
@@ -50,12 +50,12 @@ class Header extends React.Component {
 		//This is for admin login in section, can see when its unlogin, otherwise, show logout
 		if(this.state.user && this.state.user.login){
 			userlogin = (
-				<NavItem eventKey={5}>Logout</NavItem>
+				<NavItem eventKey={4}>Logout</NavItem>
 			)
 		}else {
 			userlogin = (
 				<LinkContainer to="/login">
-					<NavItem eventKey={5}>Login</NavItem>
+					<NavItem eventKey={4}>Login</NavItem>
 				</LinkContainer>
 			)
 		}
@@ -110,14 +110,11 @@ class Header extends React.Component {
 							<IndexLinkContainer to="/">
 								<NavItem eventKey={1}>Home</NavItem>
 							</IndexLinkContainer>
-							<LinkContainer to="/about">
-								<NavItem eventKey={2}>About</NavItem>
-							</LinkContainer>
 							<LinkContainer to="/project">
-								<NavItem eventKey={3}>Project</NavItem>
+								<NavItem eventKey={2}>Project</NavItem>
 							</LinkContainer>
 							<LinkContainer to="/contact">
-								<NavItem eventKey={4}>Contact</NavItem>
+								<NavItem eventKey={3}>Contact</NavItem>
 							</LinkContainer>
 							{userlogin}
 						</Nav>

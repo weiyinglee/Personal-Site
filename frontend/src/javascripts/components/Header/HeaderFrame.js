@@ -75,7 +75,8 @@ class HeaderFrame extends React.Component {
 									{editBtn}									
 								</div>
 								<h4>Get to know me more now</h4>
-								<Link role="button" className="btn btn-info" to="/about">About me</Link>
+								<a target="_blank" role="button" className="btn btn-info header-frame-btn" href="https://linkedin.com/in/weiyinglee">My Linkedin</a>
+								<Link role="button" className="btn btn-primary header-frame-btn" to="/project">My Project</Link>
 							</div>
 						</Col>
 						<Col sm={3} md={5}></Col>
