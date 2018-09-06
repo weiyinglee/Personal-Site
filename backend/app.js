@@ -5,18 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var bcrypt = require("bcryptjs");
-var passport = require("passport");
 
 var db = require("./routes/db");
-var routes = require('./routes/index');
 var api = require('./routes/api');
-require("./routes/passport");
 
 var app = express();
-
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -25,7 +18,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(passport.initialize());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 //fix XHTTP across origin header problem
 app.use(function(req, res, next) {
@@ -36,7 +28,6 @@ app.use(function(req, res, next) {
 });
 
 //middleware for router
-app.use('/', routes);
 app.use('/api', api);
 
 // catch 404 and forward to error handler
